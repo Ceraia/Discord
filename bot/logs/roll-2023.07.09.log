@@ -1,0 +1,510 @@
+00:19:39.724 INFO  Loading commands... 
+00:19:39.735 DEBUG Skipping command commission. Disabled! 
+00:19:39.748 DEBUG Skipping slash command avatar. Disabled! 
+00:19:39.749 DEBUG Skipping slash command botinvite. Disabled! 
+00:19:39.781 DEBUG Skipping slash command botstats. Disabled! 
+00:19:39.782 DEBUG Skipping slash command channelinfo. Disabled! 
+00:19:39.783 DEBUG Skipping slash command emojiinfo. Disabled! 
+00:19:39.785 DEBUG Skipping slash command guildinfo. Disabled! 
+00:19:39.785 DEBUG Skipping slash command uptime. Disabled! 
+00:19:39.786 DEBUG Skipping slash command userinfo. Disabled! 
+00:19:39.788 DEBUG Skipping command bot. Disabled! 
+00:19:39.789 DEBUG Skipping command info. Disabled! 
+00:19:39.792 DEBUG Skipping slash command deafen. Disabled! 
+00:19:39.793 DEBUG Skipping slash command disconnect. Disabled! 
+00:19:39.795 DEBUG Skipping slash command move. Disabled! 
+00:19:39.795 DEBUG Skipping slash command purge. Disabled! 
+00:19:39.796 DEBUG Skipping slash command purgeattach. Disabled! 
+00:19:39.796 DEBUG Skipping slash command purgebots. Disabled! 
+00:19:39.797 DEBUG Skipping slash command purgelinks. Disabled! 
+00:19:39.797 DEBUG Skipping slash command purgetoken. Disabled! 
+00:19:39.798 DEBUG Skipping slash command purgeuser. Disabled! 
+00:19:39.800 DEBUG Skipping command purge. Disabled! 
+00:19:39.800 DEBUG Skipping command voice. Disabled! 
+00:19:39.802 DEBUG Skipping slash command undeafen. Disabled! 
+00:19:39.803 DEBUG Skipping slash command vmute. Disabled! 
+00:19:39.803 DEBUG Skipping slash command vunmute. Disabled! 
+00:19:39.806 INFO  Loaded 54 commands 
+00:19:39.806 INFO  Loaded 39 slash commands 
+00:19:39.806 INFO  Loading contexts... 
+00:19:39.808 INFO  Loaded 2 USER contexts 
+00:19:39.809 INFO  Loaded 0 MESSAGE contexts 
+00:19:39.809 INFO  Loading events... 
+00:19:39.833 INFO  Loaded 15 events. Success (15) Failed (0) 
+00:19:39.834 INFO  Validating config.js and environment variables 
+00:19:39.835 INFO  Connecting to MongoDb... 
+00:19:40.756 INFO  Mongoose: Database connection established 
+00:19:41.873 INFO  Logged in as ﹒xdbl.dev#5226! (758776071268859946) 
+00:19:42.625 INFO  Successfully registered slash commands 
+00:21:40.446 INFO  Loading commands... 
+00:21:40.456 DEBUG Skipping command commission. Disabled! 
+00:21:40.471 DEBUG Skipping slash command avatar. Disabled! 
+00:21:40.472 DEBUG Skipping slash command botinvite. Disabled! 
+00:21:40.502 DEBUG Skipping slash command botstats. Disabled! 
+00:21:40.503 DEBUG Skipping slash command channelinfo. Disabled! 
+00:21:40.504 DEBUG Skipping slash command emojiinfo. Disabled! 
+00:21:40.505 DEBUG Skipping slash command guildinfo. Disabled! 
+00:21:40.506 DEBUG Skipping slash command uptime. Disabled! 
+00:21:40.507 DEBUG Skipping slash command userinfo. Disabled! 
+00:21:40.509 DEBUG Skipping command bot. Disabled! 
+00:21:40.510 DEBUG Skipping command info. Disabled! 
+00:21:40.512 DEBUG Skipping slash command deafen. Disabled! 
+00:21:40.513 DEBUG Skipping slash command disconnect. Disabled! 
+00:21:40.514 DEBUG Skipping slash command move. Disabled! 
+00:21:40.515 DEBUG Skipping slash command purge. Disabled! 
+00:21:40.515 DEBUG Skipping slash command purgeattach. Disabled! 
+00:21:40.516 DEBUG Skipping slash command purgebots. Disabled! 
+00:21:40.516 DEBUG Skipping slash command purgelinks. Disabled! 
+00:21:40.517 DEBUG Skipping slash command purgetoken. Disabled! 
+00:21:40.517 DEBUG Skipping slash command purgeuser. Disabled! 
+00:21:40.519 DEBUG Skipping command purge. Disabled! 
+00:21:40.519 DEBUG Skipping command voice. Disabled! 
+00:21:40.521 DEBUG Skipping slash command undeafen. Disabled! 
+00:21:40.522 DEBUG Skipping slash command vmute. Disabled! 
+00:21:40.522 DEBUG Skipping slash command vunmute. Disabled! 
+00:21:40.524 INFO  Loaded 54 commands 
+00:21:40.524 INFO  Loaded 39 slash commands 
+00:21:40.525 INFO  Loading contexts... 
+00:21:40.527 INFO  Loaded 2 USER contexts 
+00:21:40.527 INFO  Loaded 0 MESSAGE contexts 
+00:21:40.527 INFO  Loading events... 
+00:21:40.548 INFO  Loaded 15 events. Success (15) Failed (0) 
+00:21:40.549 INFO  Validating config.js and environment variables 
+00:21:40.549 INFO  Connecting to MongoDb... 
+00:21:41.397 INFO  Mongoose: Database connection established 
+00:21:42.494 INFO  Logged in as ﹒xdbl.dev#5226! (758776071268859946) 
+00:21:43.099 INFO  Successfully registered slash commands 
+00:34:47.184 INFO  Loading commands... 
+00:34:47.194 DEBUG Skipping command commission. Disabled! 
+00:34:47.207 DEBUG Skipping slash command avatar. Disabled! 
+00:34:47.207 DEBUG Skipping slash command botinvite. Disabled! 
+00:34:47.237 DEBUG Skipping slash command botstats. Disabled! 
+00:34:47.238 DEBUG Skipping slash command channelinfo. Disabled! 
+00:34:47.239 DEBUG Skipping slash command emojiinfo. Disabled! 
+00:34:47.240 DEBUG Skipping slash command guildinfo. Disabled! 
+00:34:47.240 DEBUG Skipping slash command uptime. Disabled! 
+00:34:47.241 DEBUG Skipping slash command userinfo. Disabled! 
+00:34:47.243 DEBUG Skipping command bot. Disabled! 
+00:34:47.244 DEBUG Skipping command info. Disabled! 
+00:34:47.246 DEBUG Skipping slash command deafen. Disabled! 
+00:34:47.247 DEBUG Skipping slash command disconnect. Disabled! 
+00:34:47.248 DEBUG Skipping slash command move. Disabled! 
+00:34:47.249 DEBUG Skipping slash command purge. Disabled! 
+00:34:47.249 DEBUG Skipping slash command purgeattach. Disabled! 
+00:34:47.249 DEBUG Skipping slash command purgebots. Disabled! 
+00:34:47.250 DEBUG Skipping slash command purgelinks. Disabled! 
+00:34:47.250 DEBUG Skipping slash command purgetoken. Disabled! 
+00:34:47.251 DEBUG Skipping slash command purgeuser. Disabled! 
+00:34:47.252 DEBUG Skipping command purge. Disabled! 
+00:34:47.253 DEBUG Skipping command voice. Disabled! 
+00:34:47.254 DEBUG Skipping slash command undeafen. Disabled! 
+00:34:47.255 DEBUG Skipping slash command vmute. Disabled! 
+00:34:47.255 DEBUG Skipping slash command vunmute. Disabled! 
+00:34:47.257 INFO  Loaded 54 commands 
+00:34:47.257 INFO  Loaded 39 slash commands 
+00:34:47.258 INFO  Loading contexts... 
+00:34:47.259 INFO  Loaded 2 USER contexts 
+00:34:47.259 INFO  Loaded 0 MESSAGE contexts 
+00:34:47.260 INFO  Loading events... 
+00:34:47.281 INFO  Loaded 15 events. Success (15) Failed (0) 
+00:34:47.282 INFO  Validating config.js and environment variables 
+00:34:47.282 INFO  Connecting to MongoDb... 
+00:34:47.931 INFO  Mongoose: Database connection established 
+00:34:48.907 INFO  Logged in as ﹒xdbl.dev#5226! (758776071268859946) 
+00:34:49.755 INFO  Successfully registered slash commands 
+00:35:02.208 INFO  Loading commands... 
+00:35:02.216 DEBUG Skipping command commission. Disabled! 
+00:35:02.230 DEBUG Skipping slash command avatar. Disabled! 
+00:35:02.231 DEBUG Skipping slash command botinvite. Disabled! 
+00:35:02.260 DEBUG Skipping slash command botstats. Disabled! 
+00:35:02.261 DEBUG Skipping slash command channelinfo. Disabled! 
+00:35:02.262 DEBUG Skipping slash command emojiinfo. Disabled! 
+00:35:02.263 DEBUG Skipping slash command guildinfo. Disabled! 
+00:35:02.264 DEBUG Skipping slash command uptime. Disabled! 
+00:35:02.265 DEBUG Skipping slash command userinfo. Disabled! 
+00:35:02.267 DEBUG Skipping command bot. Disabled! 
+00:35:02.268 DEBUG Skipping command info. Disabled! 
+00:35:02.270 DEBUG Skipping slash command deafen. Disabled! 
+00:35:02.271 DEBUG Skipping slash command disconnect. Disabled! 
+00:35:02.273 DEBUG Skipping slash command move. Disabled! 
+00:35:02.274 DEBUG Skipping slash command purge. Disabled! 
+00:35:02.274 DEBUG Skipping slash command purgeattach. Disabled! 
+00:35:02.275 DEBUG Skipping slash command purgebots. Disabled! 
+00:35:02.275 DEBUG Skipping slash command purgelinks. Disabled! 
+00:35:02.276 DEBUG Skipping slash command purgetoken. Disabled! 
+00:35:02.276 DEBUG Skipping slash command purgeuser. Disabled! 
+00:35:02.278 DEBUG Skipping command purge. Disabled! 
+00:35:02.278 DEBUG Skipping command voice. Disabled! 
+00:35:02.280 DEBUG Skipping slash command undeafen. Disabled! 
+00:35:02.281 DEBUG Skipping slash command vmute. Disabled! 
+00:35:02.281 DEBUG Skipping slash command vunmute. Disabled! 
+00:35:02.284 INFO  Loaded 54 commands 
+00:35:02.284 INFO  Loaded 39 slash commands 
+00:35:02.284 INFO  Loading contexts... 
+00:35:02.287 INFO  Loaded 2 USER contexts 
+00:35:02.287 INFO  Loaded 0 MESSAGE contexts 
+00:35:02.287 INFO  Loading events... 
+00:35:02.309 INFO  Loaded 15 events. Success (15) Failed (0) 
+00:35:02.310 INFO  Validating config.js and environment variables 
+00:35:02.310 INFO  Connecting to MongoDb... 
+00:35:03.037 INFO  Mongoose: Database connection established 
+00:35:04.078 INFO  Logged in as ﹒xdbl.dev#5226! (758776071268859946) 
+00:35:04.890 INFO  Successfully registered slash commands 
+01:48:20.884 INFO  Loading commands... 
+01:48:20.896 DEBUG Skipping command commission. Disabled! 
+01:48:20.913 DEBUG Skipping slash command avatar. Disabled! 
+01:48:20.914 DEBUG Skipping slash command botinvite. Disabled! 
+01:48:20.947 DEBUG Skipping slash command botstats. Disabled! 
+01:48:20.948 DEBUG Skipping slash command channelinfo. Disabled! 
+01:48:20.949 DEBUG Skipping slash command emojiinfo. Disabled! 
+01:48:20.950 DEBUG Skipping slash command guildinfo. Disabled! 
+01:48:20.950 DEBUG Skipping slash command uptime. Disabled! 
+01:48:20.951 DEBUG Skipping slash command userinfo. Disabled! 
+01:48:20.953 DEBUG Skipping command bot. Disabled! 
+01:48:20.954 DEBUG Skipping command info. Disabled! 
+01:48:20.956 DEBUG Skipping slash command deafen. Disabled! 
+01:48:20.957 DEBUG Skipping slash command disconnect. Disabled! 
+01:48:20.958 DEBUG Skipping slash command move. Disabled! 
+01:48:20.959 DEBUG Skipping slash command purge. Disabled! 
+01:48:20.960 DEBUG Skipping slash command purgeattach. Disabled! 
+01:48:20.960 DEBUG Skipping slash command purgebots. Disabled! 
+01:48:20.961 DEBUG Skipping slash command purgelinks. Disabled! 
+01:48:20.961 DEBUG Skipping slash command purgetoken. Disabled! 
+01:48:20.962 DEBUG Skipping slash command purgeuser. Disabled! 
+01:48:20.963 DEBUG Skipping command purge. Disabled! 
+01:48:20.964 DEBUG Skipping command voice. Disabled! 
+01:48:20.966 DEBUG Skipping slash command undeafen. Disabled! 
+01:48:20.967 DEBUG Skipping slash command vmute. Disabled! 
+01:48:20.967 DEBUG Skipping slash command vunmute. Disabled! 
+01:48:20.969 INFO  Loaded 54 commands 
+01:48:20.970 INFO  Loaded 39 slash commands 
+01:48:20.970 INFO  Loading contexts... 
+01:48:20.971 INFO  Loaded 2 USER contexts 
+01:48:20.972 INFO  Loaded 0 MESSAGE contexts 
+01:48:20.972 INFO  Loading events... 
+01:48:20.996 INFO  Loaded 15 events. Success (15) Failed (0) 
+01:48:20.996 INFO  Validating config.js and environment variables 
+01:48:20.997 INFO  Connecting to MongoDb... 
+01:48:21.477 INFO  Mongoose: Database connection established 
+01:48:22.441 INFO  Logged in as ﹒xdbl.dev#5226! (758776071268859946) 
+01:48:22.958 INFO  Successfully registered slash commands 
+10:23:39.996 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+10:23:40.676 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:23:41.009 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nResponse: Bad Gateway\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:357:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"Bad Gateway","inline":false}],"thumbnail":null,"image":null,"author":{"name":"Response"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:24:05.201 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nResponse: Bad Gateway\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:357:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"Bad Gateway","inline":false}],"thumbnail":null,"image":null,"author":{"name":"Response"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:24:11.140 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nResponse: Bad Gateway\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:357:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"Bad Gateway","inline":false}],"thumbnail":null,"image":null,"author":{"name":"Response"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:24:17.388 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nResponse: Bad Gateway\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:357:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"Bad Gateway","inline":false}],"thumbnail":null,"image":null,"author":{"name":"Response"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:24:20.017 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+10:24:41.565 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nResponse: Bad Gateway\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:357:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"Bad Gateway","inline":false}],"thumbnail":null,"image":null,"author":{"name":"Response"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:24:58.483 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:25:00.043 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+10:25:22.804 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:25:40.059 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+10:25:46.976 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:26:15.576 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+10:26:16.998 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:29:10.070 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+10:29:40.074 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:29:50.087 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+10:30:10.096 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processTimers (node:internal/timers:509:9)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+10:30:26.539 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+10:51:41.285 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:16:31.759 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:16:55.433 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:16:56.118 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nResponse: Bad Gateway\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:357:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"Bad Gateway","inline":false}],"thumbnail":null,"image":null,"author":{"name":"Response"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:17:15.875 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:17:31.747 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:17:40.147 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:17:49.054 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:18:01.672 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:18:19.079 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nResponse: Bad Gateway\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:357:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"Bad Gateway","inline":false}],"thumbnail":null,"image":null,"author":{"name":"Response"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:18:42.504 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:18:49.092 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:18:59.689 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:19:15.293 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:19:39.470 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:20:09.492 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async WebhookClient.send (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\structures\\Webhook.js:195:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:20:12.526 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:24:12.578 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:24:39.542 ERROR Bad Gateway
+{"name":"Response","code":502,"method":"patch","path":"/channels/984577135761043508/messages/1127170813028745236","requestData":{"json":{"content":"** **","tts":false,"embeds":[{"title":"xdbl.dev","type":"rich","description":"Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.","url":null,"timestamp":0,"color":10132122,"fields":[],"thumbnail":null,"image":null,"author":null,"footer":null}],"components":[{"components":[{"custom_id":"commissions","disabled":false,"emoji":null,"label":"commissions","style":2,"type":2,"url":null},{"custom_id":null,"disabled":false,"emoji":null,"label":"xdbl.dev","style":5,"type":2,"url":"https://xdbl.dev/"}],"type":1}],"allowed_mentions":{"replied_user":false},"flags":0},"files":[]}}
+Response: Bad Gateway
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:357:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async MessageManager.edit (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\managers\MessageManager.js:132:15) 
+13:24:42.599 ERROR The user aborted a request.
+{"name":"AbortError","code":500,"method":"post","path":"/webhooks/965964769913872484/VpCyOlIx6FaiPH3BUHggCxwmTNqvKX2c_Mi1L7rVfUKkXmea3un-nu5jEaYvHXrnoHhs?wait=true","requestData":{"json":{"tts":false,"embeds":[{"title":null,"type":"rich","description":"```js\nAbortError: The user aborted a request.\n    at RequestHandler.execute (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:201:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RequestHandler.push (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\rest\\RequestHandler.js:51:14)\n    at async MessageManager.edit (C:\\Users\\Jasper\\Projects\\xdbl.dev\\bot\\node_modules\\discord.js\\src\\managers\\MessageManager.js:132:15)\n```","url":null,"timestamp":0,"color":14031420,"fields":[{"name":"Message","value":"The user aborted a request.","inline":false}],"thumbnail":null,"image":null,"author":{"name":"AbortError"},"footer":null}],"username":"Logs"},"files":[]}}
+AbortError: The user aborted a request.
+    at RequestHandler.execute (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:201:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RequestHandler.push (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\rest\RequestHandler.js:51:14)
+    at async WebhookClient.send (C:\Users\Jasper\Projects\xdbl.dev\bot\node_modules\discord.js\src\structures\Webhook.js:195:15) 
+13:41:30.412 INFO  Loading commands... 
+13:41:30.422 DEBUG Skipping command commission. Disabled! 
+13:41:30.436 DEBUG Skipping slash command avatar. Disabled! 
+13:41:30.437 DEBUG Skipping slash command botinvite. Disabled! 
+13:41:30.466 DEBUG Skipping slash command botstats. Disabled! 
+13:41:30.467 DEBUG Skipping slash command channelinfo. Disabled! 
+13:41:30.467 DEBUG Skipping slash command emojiinfo. Disabled! 
+13:41:30.468 DEBUG Skipping slash command guildinfo. Disabled! 
+13:41:30.469 DEBUG Skipping slash command uptime. Disabled! 
+13:41:30.470 DEBUG Skipping slash command userinfo. Disabled! 
+13:41:30.472 DEBUG Skipping command bot. Disabled! 
+13:41:30.472 DEBUG Skipping command info. Disabled! 
+13:41:30.475 DEBUG Skipping slash command deafen. Disabled! 
+13:41:30.475 DEBUG Skipping slash command disconnect. Disabled! 
+13:41:30.477 DEBUG Skipping slash command move. Disabled! 
+13:41:30.477 DEBUG Skipping slash command purge. Disabled! 
+13:41:30.478 DEBUG Skipping slash command purgeattach. Disabled! 
+13:41:30.478 DEBUG Skipping slash command purgebots. Disabled! 
+13:41:30.479 DEBUG Skipping slash command purgelinks. Disabled! 
+13:41:30.479 DEBUG Skipping slash command purgetoken. Disabled! 
+13:41:30.480 DEBUG Skipping slash command purgeuser. Disabled! 
+13:41:30.481 DEBUG Skipping command purge. Disabled! 
+13:41:30.482 DEBUG Skipping command voice. Disabled! 
+13:41:30.483 DEBUG Skipping slash command undeafen. Disabled! 
+13:41:30.484 DEBUG Skipping slash command vmute. Disabled! 
+13:41:30.485 DEBUG Skipping slash command vunmute. Disabled! 
+13:41:30.487 INFO  Loaded 54 commands 
+13:41:30.487 INFO  Loaded 39 slash commands 
+13:41:30.487 INFO  Loading contexts... 
+13:41:30.488 INFO  Loaded 2 USER contexts 
+13:41:30.488 INFO  Loaded 0 MESSAGE contexts 
+13:41:30.489 INFO  Loading events... 
+13:41:30.510 INFO  Loaded 15 events. Success (15) Failed (0) 
+13:41:30.510 INFO  Validating config.js and environment variables 
+13:41:30.510 INFO  Connecting to MongoDb... 
+13:41:31.274 INFO  Mongoose: Database connection established 
+13:41:32.575 INFO  Logged in as ﹒xdbl.dev#5226! (758776071268859946) 
+13:41:33.203 INFO  Successfully registered slash commands 
