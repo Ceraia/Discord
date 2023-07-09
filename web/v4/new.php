@@ -28,7 +28,7 @@ if (isset($_FILES['file'])) {
     } else
     if (move_uploaded_file($_FILES['file']['tmp_name'], "x/" . $name  . '.' . $fileType)) {
         //file_put_contents("x/" . $name, $url . "x/" . $name . "." . $fileType);
-        echo ($url . 'x/' . $name . '.' . $fileType);
+        echo ($url . 'i?i=' . $name . '.' . $fileType);
     }
 } else {
     file_put_contents("x/" . $name, $_POST['url']);

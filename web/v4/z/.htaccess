@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_REFERER} !^https?://xdbl\.dev/ [NC]
+RewriteCond %{HTTP_REFERER} !^https?://discord\.com/ [NC]
+RewriteRule \.(png|jpe?g|gif|bmp|ico|webp)$ https://xdbl.dev/?i=%{REQUEST_URI} [R=301,L]

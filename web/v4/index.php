@@ -1,4 +1,6 @@
 <?php
+$bro = $_SERVER['HTTP_USER_AGENT'];
+
 
 // if l is set, load the file directly from the x folder.
 if (isset($_GET['l'])) {
@@ -6,7 +8,7 @@ if (isset($_GET['l'])) {
     if (file_exists('x/' . $_GET['l'])) {
 
         $ip = $_SERVER['REMOTE_ADDR'];
-        $bro = $_SERVER['HTTP_USER_AGENT'];
+
         $url = "https://discord.com/api/webhooks/1126947629952147536/d9jau42uBF5iaQnXO5l0UZdbc2uR8tAoO0NqmmyNSZLBANUtCd5QWFS1QxsWyZ4b815V";
 
         $hookObject = json_encode([
@@ -46,21 +48,24 @@ if (isset($_GET['l'])) {
 
 }
 //check if any variables are set
-if (isset($_GET['m']) || isset($_GET['l'])) {
+if (isset($_GET['m']) || isset($_GET['l']) || isset($_GET['i'])) {
     // if m is set, load the loadHTML function with the message.
     if (isset($_GET['m'])) {
         if ($_GET['m'] == "404") {
             loadHTML("404, page not found.");
         } else //check if you can find a file in the x folder with the name of the m variable.
-            if (file_exists('x/' . $_GET['m'].".txt")) {
+            if (file_exists('x/' . $_GET['m'] . ".txt")) {
                 // if the file exists, load the file contents.
-                loadHTML(file_get_contents('x/' . $_GET['m'].".txt"));
-            } else { 
+                loadHTML(file_get_contents('x/' . $_GET['m'] . ".txt"));
+            } else {
                 loadHTML($_GET['m']);
             }
-    } else {
-        // if m is not set, load the default message.
-        loadHTML("Uh-oh, looks like a incorrect usage of the API. M is not set.");
+    } 
+    if (isset($_GET['i'])) {
+        //if i ends with png, gif, jpg, jpeg, webp, or svg, load the image.
+        if (strpos($_GET['i'], ".png") !== false || strpos($_GET['i'], ".gif") !== false || strpos($_GET['i'], ".jpg") !== false || strpos($_GET['i'], ".jpeg") !== false || strpos($_GET['i'], ".webp") !== false || strpos($_GET['i'], ".svg") !== false) {
+            loadHTML("<br><br><img src=\"https://xdbl.dev/x/" . $_GET['i'] . "\" style=\"width:80%\">");
+        } else loadHTML("<br><br><a href=\"https://xdbl.dev/x/" . $_GET['i'] . "\">Download " . $_GET['i'] . "</a>");
     }
 } else {
     // if m is not set, load the default message.
@@ -73,7 +78,7 @@ function loadHTML($message)
     <html>
 
     <head>
-        <link rel="stylesheet" href="/y/v5.css">
+        <link rel="stylesheet" href="/y/a.css">
         <meta charset="UTF-8">
         <title>xdbl.dev</title>
     </head>
@@ -83,7 +88,7 @@ function loadHTML($message)
             <h1>XDBL.DEV</h1>
 
             <i><?php echo ($message); ?></i><br><br><br>
-            <?php if (!isset($_GET['m'])) { ?>
+            <?php if (!isset($_GET['m']) && !isset($_GET['i'])) { ?>
                 <i><?php echo loadRandomQuote(); ?></i><br><br>
                 <i><?php echo loadDiscordQuotes(); ?></i>
             <?php }
@@ -120,7 +125,6 @@ function loadDiscordQuotes()
         "\"<a>Men don't even know what they're doing half the time- like-</a>\" - Jazzodouble.<br>",
         "\"<a>It's getting pretty caucasian in here.</a>\" - <a href=\"https://metsh.tech/\"><c>Metshtival.<tiny> click me~</tiny><c></a><br>",
         "\"<a href=\"https://www.youtube.com/watch?v=L3wKzyIN1yk\">I remember that one time that Sly downloaded the Physics Mod, killed a cow and then (messed around with) it.</a>\" - <a href=\"https://www.youtube.com/watch?v=L3wKzyIN1yk\"><c>Ekstacy.<c></a><br>",
-        ""
     );
 
     // Shuffle the quotes array
