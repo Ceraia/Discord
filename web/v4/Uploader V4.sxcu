@@ -10,5 +10,7 @@
     "url": "{input}",
     "name": "{prompt:Custom Name|random}"
   },
-  "FileFormName": "file"
+  "FileFormName": "file",
+  "URL": "https://xdbl.dev/i?i={response}",
+  "DeletionURL": "https://xdbl.dev/delete?i={response}"
 }

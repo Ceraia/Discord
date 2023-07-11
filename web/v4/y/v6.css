@@ -78,7 +78,6 @@ div.parent {
 
 ul,
 ol {
-  display: inline-block;
   text-align: left;
 }
 

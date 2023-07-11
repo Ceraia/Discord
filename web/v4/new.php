@@ -1,4 +1,5 @@
 <?php
+//Upload server for xdbl.dev v5
 //Number of characters to be shown when a random file name is generated
 $url_length = 5;
 //URL which will be displayed after upload (URL will have the file name appended)
@@ -9,11 +10,16 @@ if ($_POST['token'] != "0lUBujrM66g2VDgQhdG0h8rcBA6eMjRw") {
     die("HTTP/1.0 401 Unauthorized");
 }
 
+$randomName = generateRandomString();
+//check if random name already exists
+while (file_exists("x/" . $randomName)) {
+    $randomName = generateRandomString();
+}
 // handle file name
 if (!isset($_POST['name'])) {
-    $name = generateRandomString();
+    $name = $randomName;
 } else if ($_POST['name'] == 'random') {
-    $name = generateRandomString();
+    $name = $randomName;
 } else
     $name = $_POST['name'];
 
@@ -21,19 +27,15 @@ if (!isset($_POST['name'])) {
 if (isset($_FILES['file'])) {
     $target_file = $_FILES['file']['name'];
     $fileType = pathinfo($target_file, PATHINFO_EXTENSION);
-    if($fileType == "txt" || $fileType == "log"){
-        //save the file and return a m? api format link
-        move_uploaded_file($_FILES['file']['tmp_name'], "x/" . $name . '.' . $fileType);
-        echo ($url . '?m=' . $name);
-    } else
     if (move_uploaded_file($_FILES['file']['tmp_name'], "x/" . $name  . '.' . $fileType)) {
-        //file_put_contents("x/" . $name, $url . "x/" . $name . "." . $fileType);
-        echo ($url . 'i?i=' . $name . '.' . $fileType);
+        file_put_contents("x/" . $name, $url . "x/" . $name . "." . $fileType);
+        echo (//$url . 'i?i=' . 
+            $name );
     }
 } else {
     file_put_contents("x/" . $name, $_POST['url']);
 
-    echo $url . '?l=' . $name;
+    echo $name;
 }
 function generateRandomString()
 {
