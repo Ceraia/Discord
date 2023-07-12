@@ -5,7 +5,7 @@ $url_length = 5;
 //URL which will be displayed after upload (URL will have the file name appended)
 $url = "https://xdbl.dev/";
 
-if ($_POST['token'] != "0lUBujrM66g2VDgQhdG0h8rcBA6eMjRw") {
+if ($_POST['token'] != "0lUBujrM66g2VDgQhdG0h8rcBA6eMjRw" && $_GET['token'] != "0lUBujrM66g2VDgQhdG0h8rcBA6eMjRw") {
     header("HTTP/1.0 401 Unauthorized");
     die("HTTP/1.0 401 Unauthorized");
 }
@@ -16,9 +16,9 @@ while (file_exists("x/" . $randomName)) {
     $randomName = generateRandomString();
 }
 // handle file name
-if (!isset($_POST['name'])) {
+if (!isset($_POST['name']) && !isset($_GET['token'])) {
     $name = $randomName;
-} else if ($_POST['name'] == 'random') {
+} else if ($_POST['name'] == 'random' || $_GET['token'] == 'random') {
     $name = $randomName;
 } else
     $name = $_POST['name'];
@@ -33,7 +33,7 @@ if (isset($_FILES['file'])) {
             $name );
     }
 } else {
-    file_put_contents("x/" . $name, $_POST['url']);
+    file_put_contents("x/" . $name, $_POST['input']);
 
     echo $name;
 }

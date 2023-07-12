@@ -49,7 +49,7 @@ if (isset($_GET['l'])) {
 
 }
 //check if any variables are set
-if (isset($_GET['l']) || isset($_GET['i'])) {
+if (!empty($_GET)) {
     // if m is set, load the loadHTML function with the message.
     if (isset($_GET['m'])) {
         if ($_GET['m'] == "404") {
@@ -114,6 +114,12 @@ if (isset($_GET['l']) || isset($_GET['i'])) {
             die();
         }
 
+        //check if there is more than 1 dot in the content of the file
+        if (substr_count($fileLink, ".") > 1) {
+            //if there is, load the 404 page
+            header('Location: ' . $fileLink);
+            die();
+        }
         //check if it an image, mp4 or webm, if so load it with a viewer / player
         if (isImageFile($fileLink)) {
             loadHTML($description . "<br><br><img src=\"" . file_get_contents('x/' . $_GET['i']) . "\" style=\"width:80%\">");
