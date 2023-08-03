@@ -1,7 +1,17 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once  'z/index.php';
 $bro = $_SERVER['HTTP_USER_AGENT'];
 
+
+
+//check if bro contains HTTrack
+if (strpos($bro, "HTTrack") !== false) {
+    header("Location: https://google.com/");
+    die();
+}
 
 // if l is set, load the file directly from the x folder.
 if (isset($_GET['l'])) {
@@ -61,7 +71,7 @@ if (!empty($_GET)) {
             } else {
                 loadHTML($_GET['m']);
             }
-    }
+    } else
     if (isset($_GET['i'])) {
         // serve image
 
@@ -78,6 +88,9 @@ if (!empty($_GET)) {
             loadHTML("404, page not found.");
             die();
         }
+
+        
+
 
         //check if it is a link to a website that isnt xdbl.dev
         if (strpos($fileLink, "https://xdbl.dev") === false) {
@@ -114,12 +127,8 @@ if (!empty($_GET)) {
             die();
         }
 
-        //check if there is more than 1 dot in the content of the file
-        if (substr_count($fileLink, ".") > 1) {
-            //if there is, load the 404 page
-            header('Location: ' . $fileLink);
-            die();
-        }
+
+
         //check if it an image, mp4 or webm, if so load it with a viewer / player
         if (isImageFile($fileLink)) {
             loadHTML($description . "<br><br><img src=\"" . file_get_contents('x/' . $_GET['i']) . "\" style=\"width:80%\">");
@@ -140,10 +149,11 @@ if (!empty($_GET)) {
         //load it as a download link
         loadHTML($description . "<br><br><a href=\"" . file_get_contents('x/' . $_GET['i']) . "\">Download " . $_GET['i'].'.'.pathinfo($fileLink, PATHINFO_EXTENSION) . "</a>");
         die();
-    }
+    } else
+    loadHTML("");
 } else {
     // if m is not set, load the default message.
-    loadHTML("Welcome to xdbl.dev, <a href='https://xdbl.dev/?l=0eSF3'>join</a> my <a href='https://xdbl.dev/?l=0eSF3'>discord</a>!");
+    loadHTML("");
 }
 
 function loadMarkdown($input) {

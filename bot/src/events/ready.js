@@ -66,6 +66,7 @@ const updatePresence = (client) => {
       label: "commissions",
       style: "SECONDARY",
       customId: "commissions",
+      disabled: true,
     },
     {
       type: "BUTTON",
@@ -84,7 +85,9 @@ const updatePresence = (client) => {
         embeds: [
           (embedTitle = new MessageEmbed()
             .setTitle("xdbl.dev")
-            .setDescription("Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.")
+            .setDescription(
+              "Welcome to the Axo's Vault, here you can find Axo's services, bots and other content.\n\nCommissions have been closed."
+            )
             .setColor("9A9A9A")),
         ],
         components: [component],
