@@ -1,6 +1,5 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 require_once  'z/index.php';
 $bro = $_SERVER['HTTP_USER_AGENT'];
@@ -78,10 +77,17 @@ if (!empty($_GET)) {
         //grab the link of the file
         $fileLink = file_get_contents('x/' . $_GET['i']);
 
+        //title handler
+        $title = '<h3>'.explode("/", $fileLink)[count(explode("/", $fileLink)) - 1].'</h3>';
+
+        //description handler
+        $description = "";
         //check if there is a description file
         if (file_exists('x/' . $_GET['i'] . ".dmd"))
             //if there is, load it as markdown
             $description = loadMarkdown(file_get_contents('x/' . $_GET['i'] . ".dmd"));
+        
+            $details = $title . $description;
 
         //check if the file itself exists, if not load the 404 page
         if (!file_exists('x/' . $_GET['i'])) {
@@ -131,23 +137,23 @@ if (!empty($_GET)) {
 
         //check if it an image, mp4 or webm, if so load it with a viewer / player
         if (isImageFile($fileLink)) {
-            loadHTML($description . "<br><br><img src=\"" . file_get_contents('x/' . $_GET['i']) . "\" style=\"width:80%\">");
+            loadHTML($details . "<br><br><img src=\"" . file_get_contents('x/' . $_GET['i']) . "\" style=\"width:80%\">");
             die();
         }  //check if it is a mp4
         if (strpos($fileLink, ".mp4") !== false) {
-            loadHTML($description . "<br><br><video width=50% controls><source src=\"" . file_get_contents('x/' . $_GET['i']) . "\" type=\"video/mp4\">");
+            loadHTML($details . "<br><br><video width=50% controls><source src=\"" . file_get_contents('x/' . $_GET['i']) . "\" type=\"video/mp4\">");
             die();
         }  //check if it is a mp4
         if (strpos($fileLink, ".webm") !== false) {
-            loadHTML($description . "<br><br><video width=50% controls><source src=\"" . file_get_contents('x/' . $_GET['i']) . "\" type=\"video/webm\">");
+            loadHTML($details . "<br><br><video width=50% controls><source src=\"" . file_get_contents('x/' . $_GET['i']) . "\" type=\"video/webm\">");
             die();
         }  //check if it is a txt file
         if (strpos($fileLink, ".txt") !== false) {
-            loadHTML($description . "<br><br>" . loadMarkdown(file_get_contents('x/' . $_GET['i'] . '.txt')));
+            loadHTML($details . "<br><br>" . loadMarkdown(file_get_contents('x/' . $_GET['i'] . '.txt')));
             die();
         }
         //load it as a download link
-        loadHTML($description . "<br><br><a href=\"" . file_get_contents('x/' . $_GET['i']) . "\">Download " . $_GET['i'].'.'.pathinfo($fileLink, PATHINFO_EXTENSION) . "</a>");
+        loadHTML($details . "<br><br><a href=\"" . file_get_contents('x/' . $_GET['i']) . "\">Download " . $_GET['i'].'.'.pathinfo($fileLink, PATHINFO_EXTENSION) . "</a>");
         die();
     } else
     loadHTML("");
@@ -163,6 +169,8 @@ function loadMarkdown($input) {
     $input = preg_replace('/^\#\#\#(.*?)($|\n(?=\n|\#|<br>))/m', '<h3>$1</h3>', $input);
     $input = preg_replace('/^\#\#(.*?)($|\n(?=\n|\#|<br>))/m', '<h2>$1</h2>', $input);
     $input = preg_replace('/^\#(.*?)($|\n(?=\n|\#|<br>))/m', '<h1>$1</h1>', $input);
+
+//filename = description
 
     // code, newlines, images, links
     $input = preg_replace('/\`(.*?)\`/', '<code>$1</code>', $input);

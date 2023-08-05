@@ -21,20 +21,28 @@ if (!isset($_POST['name']) && !isset($_GET['token'])) {
 } else if ($_POST['name'] == 'random' || $_GET['token'] == 'random') {
     $name = $randomName;
 } else
-    $name = $_POST['name'];
+
+// split name by first . and take the first result
+if (strpos($_POST['name'], '.') !== false) {
+    $name = explode('.', $_POST['name'])[0];
+} else {
+    $name = $_POST['name'];}
 
 //if there is an uploaded file
 if (isset($_FILES['file'])) {
     $target_file = $_FILES['file']['name'];
     $fileType = pathinfo($target_file, PATHINFO_EXTENSION);
     if (move_uploaded_file($_FILES['file']['tmp_name'], "x/" . $name  . '.' . $fileType)) {
-        file_put_contents("x/" . $name, $url . "x/" . $name . "." . $fileType);
+        //create reference file but only if filetype isn't dmd
+        if ($fileType != "dmd") file_put_contents("x/" . $name, $url . "x/" . $name . "." . $fileType);
+        //handle description of file
+        if(isset($_POST['description'])) file_put_contents("x/" . $name . ".dmd", $_POST['description']);
+        //return file name
         echo (//$url . 'i?i=' . 
-            $name );
+            rawurlencode($name) );
     }
 } else {
-    file_put_contents("x/" . $name, $_POST['input']);
-
+    file_put_contents("x/" . $name, $_POST['content']);
     echo $name;
 }
 function generateRandomString()
