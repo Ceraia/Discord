@@ -1,31 +1,7 @@
 {
-    "zen": "Approachable is better than simple.",
-    "hook_id": 428167261,
-    "hook": {
-        "type": "Repository",
-        "id": 428167261,
-        "name": "web",
-        "active": true,
-        "events": [
-            "*"
-        ],
-        "config": {
-            "content_type": "json",
-            "insecure_ssl": "0",
-            "url": "https://xdbl.dev/api/git/"
-        },
-        "updated_at": "2023-08-10T11:15:21Z",
-        "created_at": "2023-08-10T11:15:21Z",
-        "url": "https://api.github.com/repos/Axodouble/xdbl.dev/hooks/428167261",
-        "test_url": "https://api.github.com/repos/Axodouble/xdbl.dev/hooks/428167261/test",
-        "ping_url": "https://api.github.com/repos/Axodouble/xdbl.dev/hooks/428167261/pings",
-        "deliveries_url": "https://api.github.com/repos/Axodouble/xdbl.dev/hooks/428167261/deliveries",
-        "last_response": {
-            "code": null,
-            "status": "unused",
-            "message": null
-        }
-    },
+    "ref": "refs/heads/main",
+    "before": "000bb11c11f927832b0c1959c211840c72e61dee",
+    "after": "16579fd5cb4ebe7328589b26b1adafe1bb0d9c8f",
     "repository": {
         "id": 664285825,
         "node_id": "R_kgDOJ5gygQ",
@@ -33,6 +9,8 @@
         "full_name": "Axodouble/xdbl.dev",
         "private": true,
         "owner": {
+            "name": "Axodouble",
+            "email": "53979495+Axodouble@users.noreply.github.com",
             "login": "Axodouble",
             "id": 53979495,
             "node_id": "MDQ6VXNlcjUzOTc5NDk1",
@@ -55,7 +33,7 @@
         "html_url": "https://github.com/Axodouble/xdbl.dev",
         "description": null,
         "fork": false,
-        "url": "https://api.github.com/repos/Axodouble/xdbl.dev",
+        "url": "https://github.com/Axodouble/xdbl.dev",
         "forks_url": "https://api.github.com/repos/Axodouble/xdbl.dev/forks",
         "keys_url": "https://api.github.com/repos/Axodouble/xdbl.dev/keys{/key_id}",
         "collaborators_url": "https://api.github.com/repos/Axodouble/xdbl.dev/collaborators{/collaborator}",
@@ -92,9 +70,9 @@
         "labels_url": "https://api.github.com/repos/Axodouble/xdbl.dev/labels{/name}",
         "releases_url": "https://api.github.com/repos/Axodouble/xdbl.dev/releases{/id}",
         "deployments_url": "https://api.github.com/repos/Axodouble/xdbl.dev/deployments",
-        "created_at": "2023-07-09T13:58:18Z",
+        "created_at": 1688911098,
         "updated_at": "2023-07-09T13:58:30Z",
-        "pushed_at": "2023-08-10T00:17:21Z",
+        "pushed_at": 1691666659,
         "git_url": "git://github.com/Axodouble/xdbl.dev.git",
         "ssh_url": "git@github.com:Axodouble/xdbl.dev.git",
         "clone_url": "https://github.com/Axodouble/xdbl.dev.git",
@@ -124,7 +102,13 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "main"
+        "default_branch": "main",
+        "stargazers": 0,
+        "master_branch": "main"
+    },
+    "pusher": {
+        "name": "Axodouble",
+        "email": "53979495+Axodouble@users.noreply.github.com"
     },
     "sender": {
         "login": "Axodouble",
@@ -145,5 +129,64 @@
         "received_events_url": "https://api.github.com/users/Axodouble/received_events",
         "type": "User",
         "site_admin": false
+    },
+    "created": false,
+    "deleted": false,
+    "forced": false,
+    "base_ref": null,
+    "compare": "https://github.com/Axodouble/xdbl.dev/compare/000bb11c11f9...16579fd5cb4e",
+    "commits": [
+        {
+            "id": "16579fd5cb4ebe7328589b26b1adafe1bb0d9c8f",
+            "tree_id": "1720c07f19e6f78b8c3bed2afefe712718ad7f6a",
+            "distinct": true,
+            "message": "test",
+            "timestamp": "2023-08-10T13:24:06+02:00",
+            "url": "https://github.com/Axodouble/xdbl.dev/commit/16579fd5cb4ebe7328589b26b1adafe1bb0d9c8f",
+            "author": {
+                "name": "Axodouble",
+                "email": "53979495+Axodouble@users.noreply.github.com",
+                "username": "Axodouble"
+            },
+            "committer": {
+                "name": "Axodouble",
+                "email": "53979495+Axodouble@users.noreply.github.com",
+                "username": "Axodouble"
+            },
+            "added": [
+                "web/v4/api/git/discord_response.log",
+                "web/v4/api/git/github.json",
+                "web/v4/api/git/github.log",
+                "web/v4/api/git/index.php"
+            ],
+            "removed": [],
+            "modified": []
+        }
+    ],
+    "head_commit": {
+        "id": "16579fd5cb4ebe7328589b26b1adafe1bb0d9c8f",
+        "tree_id": "1720c07f19e6f78b8c3bed2afefe712718ad7f6a",
+        "distinct": true,
+        "message": "test",
+        "timestamp": "2023-08-10T13:24:06+02:00",
+        "url": "https://github.com/Axodouble/xdbl.dev/commit/16579fd5cb4ebe7328589b26b1adafe1bb0d9c8f",
+        "author": {
+            "name": "Axodouble",
+            "email": "53979495+Axodouble@users.noreply.github.com",
+            "username": "Axodouble"
+        },
+        "committer": {
+            "name": "Axodouble",
+            "email": "53979495+Axodouble@users.noreply.github.com",
+            "username": "Axodouble"
+        },
+        "added": [
+            "web/v4/api/git/discord_response.log",
+            "web/v4/api/git/github.json",
+            "web/v4/api/git/github.log",
+            "web/v4/api/git/index.php"
+        ],
+        "removed": [],
+        "modified": []
     }
 }
