@@ -9,14 +9,23 @@ $discordWebhookURL = 'https://discord.com/api/webhooks/1139153354619113482/nRxLU
 $discordPayload = [
     'embeds' => [
         [
-            'title' => $githubPayload['repository']['name'].//add in the branch name
-                ' ('.$githubPayload['ref'].')'
-            ,
+            //have the title follow this format [UDarkRP_Casino:main] 1 new commit
+            'title' => '['.$githubPayload['repository']['name'].':'.$githubPayload['repository']['default_branch'].'] '.
+            // add in the number of commits
+            count($githubPayload['commits']).
+            ' new commit',
             'url' => $githubPayload['repository']['html_url'],
-            'description' => //add in the first seven digits of the commit hash
-                '[`'.substr($githubPayload['commits'][0]['id'], 0, 7) . '`]('.$githubPayload['commits'][0]['url'].') '.
-                //add in the commit message
-            $githubPayload['commits'][0]['message'],
+            'description' => // for every commit, add in the commit id and the message with the following format
+            //'[`'.substr($githubPayload['commits'][0]['id'], 0, 7) . '`]('.$githubPayload['commits'][0]['url'].') '. $githubPayload['commits'][0]['message']
+            // loop through all the commits and add them to the description
+            implode("\n", array_map(function ($commit) {
+                return sprintf('[`%s`](%s) %s',
+                    substr($commit['id'], 0, 7),
+                    $commit['url'],
+                    $commit['message']
+                );
+            }, $githubPayload['commits']))
+            ,
             'color' => hexdec('3366cc'), // Color code (blue)
             'author' => [
                 'name' => $githubPayload['sender']['login'],
