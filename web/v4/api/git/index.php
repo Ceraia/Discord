@@ -9,13 +9,19 @@ $discordWebhookURL = 'https://discord.com/api/webhooks/1139153354619113482/nRxLU
 $discordPayload = [
     'embeds' => [
         [
-            'title' => $githubPayload['repository']['name'],
-            'description' => 'Event: ' . $githubPayload['event'],
+            'title' => $githubPayload['repository']['name'].//add in the branch name
+                ' ('.$githubPayload['ref'].')'
+            ,
             'url' => $githubPayload['repository']['html_url'],
+            'description' => //add in the first seven digits of the commit hash
+                '[`'.substr($githubPayload['commits'][0]['id'], 0, 7) . '`]('.$githubPayload['commits'][0]['url'].') '.
+                //add in the commit message
+            $githubPayload['commits'][0]['message'],
             'color' => hexdec('3366cc'), // Color code (blue)
-            'timestamp' => gmdate('Y-m-d\TH:i:s\Z'),
-            'footer' => [
-                'text' => 'GitHub to Discord Webhook',
+            'author' => [
+                'name' => $githubPayload['sender']['login'],
+                'url' => $githubPayload['sender']['html_url'],
+                'icon_url' => $githubPayload['sender']['avatar_url'],
             ],
         ],
     ],
