@@ -17,7 +17,7 @@ foreach ($githubPayload['commits'] as $commit) {
 }
 
 // Prepare the summary text
-$summary = "$addedFiles files added, $removedFiles files removed, $modifiedFiles files modified";
+$summary = "$addedFiles file(s) added, $removedFiles file(s) removed, $modifiedFiles file(s) modified";
 
 // Prepare Discord webhook payload
 $discordPayload = [
