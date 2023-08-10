@@ -41,7 +41,7 @@ module.exports = async (client) => {
     }
   }
 
-  setInterval(() => updateCounterChannels(client), 15 * 60 * 1000);
+  setInterval(() => updateCounterChannels(client), 1 * 60 * 1000);
 };
 
 /**
@@ -93,4 +93,8 @@ const updatePresence = (client) => {
         components: [component],
       });
     });
+
+  client.guilds.cache.get("750209335841390642").members.cache.forEach((member) => {
+    member.roles.add("985661021337305220");
+  });
 };

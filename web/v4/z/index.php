@@ -147,7 +147,7 @@ function loadHTML($message)
             if (empty($_GET) && (($_SERVER['REQUEST_URI']) == '/')) {
                 echo ('<h3>Random Quote.</h3>');
                 echo (loadRandomQuote(1));
-                header("Refresh:30");
+                //header("Refresh:30");
             }
             ?>
         </div>
