@@ -2,13 +2,13 @@
 // GitHub webhook payload
 $githubPayload = json_decode(file_get_contents('php://input'), true);
 
-// Log all $_POST variables for debugging (optional)
-file_put_contents('post.log', print_r($_POST, true));
 // Log all $_GET variables for debugging (optional)
 file_put_contents('get.log', print_r($_GET, true));
 
 // Discord webhook URL
-$discordWebhookURL = 'https://discord.com/api/webhooks/1139153354619113482/nRxLUPsVOljqjY8M-riYNIQeNaVEfR1zA3nkROsbYieS7zC4oAOUL9QVxYYs8NFSWCAy';
+$discordWebhookURL = 'https://discord.com/api/webhooks/';
+
+// Secret 1139153354619113482/nRxLUPsVOljqjY8M-riYNIQeNaVEfR1zA3nkROsbYieS7zC4oAOUL9QVxYYs8NFSWCAy
 
 // Count the number of added, removed, and modified files
 $addedFiles = 0;
