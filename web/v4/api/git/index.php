@@ -50,7 +50,7 @@ $discordPayload = [
 ];
 
 // Send payload to Discord webhook
-$ch = curl_init($discordWebhookURL);
+$ch = curl_init($discordWebhookURL.$_GET['hook']);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($discordPayload));
 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
