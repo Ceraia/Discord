@@ -71,9 +71,10 @@ if (!empty($githubPayload['commits']) || isset($githubPayload['pull_request']) |
                 ],
             ],
         ],
-        // username is either $_GET['username'] or 'GitHub'
+        'content' => $_GET['message'] ?? '',
         'username' => $_GET['username'] ?? 'GitHub',
         'avatar_url' => $_GET['avatar_url'] ?? 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+        'tts' => false,
     ];
 
     // Send payload to Discord webhook
