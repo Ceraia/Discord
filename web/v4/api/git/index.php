@@ -25,7 +25,7 @@ if (!empty($githubPayload['commits']) || isset($githubPayload['pull_request']) |
 
         $title = '['.$githubPayload['repository']['name'].':'.$githubPayload['repository']['default_branch'].'] '.
             count($githubPayload['commits']).
-            ' new commit'.count($githubPayload['commits']) > 1 ? 's' : '';
+            ' new commit'. (count($githubPayload['commits']) > 1 ? 's' : '');
         $description = "$addedFiles file(s) added, $removedFiles file(s) removed, $modifiedFiles file(s) modified\n\n".
             implode("\n", array_map(function ($commit) {
                 return sprintf('[`%s`](%s) %s',
