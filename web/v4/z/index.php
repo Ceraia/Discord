@@ -39,7 +39,8 @@ $quotes = array(
     "<img src=https://xdbl.dev/x/VHKQw.jpg><br>",
     "\"<a><i>Your mind will always shutdown before your body, only way to test your full potential is to get pushed to your limits</a></i>\" - Galah.<br>",
     "\"<a><i>It's not about how hard you can hit, it's about how hard you can get hit and keep moving forward.</i></a>\" - Rocky Balboa.<br>",
-    "\"<a><i>Despite all my beans, I'm still just a rat in some jeans.</i></a>\" - Jazzodouble.<br>"
+    "\"<a><i>Despite all my beans, I'm still just a rat in some jeans.</i></a>\" - Jazzodouble.<br>",
+    "\"<a><i>It is what it is.</i></a>\" - ZoliWorks.<br><br><br><br>Check out <a href=\"https://bisecthosting.com/ZWS\">BisectHosting</a> if you're looking for an affordable server! Use the code ZWS at checkout for a 25% discount! ",
 );
 
 function loadRandomQuote($amount)

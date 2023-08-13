@@ -22,8 +22,8 @@ if (!empty($githubPayload['commits']) || isset($githubPayload['pull_request']) |
             $removedFiles += count($commit['removed']);
             $modifiedFiles += count($commit['modified']);
         }
-
-        $title = '['.$githubPayload['repository']['name'].':'.$githubPayload['repository']['default_branch'].'] '.
+        $commitBranch = explode('/', $githubPayload['ref'])[2];
+        $title = '['.$githubPayload['repository']['name'].':'.$commitBranch.'] '.
             count($githubPayload['commits']).
             ' new commit'. (count($githubPayload['commits']) > 1 ? 's' : '');
         $description = "$addedFiles file(s) added, $removedFiles file(s) removed, $modifiedFiles file(s) modified\n\n".
