@@ -27,20 +27,15 @@ $quotes = array(
     "\"<a href=\"https://www.youtube.com/watch?v=L3wKzyIN1yk\"><i>I remember that one time that Sly downloaded the Physics Mod, killed a cow and then (messed around with) it.</i></a>\" - <a href=\"https://www.youtube.com/watch?v=L3wKzyIN1yk\"><c>Ekstacy.<c></a><br>",
     "\"<a><i>Money can't buy back your youth when you're old, a friend when you're lonely, or peace to your soul.</i></a>\" - Johnny Cash.<br>",
     "\"<a><i>Can't shake the devil's hand and say you're only kidding.</i></a>\" - on <a href=\"https://www.youtube.com/watch?v=Ow-nuHCTA5E\">Your Racist Friend</a>, by They Might Be Giants.<br>",
-    "\"<a><i>Better be a warrior in the garden, than a gardener in the war. When the time comes to put down the sword, and pick up the plow, you'll know. Until that day comes.</i></a>\" - Old Japanese Saying.<br>",
     "\"<a><i>A weapon does not decide whether or not to kill. A weapon is a manifestation of a decision that has already been made.</i></a>\" - On <a href=\"https://www.amazon.com/Cellist-Sarajevo-Steven-Galloway/dp/1594483655\">The Cellist of Sarajevo</a>, by Steven Galloway.<br>",
-    "\"<a><i>It's not a resistance if you're winning; it's a revolution.</i></a>\" - Someone.",
     "\"<a><i>You can't call yourself peaceful if you're not capable of violence. If you're not capable of violence, you're not peaceful; you're harmless.</i></a>\" - Someone.<br>",
     "\"<a><i>I do believe that, where there is only a choice between cowardice and violence, I would advise violence.</i></a>\" - Mahatma Gandhi.<br>",
-    "\"<a><i>It is a shame for a man to grow old without seeing the beauty and strength which his body is capable of.</i></a>\" - Socrates.<br>",
-    "\"<a><i>Circumstances don't make the man. They only reveal him to himself</i></a>\" - Epictetus.<br>",
     "\"<a><i>Then there was the war, and I married it because there was nothing else when I reached the age of falling in love.</i></a>\" - On <a href=\"https://www.amazon.com/Forgotten-Soldier-Guy-Sajer/dp/1574882864\">The Forgotten Soldier</a>, by Guy Sajer.<br>",
     "\"<a><i>I fear all we have done is to awaken a sleeping giant and fill him with a terrible resolve.</i></a>\" - Isoroku Yamamoto.<br>",
-    "<img src=https://xdbl.dev/x/VHKQw.jpg><br>",
-    "\"<a><i>Your mind will always shutdown before your body, only way to test your full potential is to get pushed to your limits</a></i>\" - Galah.<br>",
-    "\"<a><i>It's not about how hard you can hit, it's about how hard you can get hit and keep moving forward.</i></a>\" - Rocky Balboa.<br>",
+    "\"<a><i>Your mind will always shutdown before your body, only way to test your full potential is to get pushed to your limits.</a></i>\" - Galah.<br>",
     "\"<a><i>Despite all my beans, I'm still just a rat in some jeans.</i></a>\" - Jazzodouble.<br>",
     "\"<a><i>It is what it is.</i></a>\" - ZoliWorks.<br><br><br><br>Check out <a href=\"https://bisecthosting.com/ZWS\">BisectHosting</a> if you're looking for an affordable server! Use the code ZWS at checkout for a 25% discount! ",
+    "\"<a><i>I hate the word homophobia. It's not a phobia. You're not scared. You're an asshole.</i></a>\" - Morgan Freeman.<br>",
 );
 
 function loadRandomQuote($amount)
