@@ -39,7 +39,7 @@ if (isset($_FILES['file'])) {
         if(isset($_POST['description'])) file_put_contents("x/" . $name . ".dmd", $_POST['description']);
         //return file name
         echo (//$url . 'i?i=' . 
-            rawurlencode($name) );
+            rawurlencode($name . "." . $fileType) );
     }
 } else {
     file_put_contents("x/" . $name, $_POST['content']);

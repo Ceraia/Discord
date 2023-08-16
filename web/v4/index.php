@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require_once  'z/index.php';
 $bro = $_SERVER['HTTP_USER_AGENT'];
@@ -57,6 +58,7 @@ if (isset($_GET['l'])) {
     // redirect to file contents within the x folder
 
 }
+
 //check if any variables are set
 if (!empty($_GET)) {
     // if m is set, load the loadHTML function with the message.
@@ -74,11 +76,19 @@ if (!empty($_GET)) {
     if (isset($_GET['i'])) {
         // serve image
 
+        $fileLink = '';
+echo($_GET['i']);
+        //check if i contains a .
+        if (strpos($_GET['i'], ".") !== true)
+        {
+            $fileLink = file_get_contents('x/' . $_GET['i']);
+        } else 
+            $fileLink = 'https://xdbl.dev/image?i=' . $_GET['i'];
         //grab the link of the file
-        $fileLink = file_get_contents('x/' . $_GET['i']);
-
+        
+echo($fileLink);
         //title handler
-        $title = '<h3>'.explode("/", $fileLink)[count(explode("/", $fileLink)) - 1].'</h3>';
+        $title = '<h3>'.explode("=", $fileLink)[count(explode("=", $fileLink)) - 1].'</h3>';
 
         //description handler
         $description = "";
@@ -137,15 +147,15 @@ if (!empty($_GET)) {
 
         //check if it an image, mp4 or webm, if so load it with a viewer / player
         if (isImageFile($fileLink)) {
-            loadHTML($details . "<br><br><img src=\"" . file_get_contents('x/' . $_GET['i']) . "\" style=\"width:80%\">");
+            loadHTML($details . "<br><br><img src=\"" . $fileLink . "\" style=\"width:80%\">");
             die();
         }  //check if it is a mp4
         if (strpos($fileLink, ".mp4") !== false) {
-            loadHTML($details . "<br><br><video width=50% controls><source src=\"" . file_get_contents('x/' . $_GET['i']) . "\" type=\"video/mp4\">");
+            loadHTML($details . "<br><br><video width=50% controls><source src=\"" . $fileLink . "\" type=\"video/mp4\">");
             die();
         }  //check if it is a mp4
         if (strpos($fileLink, ".webm") !== false) {
-            loadHTML($details . "<br><br><video width=50% controls><source src=\"" . file_get_contents('x/' . $_GET['i']) . "\" type=\"video/webm\">");
+            loadHTML($details . "<br><br><video width=50% controls><source src=\"" . $fileLink . "\" type=\"video/webm\">");
             die();
         }  //check if it is a txt file
         if (strpos($fileLink, ".txt") !== false) {
@@ -153,7 +163,7 @@ if (!empty($_GET)) {
             die();
         }
         //load it as a download link
-        loadHTML($details . "<br><br><a href=\"" . file_get_contents('x/' . $_GET['i']) . "\">Download " . $_GET['i'].'.'.pathinfo($fileLink, PATHINFO_EXTENSION) . "</a>");
+        loadHTML($details . "<br><br><a href=\"" . $fileLink . "\">Download " . $_GET['i'].'.'.pathinfo($fileLink, PATHINFO_EXTENSION) . "</a>");
         die();
     } else
     loadHTML("");

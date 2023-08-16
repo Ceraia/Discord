@@ -12,10 +12,10 @@ module.exports = async (client, message) => {
   const settings = await getSettings(message.guild);
   const { prefix } = settings;
 
-  // check for bot mentions
-  if (message.content.includes(`${client.user.id}`)) {
-    sendMessage(message.channel, `My prefix is \`${settings.prefix}\``);
-  }
+  // // check for bot mentions
+  // if (message.content.includes(`${client.user.id}`)) {
+  //   sendMessage(message.channel, `My prefix is \`${settings.prefix}\``);
+  // }
 
   //afk checker
   if (message.mentions.members) {

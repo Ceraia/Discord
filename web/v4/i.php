@@ -6,8 +6,12 @@ if (isset($_GET['i'])) {
         // check if the file itself exists, otherwise assume it is registered as file link
         //if the file has a file extension
         if (strpos($_GET['i'], '.') == true) {
-            if (file_exists("x/" . $_GET['i'])) header("Location: " . 'https://xdbl.dev/x/' . $_GET['i']);
-            else header("Location: " . file_get_contents('x/' . $_GET['i']));
+                $imageMimeType = mime_content_type('x/'.$_GET['i']);
+                // Set appropriate headers
+                header('Content-Type: ' . $imageMimeType);
+                header('Content-Length: ' . filesize('x/'.$_GET['i']));
+    // Output the image content
+    readfile('x/'.$_GET['i']);
         } else {
             header("Location: " . file_get_contents('x/' . $_GET['i']));
         }
