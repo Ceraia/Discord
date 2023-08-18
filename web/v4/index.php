@@ -79,10 +79,6 @@ if (!empty($_GET)) {
         $fileLink = '';
 echo($_GET['i']);
         //check if i contains a .
-        if (strpos($_GET['i'], ".") !== true)
-        {
-            $fileLink = file_get_contents('x/' . $_GET['i']);
-        } else 
             $fileLink = 'https://xdbl.dev/image?i=' . $_GET['i'];
         //grab the link of the file
         
