@@ -77,14 +77,16 @@ if (!empty($_GET)) {
         // serve image
 
         $fileLink = '';
-echo($_GET['i']);
-        //check if i contains a .
+        $title = '';
+
+        //check if $_GET['i'] has a . in it, if not, get file contents of the file as the link
+        if (strpos($_GET['i'], ".") == false)
+            $fileLink = file_get_contents('x/' . $_GET['i']);
+        else
             $fileLink = 'https://xdbl.dev/image?i=' . $_GET['i'];
-        //grab the link of the file
-        
-echo($fileLink);
-        //title handler
-        $title = '<h3>'.explode("=", $fileLink)[count(explode("=", $fileLink)) - 1].'</h3>';
+
+        // //title handler
+        // $title = '<h3>'.explode("=", $fileLink)[count(explode("=", $fileLink)) - 1].'</h3>';
 
         //description handler
         $description = "";
