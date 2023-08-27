@@ -36,6 +36,7 @@ $quotes = array(
     "\"<a><i>Despite all my beans, I'm still just a rat in some jeans.</i></a>\" - Jazzodouble.<br>",
     "\"<a><i>It is what it is.</i></a>\" - ZoliWorks.<br><br><br><br>Check out <a href=\"https://bisecthosting.com/ZWS\">BisectHosting</a> if you're looking for an affordable server! Use the code ZWS at checkout for a 25% discount! ",
     "\"<a><i>I hate the word homophobia. It's not a phobia. You're not scared. You're an asshole.</i></a>\" - Morgan Freeman.<br>",
+    "\"<a><i>If you're not in the state of post-nut clarity, you're in state of pre-nut delusion.</i></a>\" - Taki.<br>"
 );
 
 function loadRandomQuote($amount)
