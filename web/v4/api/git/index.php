@@ -22,6 +22,9 @@ if (!empty($githubPayload['commits']) || isset($githubPayload['pull_request']) |
             $removedFiles += count($commit['removed']);
             $modifiedFiles += count($commit['modified']);
         }
+        if ($addedFiles >= 3000) {
+            $addedFiles = '3000+';
+        }
         $commitBranch = explode('/', $githubPayload['ref'])[2];
         $title = '['.$githubPayload['repository']['name'].':'.$commitBranch.'] '.
             count($githubPayload['commits']).
