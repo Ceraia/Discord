@@ -1,0 +1,21 @@
+{
+  "system_data": {
+    "last_update_timestamp": 1693863043
+  },
+  "market_data": [
+    {
+      "name": "HKID - Hawk Industries",
+      "current_value": 520828,
+      "profitfactor": 20,
+      "lossfactor": -20,
+      "previous_values": []
+    },
+    {
+      "name": "ENT3 - Entropy 3rd Generation Industries",
+      "current_value": 300367,
+      "profitfactor": 20,
+      "lossfactor": -20,
+      "previous_values": []
+    }
+  ]
+}
