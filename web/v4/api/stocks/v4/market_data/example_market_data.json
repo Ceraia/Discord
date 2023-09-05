@@ -4,18 +4,42 @@
   },
   "market_data": [
     {
-      "name": "HKID - Hawk Industries",
-      "current_value": 520828,
-      "profitfactor": 20,
-      "lossfactor": -20,
-      "previous_values": []
+      "id": "HKID",
+      "name": "Hawk Industries",
+      "appearance": {
+        "color": "#82aadb"
+      },
+      "market": {
+        "strength": {
+          "profit": 2,
+          "loss": -2
+        },
+        "value": [
+          {
+            "value": 1000000,
+            "timestamp": 1693863043
+          }
+        ]
+      }
     },
     {
-      "name": "ENT3 - Entropy 3rd Generation Industries",
-      "current_value": 300367,
-      "profitfactor": 20,
-      "lossfactor": -20,
-      "previous_values": []
+      "id": "ENT3",
+      "name": "Entropy 3rd Generation Industries",
+      "appearance": {
+        "color": "#f5a623"
+      },
+      "market": {
+        "strength": {
+          "profit": 2,
+          "loss": -2
+        },
+        "value": [
+          {
+            "value": 100000,
+            "timestamp": 1693863043
+          }
+        ]
+      }
     }
   ]
 }

@@ -36,7 +36,12 @@ $quotes = array(
     "\"<a><i>Despite all my beans, I'm still just a rat in some jeans.</i></a>\" - Jazzodouble.<br>",
     "\"<a><i>It is what it is.</i></a>\" - ZoliWorks.<br><br><br><br>Check out <a href=\"https://bisecthosting.com/ZWS\">BisectHosting</a> if you're looking for an affordable server! Use the code ZWS at checkout for a 25% discount! ",
     "\"<a><i>I hate the word homophobia. It's not a phobia. You're not scared. You're an asshole.</i></a>\" - Morgan Freeman.<br>",
-    "\"<a><i>If you're not in the state of post-nut clarity, you're in state of pre-nut delusion.</i></a>\" - Taki.<br>"
+    "\"<a><i>If you're not in the state of post-nut clarity, you're in state of pre-nut delusion.</i></a>\" - Taki.<br>",
+    "\"<a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><i>My doctrines exist to rid maternity hospitals of their horror, to preserve the wife for her husband and the mother for her child.</i></a>\" - <a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><c>Ignaz Semmelweis.</c></a>",
+    "\"<a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><i>My doctrines exist to rid maternity hospitals of their horror, to preserve the wife for her husband and the mother for her child.</i></a>\" - <a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><c>Ignaz Semmelweis.</c></a>",
+    "\"<a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><i>My doctrines exist to rid maternity hospitals of their horror, to preserve the wife for her husband and the mother for her child.</i></a>\" - <a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><c>Ignaz Semmelweis.</c></a>",
+    "\"<a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><i>My doctrines exist to rid maternity hospitals of their horror, to preserve the wife for her husband and the mother for her child.</i></a>\" - <a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><c>Ignaz Semmelweis.</c></a>",
+    "\"<a><i>A new scientific truth does not triumph by convincing its opponents and making them see the light, but rather because its opponents eventually die, and a new generation grows up that is familiar with it.</i></a>\" - Max Planck.<br>",
 );
 
 function loadRandomQuote($amount)
@@ -116,21 +121,22 @@ function loadHTML($message)
             if ((isset($_GET['authgen']))) {
                 if ($_GET['authgen'] == getOTP('YTO3N3ZX3NPQUUQLVRFPQ36Z')) {
                     echo ('<h3>Random Auth.</h3>');
-                    
+
                     $secret = genSecret();
-                    if(isset($_GET['name']) != '') $reason = $_GET['name']; else $reason = 'xdbl';
+                    if (isset($_GET['name']) != '') $reason = $_GET['name'];
+                    else $reason = 'xdbl';
                     $uri = genURI($reason, $secret);
-                    echo ($uri.'<br>');
+                    echo ($uri . '<br>');
                     generateQRCode($uri);
-                } 
-                else {echo (genToken('w')); echo ('
+                } else {
+                    echo (genToken('w'));
+                    echo ('
                 <form method="get" action="?authgen">
                 <input type="text" id="authInput" name="authgen" placeholder="Enter Authentication" required autofocus>
                 <input type="text" id="nameInput" name="name" placeholder="Enter Name">    
                 <button type="submit">Go</button>
                 </form>');
                 }
-                
             } else if (isset($_GET['auth'])) {
                 if ($_GET['auth'] === '') {
                     echo ("Not okie dokie");

@@ -10,21 +10,8 @@ function updateMarketData($filename, $marketDataInput)
 
     // Loop through each company
     foreach ($marketDataInput['market_data'] as $data => &$company) {
-
-        // Get current_value
-        $currentValue = $company['current_value'];
-
-        // Get current_value and add it to the array of previous values
-        $company['previous_values'][] = $currentValue;
-
-        // If there are more than 672 previous values ( 7 days * 24 hours * 4 values per hour )
-        if (count($company['previous_values']) > (673 * 2)) {
-            // Remove the oldest value
-            array_shift($company['previous_values']);
-        }
-
-
-        $company['current_value'] = fluctuateMarketValue($company);
+        // Fluctuate the market value
+        $company = fluctuateMarketValue($company);
     }
 
     // Save the updated market data to the JSON file
@@ -37,15 +24,22 @@ function updateMarketData($filename, $marketDataInput)
 // Do fluctuation calculations
 function fluctuateMarketValue($company)
 {
-    // Get current_value
-    $currentValue = $company['current_value'];
+    // Get current_value by getting the most recent value
+    $currentValue = $company['market']['value'][count($company['market']['value']) - 1]['value'];
 
-    // Fluctuate the current value by -2% to +2%
     $fluctuation = rand(
-        $company['lossfactor'],
-        $company['profitfactor']
-    ) / 1000;
-    return round($currentValue + ($currentValue * $fluctuation));
+        $company['market']['strength']['profit'],
+        $company['market']['strength']['loss']
+    ) / 100;
+
+
+    // Add the current value and time to the 'previous' values
+    $company['market']['value'][] = [
+        'value' => round($currentValue + ($currentValue * $fluctuation)),
+        'time' => time()
+    ];
+
+    return $company;
 };
 
 // Load corresponding market data
@@ -131,7 +125,7 @@ if (isset($_GET)) {
         }
 
         // Check how many more fluctuations are needed to reach 672
-        $fluctuationsNeeded = (673 * 2) - count($marketData['market_data'][0]['previous_values']);
+        $fluctuationsNeeded = (673 * 2) - count($marketData['market_data'][0]['market']['value']['previous']);
 
         // For the amount needed, update the market data
         for ($i = 0; $i < $fluctuationsNeeded; $i++) {
