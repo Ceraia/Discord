@@ -76,7 +76,7 @@ function genURI($account, $secret, $digits = null, $period = null, $issuer = nul
         (empty($issuer) ? '' : "&issuer=$issuer");
 }
 
-function genToken($account, )
+function genToken($account,)
 {
     //generate a 24 character string of random characters
     $token = generateRandomString(64);
