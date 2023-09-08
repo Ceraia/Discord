@@ -289,14 +289,57 @@ if (isset($_GET['auth']) || isset($_GET['override'])) {
                     }
                 }
             }
+            // Delete a company
+            if (isset($_GET['delete']) && ($_GET['delete'] !== '')) {
+                // Get the value of the 'instance' parameter from the URL
+                $instance = $_GET['instance'] ?? null;
+
+                if (!$instance) {
+                    echo "Please provide an 'instance' parameter.";
+                    die();
+                }
+
+                // Define the directory where JSON files will be stored
+                $dataDirectory = 'market_data';
+
+                // Create the directory if it doesn't exist
+                if (!file_exists($dataDirectory)) {
+                    mkdir($dataDirectory);
+                }
+
+                // Define the filename based on the instance
+                $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+
+                // Get market data
+                $marketData = getMarketData($filename);
+
+                if (!$marketData) {
+                    echo "No market data found for instance: " . $instance;
+                    die();
+                }
+
+                // Loop through each company
+                foreach ($marketData['market_data'] as $data => &$company) {
+                    // Check if the company ID matches the ID in the URL
+                    if ($company['id'] == $_GET['delete']) {
+                        // Remove the company from the market data
+                        unset($marketData['market_data'][$data]);
+
+                        // Log in audit log
+                        $marketData = logAudit(
+                            $marketData,
+                            'Deleted company: [' . $_GET['delete'] . "] " . $company['name'],
+                            $_GET['user']
+                        );
+                    }
+                }
+
+                // Roll through the market data
+                $marketData = updateMarketData($filename, $marketData);
+            }
         }
     }
 }
-
-// Give the user the option to create a new stock
-
-
-
 
 // Return the market data as JSON response
 header('Content-Type: application/json');

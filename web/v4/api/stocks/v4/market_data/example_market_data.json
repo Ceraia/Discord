@@ -1,6 +1,11 @@
 {
   "system_data": {
     "last_update_timestamp": 1693863043,
+    "webhooks": [
+      {
+        "url": "https://example.com/webhook"
+      }
+    ],
     "audit_log": [
       {
         "time": 1693863043,

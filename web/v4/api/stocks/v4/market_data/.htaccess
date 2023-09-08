@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(.*)$ http://xdbl.dev/$1 [R=301,L]
