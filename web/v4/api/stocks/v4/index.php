@@ -71,11 +71,10 @@ function createSystemFilteredJson($marketData)
 }
 
 // Log in audit log
-function logAudit($marketDataInput, $action, $action_data, $actor)
+function logAudit($marketDataInput, $action, $actor)
 {
     $marketDataInput["system_data"]['audit_log'][] = [
         'action' => $action,
-        'action_data' => $action_data,
         'actor' => $actor,
         'time' => time()
     ];
@@ -130,38 +129,167 @@ if (isset($_GET['id'])) {
     });
 }
 
-// Populate the market data
-if (isset($_GET['populate'])) {
-    // Get the value of the 'instance' parameter from the URL
-    $instance = $_GET['instance'] ?? null;
+/////////////////////////////////////////////////////////////////////////////////////////// AUTH Systems
 
-    if (!$instance) {
-        echo "Please provide an 'instance' parameter.";
-        die();
+$base32Map = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+
+function getOTP($secret, $digits = 6, $period = 30, $offset = 0, $algo = 'sha1')
+{
+    global $base32Map;
+    if (strlen($secret) < 16 || strlen($secret) % 8 != 0)
+        return ['err' => 'length of secret must be a multiple of 8, and at least 16 characters'];
+    if (preg_match('/[^a-z2-7]/i', $secret) === 1)
+        return ['err' => 'secret contains non-base32 characters'];
+    $digits = intval($digits);
+    if ($digits < 6 || $digits > 8)
+        return ['err' => 'digits must be 6, 7 or 8'];
+    if (in_array(strtolower($algo), ['sha1', 'sha256', 'sha512']) === false)
+        return ['err' => 'algo must be SHA1, SHA256 or SHA512'];
+
+    $seed = base32Decode($secret); // Use base32Decode($secret) instead of self::base32Decode($secret)
+    $time = str_pad(pack('N', intval($offset + time() / $period)), 8, "\x00", STR_PAD_LEFT);
+    $hash = hash_hmac(strtolower($algo), $time, $seed, false);
+    $otp = (hexdec(substr($hash, hexdec($hash[-1]) * 2, 8)) & 0x7fffffff) % pow(10, $digits);
+
+    return sprintf("%'0{$digits}u", $otp);
+}
+
+function base32Decode($in)
+{
+    global $base32Map; // Add this line to access the global variable
+    $l = strlen($in);
+    $n = $bs = 0;
+    $out = '';
+
+    for ($i = 0; $i < $l; $i++) {
+        $n <<= 5;
+        $n += stripos($base32Map, $in[$i]); // Use $base32Map instead of self::$base32Map
+        $bs = ($bs + 5) % 8;
+        $out .= $bs < 5 ? chr(($n & (255 << $bs)) >> $bs) : null;
     }
 
-    // Define the directory where JSON files will be stored
-    $dataDirectory = 'market_data';
+    return $out;
+}
+/////////////////////////////////////////////////////////////////////////////////////////// AUTH Systems
 
-    // Create the directory if it doesn't exist
-    if (!file_exists($dataDirectory)) {
-        mkdir($dataDirectory);
-    }
 
-    // Define the filename based on the instance
-    $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+// Check if bot is sending the request
+if (isset($_GET['auth']) || isset($_GET['override'])) {
+    // Authenticate the bot using 
+    if ((isset($_GET['auth']) && $_GET['auth'] !== '' && $_GET['auth'] == getOTP('YTO3N3ZX3NPQUUQLVRFPQ36Z')) ||
+        isset($_GET['override'])
+    ) {
 
-    // Get market data
-    $marketData = getMarketData($filename);
+        if (isset($_GET['user'])) {
+            // Populate the market data
+            if (isset($_GET['populate'])) {
+                // Get the value of the 'instance' parameter from the URL
+                $instance = $_GET['instance'] ?? null;
 
-    if (!$marketData) {
-        echo "No market data found for instance: " . $instance;
-        die();
-    }
+                if (!$instance) {
+                    echo "Please provide an 'instance' parameter.";
+                    die();
+                }
 
-    // Fluctuate the market value 100 times
-    for ($i = 0; $i < 100; $i++) {
-        $marketData = updateMarketData($filename, $marketData); // Pass by reference
+                // Define the directory where JSON files will be stored
+                $dataDirectory = 'market_data';
+
+                // Create the directory if it doesn't exist
+                if (!file_exists($dataDirectory)) {
+                    mkdir($dataDirectory);
+                }
+
+                // Define the filename based on the instance
+                $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+
+                // Get market data
+                $marketData = getMarketData($filename);
+
+                if (!$marketData) {
+                    echo "No market data found for instance: " . $instance;
+                    die();
+                }
+
+                // Log in audit log
+                $marketData = logAudit(
+                    $marketData,
+                    '!!! Populated market.',
+                    $_GET['user']
+                );
+
+                // Fluctuate the market value 100 times
+                for ($i = 0; $i < 100; $i++) {
+                    $marketData = updateMarketData($filename, $marketData); // Pass by reference
+                }
+            }
+            // Make a company
+            if (isset($_GET['create']) && ($_GET['create'] !== '')) {
+                if (isset($_GET['id']) && ($_GET['id'] !== '')) {
+                    if (isset($_GET['value']) && ($_GET['value'] !== '')) {
+                        // Make sure that value is an integer and not a string
+                        $_GET['value'] = intval($_GET['value']);
+
+                        // Get the value of the 'instance' parameter from the URL
+                        $instance = $_GET['instance'] ?? null;
+
+                        if (!$instance) {
+                            echo "Please provide an 'instance' parameter.";
+                            die();
+                        }
+
+                        // Define the directory where JSON files will be stored
+                        $dataDirectory = 'market_data';
+
+                        // Create the directory if it doesn't exist
+                        if (!file_exists($dataDirectory)) {
+                            mkdir($dataDirectory);
+                        }
+
+                        // Define the filename based on the instance
+                        $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+
+                        // Get market data
+                        $marketData = getMarketData($filename);
+
+                        if (!$marketData) {
+                            echo "No market data found for instance: " . $instance;
+                            die();
+                        }
+
+                        // Create the actual company
+                        $marketData['market_data'][] = [
+                            'id' => $_GET['id'],
+                            'name' => $_GET['create'],
+                            'appearance' => [
+                                'color' => '#ffffff',
+                            ],
+                            'market' => [
+                                'strength' => [
+                                    'profit' => 2,
+                                    'loss' => -2
+                                ],
+                                'value' => [
+                                    [
+                                        'value' => $_GET['value'],
+                                        'time' => time()
+                                    ]
+                                ]
+                            ]
+                        ];
+
+                        // Log in audit log
+                        $marketData = logAudit(
+                            $marketData,
+                            'Created company: [' . $_GET['id'] . "] " . $_GET['create'] . '$' . $_GET['value'],
+                            $_GET['user']
+                        );
+
+                        // Roll through the market data 
+                        $marketData = updateMarketData($filename, $marketData);
+                    }
+                }
+            }
+        }
     }
 }
 

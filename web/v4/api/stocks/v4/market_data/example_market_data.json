@@ -5,14 +5,7 @@
       {
         "time": 1693863043,
         "action": "Create Corporation",
-        "action_data": {
-          "corporation_id": "HKID",
-          "corporation_name": "Hawk Industries"
-        },
-        "actor": {
-          "id": "HKID",
-          "name": "Hawk Industries"
-        }
+        "actor": "Davey"
       }
     ]
   },
