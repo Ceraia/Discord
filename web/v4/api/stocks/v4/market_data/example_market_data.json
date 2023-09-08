@@ -1,6 +1,20 @@
 {
   "system_data": {
-    "last_update_timestamp": 1693863043
+    "last_update_timestamp": 1693863043,
+    "audit_log": [
+      {
+        "time": 1693863043,
+        "action": "Create Corporation",
+        "action_data": {
+          "corporation_id": "HKID",
+          "corporation_name": "Hawk Industries"
+        },
+        "actor": {
+          "id": "HKID",
+          "name": "Hawk Industries"
+        }
+      }
+    ]
   },
   "market_data": [
     {
@@ -30,8 +44,8 @@
       },
       "market": {
         "strength": {
-          "profit": 2,
-          "loss": -2
+          "profit": 20,
+          "loss": -20
         },
         "value": [
           {
