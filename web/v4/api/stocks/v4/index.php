@@ -337,6 +337,161 @@ if (isset($_GET['auth']) || isset($_GET['override'])) {
                 // Roll through the market data
                 $marketData = updateMarketData($filename, $marketData);
             }
+            // Change a company's value
+            if (isset($_GET['change'])) {
+                if (isset($_GET['id']) && ($_GET['id'] !== '')) {
+                    if (isset($_GET['value']) && ($_GET['value'] !== '')) {
+                        // Make sure that value is an integer and not a string
+                        $_GET['value'] = intval($_GET['value']);
+
+                        // Get the value of the 'instance' parameter from the URL
+                        $instance = $_GET['instance'] ?? null;
+
+                        if (!$instance) {
+                            echo "Please provide an 'instance' parameter.";
+                            die();
+                        }
+
+                        // Define the directory where JSON files will be stored
+                        $dataDirectory = 'market_data';
+
+                        // Create the directory if it doesn't exist
+                        if (!file_exists($dataDirectory)) {
+                            mkdir($dataDirectory);
+                        }
+
+                        // Define the filename based on the instance
+                        $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+
+                        // Get market data
+                        $marketData = getMarketData($filename);
+
+                        if (!$marketData) {
+                            echo "No market data found for instance: " . $instance;
+                            die();
+                        }
+
+                        // Loop through each company
+                        foreach ($marketData['market_data'] as $data => &$company) {
+                            // Check if the company ID matches the ID in the URL
+                            if ($company['id'] == $_GET['id']) {
+                                // Log in audit log
+                                $marketData = logAudit(
+                                    $marketData,
+                                    'Changed company value from: [' . $_GET['id'] . "] " . $company['name'] . '$' . $company['market']['value'][count($company['market']['value']) - 1]['value'] . ' to $' . $_GET['value'],
+                                    $_GET['user']
+                                );
+
+                                // Change the company's value
+                                $company['market']['value'][count($company['market']['value']) - 1]['value'] = $_GET['value'];
+                            }
+                        }
+
+                        // Roll through the market data
+                        $marketData = updateMarketData($filename, $marketData);
+                    }
+                }
+            }
+            // Change a company's appearance (name or color)
+            if (isset($_GET['appearance'])) {
+                if (isset($_GET['id']) && ($_GET['id'] !== '')) {
+                    if (isset($_GET['name']) && ($_GET['name'] !== '')) {
+                        // Get the value of the 'instance' parameter from the URL
+                        $instance = $_GET['instance'] ?? null;
+
+                        if (!$instance) {
+                            echo "Please provide an 'instance' parameter.";
+                            die();
+                        }
+
+                        // Define the directory where JSON files will be stored
+                        $dataDirectory = 'market_data';
+
+                        // Create the directory if it doesn't exist
+                        if (!file_exists($dataDirectory)) {
+                            mkdir($dataDirectory);
+                        }
+
+                        // Define the filename based on the instance
+                        $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+
+                        // Get market data
+                        $marketData = getMarketData($filename);
+
+                        if (!$marketData) {
+                            echo "No market data found for instance: " . $instance;
+                            die();
+                        }
+
+                        // Loop through each company
+                        foreach ($marketData['market_data'] as $data => &$company) {
+                            // Check if the company ID matches the ID in the URL
+                            if ($company['id'] == $_GET['id']) {
+                                // Log in audit log
+                                $marketData = logAudit(
+                                    $marketData,
+                                    'Changed company appearance from: [' . $_GET['id'] . "] " . $company['name'] .
+                                        ' to [' . $_GET['id'] . "] " . $_GET['name'],
+                                    $_GET['user']
+                                );
+
+                                // Change the company's name
+                                $company['name'] = $_GET['name'];
+                            }
+                        }
+
+                        // Roll through the market data
+                        $marketData = updateMarketData($filename, $marketData);
+                    }
+                    if (isset($_GET['color']) && ($_GET['color'] !== '')) {
+                        // Get the value of the 'instance' parameter from the URL
+                        $instance = $_GET['instance'] ?? null;
+
+                        if (!$instance) {
+                            echo "Please provide an 'instance' parameter.";
+                            die();
+                        }
+
+                        // Define the directory where JSON files will be stored
+                        $dataDirectory = 'market_data';
+
+                        // Create the directory if it doesn't exist
+                        if (!file_exists($dataDirectory)) {
+                            mkdir($dataDirectory);
+                        }
+
+                        // Define the filename based on the instance
+                        $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+
+                        // Get market data
+                        $marketData = getMarketData($filename);
+
+                        if (!$marketData) {
+                            echo "No market data found for instance: " . $instance;
+                            die();
+                        }
+
+                        // Loop through each company
+                        foreach ($marketData['market_data'] as $data => &$company) {
+                            // Check if the company ID matches the ID in the URL
+                            if ($company['id'] == $_GET['id']) {
+                                // Log in audit log
+                                $marketData = logAudit(
+                                    $marketData,
+                                    'Changed company color to ' . $_GET['color'],
+                                    $_GET['user']
+                                );
+
+                                // Change the company's color
+                                $company['appearance']['color'] = $_GET['color'];
+                            }
+                        }
+
+                        // Roll through the market data
+                        $marketData = updateMarketData($filename, $marketData);
+                    }
+                }
+            }
         }
     }
 }
