@@ -73,11 +73,46 @@ function createSystemFilteredJson($marketData)
 // Log in audit log
 function logAudit($marketDataInput, $action, $actor)
 {
+    // Physical audit log
     $marketDataInput["system_data"]['audit_log'][] = [
         'action' => $action,
         'actor' => $actor,
         'time' => time()
     ];
+
+    // Go through all webhooks and send the audit log
+    foreach ($marketDataInput["system_data"]['webhooks'] as $webhook) {
+        // Construct the discord webhook URL
+        $url = $webhook['url'];
+
+        // Construct the webhook object
+        $hookObject = json_encode([
+            "username" => "Audit Log",
+            "tts" => false,
+            "content" => "Action: " . $action . "\nActor: " . $actor
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
+        // Initialize the cURL session
+        $ch = curl_init();
+
+        // Set the cURL options
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $url,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $hookObject,
+            CURLOPT_HTTPHEADER => [
+                "Content-Type: application/json"
+            ]
+        ]);
+
+        // Execute the cURL session
+        curl_exec($ch);
+
+        // Close the cURL session
+        curl_close($ch);
+    }
+
+    // Return the updated market data
     return $marketDataInput;
 }
 
@@ -121,11 +156,11 @@ if (isset($_GET['instance'])) {
     }
 }
 
-// Check if a id is set
-if (isset($_GET['id'])) {
+// Check if search is set
+if (isset($_GET['search'])) {
     // Filter the market data to only include the company with the given ID
     $marketData['market_data'] = array_filter($marketData['market_data'], function ($company) {
-        return $company['id'] == $_GET['id'];
+        return $company['id'] == $_GET['search'];
     });
 }
 
@@ -489,6 +524,60 @@ if (isset($_GET['auth']) || isset($_GET['override'])) {
 
                         // Roll through the market data
                         $marketData = updateMarketData($filename, $marketData);
+                    }
+                }
+            }
+            // Change a company's strength
+            if (isset($_GET['strength']) && ($_GET['strength'] !== '')) {
+                if (isset($_GET['id']) && ($_GET['id'] !== '')) {
+                    // Get the value of the 'instance' parameter from the URL
+                    $instance = $_GET['instance'] ?? null;
+
+                    if (!$instance) {
+                        echo "Please provide an 'instance' parameter.";
+                        die();
+                    }
+
+                    // Define the directory where JSON files will be stored
+                    $dataDirectory = 'market_data';
+
+                    // Create the directory if it doesn't exist
+                    if (!file_exists($dataDirectory)) {
+                        mkdir($dataDirectory);
+                    }
+
+                    // Define the filename based on the instance
+                    $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+
+                    // Get market data
+                    $marketData = getMarketData($filename);
+
+                    if (!$marketData) {
+                        echo "No market data found for instance: " . $instance;
+                        die();
+                    }
+
+                    // Construct the correct ratio in a format of 'profit:loss'
+                    $ratio = explode(':', $_GET['strength']);
+
+                    // Loop through each company
+                    foreach ($marketData['market_data'] as $data => &$company) {
+                        // Check if the company ID matches the ID in the URL
+                        if ($company['id'] == $_GET['id']) {
+                            // Log in audit log
+                            $marketData = logAudit(
+                                $marketData,
+                                'Changed company strength from: [' . $_GET['id'] . "] " . $company['name'] .
+                                    ' to ' . $_GET['strength'],
+                                $_GET['user']
+                            );
+
+                            // Change the company's strength
+                            $company['market']['strength'] = [
+                                'profit' => intval($ratio[0]),
+                                'loss' => intval($ratio[1])
+                            ];
+                        }
                     }
                 }
             }
