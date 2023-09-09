@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Define the updateMarketData function first
-function updateMarketData($filename, $marketDataInput)
+function updateMarketData($filename, $marketDataInput, $time = 0)
 {
     // Set the last update timestamp
     $marketDataInput["system_data"]['last_update_timestamp'] = time();
@@ -11,7 +11,7 @@ function updateMarketData($filename, $marketDataInput)
     // Loop through each company
     foreach ($marketDataInput['market_data'] as $data => &$company) {
         // Fluctuate the market value
-        $company = fluctuateMarketValue($company);
+        $company = fluctuateMarketValue($company, $time);
     }
 
     // Save the updated market data to the JSON file
@@ -22,7 +22,7 @@ function updateMarketData($filename, $marketDataInput)
 }
 
 // Do fluctuation calculations
-function fluctuateMarketValue($company)
+function fluctuateMarketValue($company, $time = 0)
 {
     // Get current_value by getting the most recent value
     $currentValue = $company['market']['value'][count($company['market']['value']) - 1]['value'];
@@ -32,10 +32,13 @@ function fluctuateMarketValue($company)
         $company['market']['strength']['loss']
     ) / 100;
 
+    if ($time !== 0) $timestamp = $time;
+    else $timestamp = time();
+
     // Add the current value and time to the 'previous' values
     $company['market']['value'][] = [
         'value' => round($currentValue + ($currentValue * $fluctuation)),
-        'time' => time()
+        'time' => $timestamp
     ];
 
     return $company;
@@ -577,6 +580,55 @@ if (isset($_GET['auth']) || isset($_GET['override'])) {
                                 'profit' => intval($ratio[0]),
                                 'loss' => intval($ratio[1])
                             ];
+                        }
+                    }
+                }
+            }
+            // Generate 2 weeks of data for company
+            if (isset($_GET['simulate'])) {
+                if (isset($_GET['id']) && ($_GET['id'] !== '')) {
+                    // Get the value of the 'instance' parameter from the URL
+                    $instance = $_GET['instance'] ?? null;
+
+                    if (!$instance) {
+                        echo "Please provide an 'instance' parameter.";
+                        die();
+                    }
+
+                    // Define the directory where JSON files will be stored
+                    $dataDirectory = 'market_data';
+
+                    // Create the directory if it doesn't exist
+                    if (!file_exists($dataDirectory)) {
+                        mkdir($dataDirectory);
+                    }
+
+                    // Define the filename based on the instance
+                    $filename = $dataDirectory . '/' . $instance . '_market_data.json';
+
+                    // Get market data
+                    $marketData = getMarketData($filename);
+
+                    if (!$marketData) {
+                        echo "No market data found for instance: " . $instance;
+                        die();
+                    }
+
+                    // Loop through each company
+                    foreach ($marketData['market_data'] as $data => &$company) {
+                        // Check if the company ID matches the ID in the URL
+                        if ($company['id'] == $_GET['id']) {
+                            // Log in audit log
+                            $marketData = logAudit(
+                                $marketData,
+                                '!!! Simulated 2 weeks of data (CAUTION)',
+                                $_GET['user']
+                            );
+
+                            // Simulate 2 weeks of data with 15 minute intervals
+                            for ($i = 0; $i < 1344; $i++) {
+                                $marketData = updateMarketData($filename, $marketData, time() - (1209600 - ($i * 900))); // Pass by reference
+                            }
                         }
                     }
                 }
