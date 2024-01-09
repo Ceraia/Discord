@@ -1,7 +1,6 @@
 const axios = require("axios");
 const settings = require("../settings.js");
 const { EmbedBuilder } = require("@discordjs/builders");
-const { client } = require("./client.js");
 
 // Send messages to the console for logging.
 async function log(message) {

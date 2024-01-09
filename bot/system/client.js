@@ -1,9 +1,11 @@
-const { Client, GatewayIntentBits, EmbedBuilder } = require("discord.js");
+const { Client, GatewayIntentBits } = require("discord.js");
 
 let client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildVoiceStates,
+    GatewayIntentBits.GuildMembers,
     GatewayIntentBits.MessageContent,
   ],
 });
@@ -22,12 +24,6 @@ client.slashcommands = new Map();
 client.aliases = new Map();
 client.buttons = new Map();
 client.modals = new Map();
-
-// Client database
-client.database = new Map();
-
-// Client cache
-client.cache = new Map();
 
 // Client logging
 client.log = log;

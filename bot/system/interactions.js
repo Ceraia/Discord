@@ -2,29 +2,23 @@ const path = require("path");
 const fs = require("fs");
 
 // Command loader
-async function loadCommands(client, reload = false) {
-  // If reload is true, delete all commands
-  if (reload) {
-    await client.textcommands.clear();
-    await client.aliases.clear();
-    await client.slashcommands.clear();
-    await client.log("Removed all commands.");
-  }
-
+async function loadCommands(client) {
   // Find all folders in the commands directory
   const commandFolders = fs
-    .readdirSync("./commands")
-    .filter((file) => fs.statSync(path.join("./commands", file)).isDirectory());
+    .readdirSync("./interactions/commands")
+    .filter((file) =>
+      fs.statSync(path.join("./interactions/commands", file)).isDirectory()
+    );
 
   // Register all commands in the folders
   for (const folder of commandFolders) {
     const commandFiles = fs
-      .readdirSync(`./commands/${folder}`)
+      .readdirSync(`./interactions/commands/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Register all slash commands
     for (const file of commandFiles) {
-      const command = require(`../commands/${folder}/${file}`);
+      const command = require(`../interactions/commands/${folder}/${file}`);
       if (command.slashcommand) {
         // Get current slash commands
         const commands = await client.application.commands.fetch();
@@ -36,7 +30,7 @@ async function loadCommands(client, reload = false) {
 
         // If the command doesn't exist, create it
         if (!existingCommand) {
-          client.log(`Created ${command.slashcommand.name}.`);
+          client.log(`Created ${command.slashcommand.name} command.`);
           client.application.commands.create(command.slashcommand);
         } else if (
           existingCommand.description !== command.slashcommand.description ||
@@ -60,116 +54,79 @@ async function loadCommands(client, reload = false) {
   }
 
   // Find all commands that are registered on Discord but not in the bot
-  const commands = await client.application.commands.fetch();
-  for (const command of commands) {
-    if (!client.slashcommands.get(command[1].name)) {
-      client.log(`Deleted ${command[1].name}.`);
-      client.application.commands.delete(command[1]);
-    }
-  }
+  client.application.commands.fetch().then((commands) => {
+    commands.forEach((command) => {
+      if (!client.slashcommands.has(command.name)) {
+        client.log(`Deleting the /${command.name} command.`);
+        command.delete();
+      }
+    });
+  });
 
-  client.log(`${reload ? "Rel" : "L"}oaded all commands.`);
+  client.log(`Loaded all commands.`);
 }
 
 // Button loader
-async function loadButtons(client, reload = false) {
-  // If reload is true, delete all buttons
-  if (reload) {
-    await client.buttons.clear();
-    await client.log("Removed all buttons.");
-  }
-
+async function loadButtons(client) {
   // Find all folders in the buttons directory
   const buttonFolders = fs
-    .readdirSync("./buttons")
-    .filter((file) => fs.statSync(path.join("./buttons", file)).isDirectory());
+    .readdirSync("./interactions/buttons")
+    .filter((file) =>
+      fs.statSync(path.join("./interactions/buttons", file)).isDirectory()
+    );
 
   // Register all buttons in the folders
   for (const folder of buttonFolders) {
     const buttonFiles = fs
-      .readdirSync(`./buttons/${folder}`)
+      .readdirSync(`./interactions/buttons/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Register all buttons
     for (const file of buttonFiles) {
-      const button = require(`../buttons/${folder}/${file}`);
+      const button = require(`../interactions/buttons/${folder}/${file}`);
       client.buttons.set(button.name, button);
     }
   }
 
-  client.log(`${reload ? "Rel" : "L"}oaded all buttons.`);
+  client.log(`Loaded all buttons.`);
 }
 
 // Event loader
-async function loadEvents(client, reload = false) {
-  // If reload is true, delete all events
-  if (reload) {
-    await client.removeAllListeners();
-    await client.log("Removed all events.");
-  }
-
+async function loadEvents(client) {
   // Find all folders in the events directory
   const eventFolders = await fs
-    .readdirSync("./events")
-    .filter((file) => fs.statSync(path.join("./events", file)).isDirectory());
+    .readdirSync("./interactions/events")
+    .filter((file) =>
+      fs.statSync(path.join("./interactions/events", file)).isDirectory()
+    );
 
   // Register all events in the folders
   for (const folder of eventFolders) {
     const eventFiles = fs
-      .readdirSync(`./events/${folder}`)
+      .readdirSync(`./interactions/events/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Register all events
     for (const file of eventFiles) {
-      const event = require(`../events/${folder}/${file}`);
+      const event = require(`../interactions/events/${folder}/${file}`);
       event.once
         ? client.once(event.name, (...args) => event.execute(...args, client))
         : client.on(event.name, (...args) => event.execute(...args, client));
     }
   }
 
-  client.log(`${reload ? "Rel" : "L"}oaded all events.`);
+  client.log(`Loaded all events.`);
 }
 
-async function loadModals(client, reload = false) {
-  // If reload is true, delete all modals
-  if (reload) {
-    await client.modals.clear();
-    await client.log("Removed all modals.");
-  }
-
-  // Find all folders in the modals directory
-  const modalFolders = fs
-    .readdirSync("./modals")
-    .filter((file) => fs.statSync(path.join("./modals", file)).isDirectory());
-
-  // Register all modals in the folders
-  for (const folder of modalFolders) {
-    const modalFiles = fs
-      .readdirSync(`./modals/${folder}`)
-      .filter((file) => file.endsWith(".js"));
-
-    // Register all modals
-    for (const file of modalFiles) {
-      const modal = require(`../modals/${folder}/${file}`);
-      client.modals.set(modal.name, modal);
-    }
-  }
-
-  client.log(`${reload ? "Rel" : "L"}oaded all modals.`);
-}
-
-async function loadInteractions(client, reload = false) {
-  await loadCommands(client, reload);
-  await loadButtons(client, reload);
-  await loadEvents(client, reload);
-  await loadModals(client, reload);
+async function loadInteractions(client) {
+  await loadCommands(client);
+  await loadButtons(client);
+  await loadEvents(client);
 }
 
 module.exports = {
   loadCommands,
   loadButtons,
   loadEvents,
-  loadModals,
   loadInteractions,
 };
