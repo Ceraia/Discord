@@ -1,6 +1,10 @@
 module.exports = {
   name: "interactionCreate",
   once: false,
+  /**
+   * @param {import("discord.js").ModalSubmitInteraction} interaction
+   * @param {import("discord.js").Client} client
+   */
   async execute(interaction, client) {
     if (!interaction.isCommand()) return;
 
@@ -8,11 +12,6 @@ module.exports = {
     if (!command) return;
 
     try {
-      if (command.defer || command.defer == null) {
-        if (command.ephemeral)
-          await interaction.deferReply({ ephemeral: true });
-        else await interaction.deferReply();
-      }
       await command.executeSlash(interaction, client);
     } catch (error) {
       client.error("`Command issue` : " + error.stack);

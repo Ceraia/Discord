@@ -10,14 +10,22 @@ module.exports = {
     .setName("help")
     .setDMPermission(false)
     .setDescription("Get help with the commands"),
-  ephemeral: false,
   category: parentDirectoryName,
   textcommand: false,
+  /**
+   * @param {import("discord.js").Interaction} interaction
+   * @param {import("discord.js").Client} client
+   */
   async executeText(client, message, args) {
     let response = await execute(client);
     message.channel.send(response);
   },
+  /**
+   * @param {import("discord.js").Interaction} interaction
+   * @param {import("discord.js").Client} client
+   */
   async executeSlash(interaction, client) {
+    interaction.deferReply({ ephemeral: true });
     let response = await execute(client);
     interaction.editReply(response);
   },

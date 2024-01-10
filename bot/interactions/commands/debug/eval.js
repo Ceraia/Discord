@@ -6,7 +6,6 @@ module.exports = {
   name: "eval",
   aliases: [],
   slashcommand: false,
-  ephemeral: false,
   category: parentDirectoryName,
   textcommand: true,
   async executeText(client, message, args) {

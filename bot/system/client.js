@@ -21,6 +21,7 @@ client.settings = settings;
 // Client maps
 client.textcommands = new Map();
 client.slashcommands = new Map();
+client.contexts = new Map();
 client.aliases = new Map();
 client.buttons = new Map();
 client.modals = new Map();
@@ -36,6 +37,10 @@ client.logqueue = [];
 client.once("ready", async () => {
   // Call the initialization function
   await initializeClient(client);
+
+  client.guilds.cache.forEach((guild) => {
+    client.debug(`Loaded ${guild.name}`);
+  });
 });
 
 // Make sure no matter what error occurs, the bot doesn't crash
