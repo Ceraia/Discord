@@ -1,17 +1,11 @@
 const {
-  EmbedBuilder,
   SlashCommandBuilder,
   PermissionsBitField,
-  ChannelType,
   ModalBuilder,
   TextInputBuilder,
   TextInputStyle,
-  StringSelectMenuBuilder,
   ActionRowBuilder,
 } = require("discord.js");
-const path = require("path");
-const currentDirectory = path.dirname(__filename);
-const parentDirectoryName = path.basename(path.dirname(currentDirectory));
 
 module.exports = {
   name: "send",
@@ -21,7 +15,7 @@ module.exports = {
     .setDMPermission(false)
     .setDefaultMemberPermissions(PermissionsBitField.Flags.Administrator)
     .setDescription("Send a message as the bot"),
-  category: parentDirectoryName,
+  category: "system",
   textcommand: false,
   /**
    * @param {import("discord.js").Interaction} interaction

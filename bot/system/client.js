@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 
-let client = new Client({
+const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
@@ -9,6 +9,8 @@ let client = new Client({
     GatewayIntentBits.MessageContent,
   ],
 });
+
+const Stripe = require("stripe");
 
 // Get settings js file
 const settings = require("../settings.js");
@@ -25,6 +27,7 @@ client.contexts = new Map();
 client.aliases = new Map();
 client.buttons = new Map();
 client.modals = new Map();
+client.selectmenus = new Map();
 
 // Client logging
 client.log = log;
@@ -33,14 +36,14 @@ client.debug = debug;
 client.warning = warning;
 client.logqueue = [];
 
+// Payment gateway
+client.stripe = Stripe(client.settings.stripe.secret);
+client.products = new Map();
+
 // Client initialization
 client.once("ready", async () => {
   // Call the initialization function
   await initializeClient(client);
-
-  client.guilds.cache.forEach((guild) => {
-    client.debug(`Loaded ${guild.name}`);
-  });
 });
 
 // Make sure no matter what error occurs, the bot doesn't crash

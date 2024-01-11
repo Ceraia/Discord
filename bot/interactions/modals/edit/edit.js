@@ -6,7 +6,7 @@ module.exports = {
    */
   async executeModal(interaction, client) {
     await interaction.reply({
-      content: "Alright! Attempting to edit message...",
+      content: "Alright! Editing message.",
       ephemeral: true,
     });
     interaction.channel.messages

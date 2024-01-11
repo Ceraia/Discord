@@ -1,7 +1,4 @@
 const { EmbedBuilder, SlashCommandBuilder } = require("discord.js");
-const path = require("path");
-const currentDirectory = path.dirname(__filename);
-const parentDirectoryName = path.basename(path.dirname(currentDirectory));
 
 module.exports = {
   name: "help",
@@ -10,7 +7,7 @@ module.exports = {
     .setName("help")
     .setDMPermission(false)
     .setDescription("Get help with the commands"),
-  category: parentDirectoryName,
+  category: "system",
   textcommand: false,
   /**
    * @param {import("discord.js").Interaction} interaction

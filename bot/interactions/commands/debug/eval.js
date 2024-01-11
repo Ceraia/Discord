@@ -1,12 +1,8 @@
-const path = require("path");
-const currentDirectory = path.dirname(__filename);
-const parentDirectoryName = path.basename(path.dirname(currentDirectory));
-
 module.exports = {
   name: "eval",
   aliases: [],
   slashcommand: false,
-  category: parentDirectoryName,
+  category: "debug",
   textcommand: true,
   async executeText(client, message, args) {
     let response = await execute(client, message);

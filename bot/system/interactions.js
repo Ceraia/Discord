@@ -189,6 +189,31 @@ async function loadModals(client) {
   client.log(`Loaded all modals.`);
 }
 
+// Select menu loader
+async function loadSelectMenus(client) {
+  // Find all folders in the select menus directory
+  const selectMenuFolders = fs
+    .readdirSync("./interactions/selectmenus")
+    .filter((file) =>
+      fs.statSync(path.join("./interactions/selectmenus", file)).isDirectory()
+    );
+
+  // Register all select menus in the folders
+  for (const folder of selectMenuFolders) {
+    const selectMenuFiles = fs
+      .readdirSync(`./interactions/selectmenus/${folder}`)
+      .filter((file) => file.endsWith(".js"));
+
+    // Register all select menus
+    for (const file of selectMenuFiles) {
+      const selectMenu = require(`../interactions/selectmenus/${folder}/${file}`);
+      client.selectmenus.set(selectMenu.name, selectMenu);
+    }
+  }
+
+  client.log(`Loaded all select menus.`);
+}
+
 // Interaction loader
 async function loadInteractions(client) {
   await loadCommands(client);
@@ -196,6 +221,7 @@ async function loadInteractions(client) {
   await loadButtons(client);
   await loadEvents(client);
   await loadModals(client);
+  await loadSelectMenus(client);
 
   await deleteInteractions(client);
 }
