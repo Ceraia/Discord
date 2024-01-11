@@ -10,6 +10,7 @@ module.exports = {
         .retrieve(product.default_price)
         .then((price) => {
           product.price = Number(price.unit_amount) / 100;
+          product.price_id = price.id;
           return product;
         });
     });
