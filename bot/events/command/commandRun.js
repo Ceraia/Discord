@@ -9,7 +9,7 @@ module.exports = {
     if (!interaction.isCommand()) return;
 
     const command = client.slashcommands.get(interaction.commandName);
-    if (!command) return;
+    if (!command) return client.error("Command not found.");
 
     try {
       await command.executeSlash(interaction, client);
@@ -18,13 +18,17 @@ module.exports = {
       await interaction
         .reply({
           content: "There was an error while executing this command!",
-          ephemeral: command.ephemeral,
         })
         .catch(async () => {
-          await interaction.editReply({
-            content: "There was an error while executing this command!",
-            ephemeral: command.ephemeral,
-          });
+          await interaction
+            .editReply({
+              content: "There was an error while executing this command!",
+            })
+            .catch(async () => {
+              await interaction.followUp({
+                content: "There was an error while executing this command!",
+              });
+            });
         });
     }
   },

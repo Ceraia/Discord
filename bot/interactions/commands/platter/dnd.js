@@ -30,8 +30,8 @@ module.exports = {
    * @param {import("discord.js").Client} client
    */
   async executeSlash(interaction, client) {
-    interaction.deferReply({ ephemeral: true });
-    if (interaction.options.getSubcommand() === "roll") {
+    await interaction.deferReply({ ephemeral: true });
+    if (interaction.options.getSubcommand() === "dice") {
       await interaction.editReply(
         `You rolled a ${
           Math.floor(Math.random() * interaction.options.getInteger("sides")) +

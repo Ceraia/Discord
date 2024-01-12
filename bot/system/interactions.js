@@ -28,53 +28,54 @@ async function loadCommands(client) {
           (cmd) => cmd.name === command.slashcommand.name
         );
 
-        // If the command doesn't exist, create it
-        if (!existingCommand) {
-          if (command.guild) {
-            // If the command has a guild property, create it in the guild
-            let guild = await client.guilds.cache.get(command.guild);
-            if (!guild) return client.log(`Guild ${command.guild} not found.`);
+        if (existingCommand && !command.guild) {
+          // If the command exists, compare it to the current command
+          if (!commandsSame(existingCommand, command.slashcommand)) {
+            // If the commands are different, update the command
+            client.log(`Updating ${command.slashcommand.name} command.`);
+            await existingCommand.edit(command.slashcommand);
+          }
+        } else if (!existingCommand && !command.guild) {
+          // If the command doesn't exist, create it
+          client.log(`Created ${command.slashcommand.name} command.`);
+          await client.application.commands.create(command.slashcommand);
+        } else if (command.guild) {
+          // If the command is a guild command, register it as a guild command
+          let guild = await client.guilds.cache.get(command.guild);
 
-            let guildcommands = await guild.commands.fetch();
-            let existingGuildCommand = guildcommands.find(
-              (cmd) => cmd.name === command.slashcommand.name
+          if (!guild) {
+            client.error(
+              `Could not find guild with ID ${command.guild} for command ${command.slashcommand.name}.`
             );
+            continue;
+          }
 
-            if (!existingGuildCommand) {
-              // Check if the command already exists in the guild, if not, create it
+          // Get current guild commands
+          commands = await guild.commands.fetch();
+
+          // Find a command with the same name in the commands
+          const existingCommand = commands.find(
+            (cmd) => cmd.name === command.slashcommand.name
+          );
+
+          if (existingCommand) {
+            // If the command exists, compare it to the current command
+            if (!commandsSame(existingCommand, command.slashcommand)) {
+              // If the commands are different, update the command
               client.log(
-                `Created ${command.slashcommand.name} guild command for ${
-                  client.guilds.cache.get(command.guild).name
-                }.`
+                `Updating ${command.slashcommand.name} command in guild ${guild.name}.`
               );
-              client.guilds.cache
-                .get(command.guild)
-                .commands.create(command.slashcommand);
-            } else if (
-              // If the command exists, check if it needs to be updated
-              existingGuildCommand.description !==
-                command.slashcommand.description ||
-              existingGuildCommand.options.toString() !==
-                command.slashcommand.options.toString()
-            ) {
-              // If the command needs to be updated, update it
-              client.log(`Updated ${command.slashcommand.name}.`);
-              client.guilds.cache
-                .get(command.guild)
-                .commands.create(command.slashcommand);
+              await existingCommand.edit(command.slashcommand);
             }
           } else {
-            client.log(`Created ${command.slashcommand.name} command.`);
-            client.application.commands.create(command.slashcommand);
+            // If the command doesn't exist, create it
+            client.log(
+              `Created ${command.slashcommand.name} command in guild ${guild.name}.`
+            );
+            await guild.commands.create(command.slashcommand);
           }
-        } else if (
-          existingCommand.description !== command.slashcommand.description ||
-          existingCommand.options.toString() !==
-            command.slashcommand.options.toString()
-        ) {
-          client.log(`Updated ${command.slashcommand.name}.`);
-          client.application.commands.create(command.slashcommand);
         }
+
         client.slashcommands.set(command.name, command);
       }
       if (command.textcommand) {
@@ -88,7 +89,21 @@ async function loadCommands(client) {
     }
   }
 
-  client.log(`Loaded all guild and global commands.`);
+  client.log(`Loaded ${client.slashcommands.size} commands.`);
+}
+
+// Slash command comparer
+/**
+ * @param {import("discord.js").ApplicationCommand} command1
+ * @param {import("discord.js").ApplicationCommand} command2
+ */
+function commandsSame(command1, command2) {
+  if (command1.name !== command2.name) return false;
+  if (command1.description !== command2.description) return false;
+  if (command1.defaultPermission !== command2.defaultPermission) return false;
+  if (command1.options.length !== command2.options.length) return false;
+
+  return true;
 }
 
 // Context loader
@@ -129,7 +144,7 @@ async function loadContexts(client) {
     }
   }
 
-  client.log(`Loaded all contexts.`);
+  client.log(`Loaded ${client.contexts.size} contexts.`);
 }
 
 // Delete old contexts and commands
@@ -140,10 +155,8 @@ async function deleteInteractions(client) {
   // Find all commands that are registered on Discord but not in the bot
   commands.forEach((command) => {
     if (
-      (!client.slashcommands.has(command.name) &&
-        !client.contexts.has(command.name)) ||
-      (client.slashcommands.has(command.name) &&
-        client.slashcommands.get(command.name).guild)
+      !client.slashcommands.has(command.name) &&
+      !client.contexts.has(command.name)
     ) {
       client.log(`Deleting ${command.name} interaction.`);
       command.delete();
@@ -173,7 +186,7 @@ async function loadButtons(client) {
     }
   }
 
-  client.log(`Loaded all buttons.`);
+  client.log(`Loaded ${client.buttons.size} buttons.`);
 }
 
 // Event loader
@@ -183,6 +196,9 @@ async function loadEvents(client) {
     .readdirSync("./events")
     .filter((file) => fs.statSync(path.join("./events", file)).isDirectory());
 
+  // Event Counter
+  let eventCount = 0;
+
   // Register all events in the folders
   for (const folder of eventFolders) {
     const eventFiles = fs
@@ -191,6 +207,7 @@ async function loadEvents(client) {
 
     // Register all events
     for (const file of eventFiles) {
+      eventCount++;
       const event = require(`../events/${folder}/${file}`);
       event.once
         ? client.once(event.name, (...args) => event.execute(...args, client))
@@ -198,7 +215,7 @@ async function loadEvents(client) {
     }
   }
 
-  client.log(`Loaded all events.`);
+  client.log(`Loaded ${eventCount} events.`);
 }
 
 // Modal loader
@@ -223,7 +240,7 @@ async function loadModals(client) {
     }
   }
 
-  client.log(`Loaded all modals.`);
+  client.log(`Loaded ${client.modals.size} modals.`);
 }
 
 // Select menu loader
@@ -248,7 +265,7 @@ async function loadSelectMenus(client) {
     }
   }
 
-  client.log(`Loaded all select menus.`);
+  client.log(`Loaded ${client.selectmenus.size} modals.`);
 }
 
 // Interaction loader
