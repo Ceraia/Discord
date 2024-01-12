@@ -22,7 +22,7 @@ module.exports = {
    * @param {import("discord.js").Client} client
    */
   async executeSlash(interaction, client) {
-    interaction.deferReply({ ephemeral: true });
+    await interaction.deferReply({ ephemeral: true });
     let response = await execute(client);
     interaction.editReply(response);
   },
@@ -36,16 +36,18 @@ async function execute(client) {
     .setDescription("Help Menu");
 
   client.slashcommands.forEach((command) => {
-    embed.addFields({
-      name: `${command.slashcommand.name} ${
-        command.textcommand
-          ? "(" +
-            command.name +
-            `${command.aliases ? " | " + command.aliases.join(" | ") : ""})`
-          : ""
-      }`,
-      value: `${command.slashcommand.description}`,
-    });
+    command.category
+      ? embed.addFields({
+          name: `${command.slashcommand.name} ${
+            command.textcommand
+              ? "(" +
+                command.name +
+                `${command.aliases ? " | " + command.aliases.join(" | ") : ""})`
+              : ""
+          }`,
+          value: `${command.slashcommand.description}`,
+        })
+      : null;
   });
 
   return { embeds: [embed] };

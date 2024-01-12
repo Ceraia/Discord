@@ -21,7 +21,7 @@ async function loadCommands(client) {
       const command = require(`../interactions/commands/${folder}/${file}`);
       if (command.slashcommand) {
         // Get current slash commands
-        const commands = await client.application.commands.fetch();
+        let commands = await client.application.commands.fetch();
 
         // Find a command with the same name in the commands
         const existingCommand = commands.find(
@@ -30,8 +30,43 @@ async function loadCommands(client) {
 
         // If the command doesn't exist, create it
         if (!existingCommand) {
-          client.log(`Created ${command.slashcommand.name} command.`);
-          client.application.commands.create(command.slashcommand);
+          if (command.guild) {
+            // If the command has a guild property, create it in the guild
+            let guild = await client.guilds.cache.get(command.guild);
+            if (!guild) return client.log(`Guild ${command.guild} not found.`);
+
+            let guildcommands = await guild.commands.fetch();
+            let existingGuildCommand = guildcommands.find(
+              (cmd) => cmd.name === command.slashcommand.name
+            );
+
+            if (!existingGuildCommand) {
+              // Check if the command already exists in the guild, if not, create it
+              client.log(
+                `Created ${command.slashcommand.name} guild command for ${
+                  client.guilds.cache.get(command.guild).name
+                }.`
+              );
+              client.guilds.cache
+                .get(command.guild)
+                .commands.create(command.slashcommand);
+            } else if (
+              // If the command exists, check if it needs to be updated
+              existingGuildCommand.description !==
+                command.slashcommand.description ||
+              existingGuildCommand.options.toString() !==
+                command.slashcommand.options.toString()
+            ) {
+              // If the command needs to be updated, update it
+              client.log(`Updated ${command.slashcommand.name}.`);
+              client.guilds.cache
+                .get(command.guild)
+                .commands.create(command.slashcommand);
+            }
+          } else {
+            client.log(`Created ${command.slashcommand.name} command.`);
+            client.application.commands.create(command.slashcommand);
+          }
         } else if (
           existingCommand.description !== command.slashcommand.description ||
           existingCommand.options.toString() !==
@@ -53,7 +88,7 @@ async function loadCommands(client) {
     }
   }
 
-  client.log(`Loaded all commands.`);
+  client.log(`Loaded all guild and global commands.`);
 }
 
 // Context loader
@@ -105,8 +140,11 @@ async function deleteInteractions(client) {
   // Find all commands that are registered on Discord but not in the bot
   commands.forEach((command) => {
     if (
-      !client.slashcommands.has(command.name) &&
-      !client.contexts.has(command.name)
+      (!client.slashcommands.has(command.name) &&
+        !client.contexts.has(command.name)) ||
+      (client.slashcommands.has(command.name) &&
+        !client.contexts.has(command.name) &&
+        command.guild)
     ) {
       client.log(`Deleting ${command.name} interaction.`);
       command.delete();

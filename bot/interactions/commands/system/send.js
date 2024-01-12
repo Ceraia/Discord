@@ -12,13 +12,13 @@ module.exports = {
   aliases: [],
   slashcommand: new SlashCommandBuilder()
     .setName("send")
-    .setDMPermission(false)
     .setDefaultMemberPermissions(PermissionsBitField.Flags.Administrator)
-    .setDescription("Send a message as the bot"),
+    .setDMPermission(false)
+    .setDescription("Send a message as the bot."),
   category: "system",
   textcommand: false,
   /**
-   * @param {import("discord.js").Interaction} interaction
+   * @param {import("discord.js").CommandInteraction} interaction
    * @param {import("discord.js").Client} client
    */
   async executeSlash(interaction, client) {

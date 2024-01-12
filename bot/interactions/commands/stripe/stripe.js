@@ -17,21 +17,38 @@ module.exports = {
   slashcommand: new SlashCommandBuilder()
     .setName("stripe")
     .setDMPermission(false)
-    .setDescription("Stripe related commands")
+    .setDescription("Stripe related commands.")
     .addSubcommand((subcommand) =>
-      subcommand.setName("products").setDescription("Get all products")
+      subcommand.setName("shop").setDescription("Get all products.")
+    )
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("url")
+        .setDescription("Set custom purchase url")
+        .addUserOption((option) =>
+          option
+            .setName("user")
+            .setDescription("The user to set the url for.")
+            .setRequired(true)
+        )
+        .addStringOption((option) =>
+          option
+            .setName("url")
+            .setDescription("The url to set.")
+            .setRequired(true)
+        )
     )
     .setDefaultMemberPermissions(PermissionsBitField.Flags.Administrator),
   category: "stripe",
   textcommand: false,
   async executeText(client, message, args) {},
   /**
-   * @param {import("discord.js").Interaction} interaction
+   * @param {import("discord.js").CommandInteraction} interaction
    * @param {import("discord.js").Client} client
    */
   async executeSlash(interaction, client) {
-    await interaction.deferReply({ ephemeral: false });
-    try {
+    await interaction.deferReply({ ephemeral: true });
+    if (interaction.options.getSubcommand() === "shop") {
       interaction
         .editReply({
           embeds: [
@@ -72,12 +89,71 @@ module.exports = {
             products: [],
           });
         });
-    } catch (error) {
-      // Handle errors appropriately
-      client.error(error);
-      interaction.editReply({
-        content: "There was an error while executing this command!",
-      });
+    }
+    if (interaction.options.getSubcommand() === "url") {
+      let user = interaction.options.getUser("user");
+      await client.users
+        .fetch(user.id)
+        .then((user) => {
+          user
+            .send({ content: "Incoming purchase..." })
+            .then(async (msg) => {
+              msg
+                .edit({
+                  content: null,
+                  embeds: [
+                    new EmbedBuilder()
+                      .setTitle("Purchase")
+                      .setDescription(
+                        `Please click the button below to complete your purchase.\n\n[Click here to complete your purchase](${interaction.options.getString(
+                          "url"
+                        )})`
+                      )
+                      .setColor(0x2b2d31),
+                  ],
+                  components: [],
+                })
+                .then(() => {
+                  interaction.editReply({
+                    content: "Purchase sent.",
+                    components: [],
+                    embeds: [],
+                  });
+                })
+                .catch((err) => {
+                  messageIssue(interaction);
+                  client.error(err.stack);
+                });
+            })
+            .catch((err) => {
+              messageIssue(interaction);
+              client.error(err.stack);
+            });
+        })
+        .catch((err) => {
+          messageIssue(interaction);
+          client.error(err.stack);
+        });
     }
   },
 };
+
+/**
+ * @param {import("discord.js").AnySelectMenuInteraction} interaction
+ */
+async function messageIssue(interaction) {
+  interaction
+    .update({
+      content: "There was an issue getting the user.",
+      components: [],
+      embeds: [],
+    })
+    .catch((err) => {
+      client.error(err.stack);
+      interaction.message.edit({
+        content: "There was an issue getting the user.",
+        components: [],
+        embeds: [],
+      });
+    });
+}
