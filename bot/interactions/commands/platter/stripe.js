@@ -39,8 +39,7 @@ module.exports = {
         )
     )
     .setDefaultMemberPermissions(PermissionsBitField.Flags.Administrator),
-  category: "stripe",
-  textcommand: false,
+  guild: "750209335841390642",
   async executeText(client, message, args) {},
   /**
    * @param {import("discord.js").CommandInteraction} interaction

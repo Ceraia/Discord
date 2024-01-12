@@ -20,8 +20,7 @@ module.exports = {
         .setRequired(true)
     )
     .setDescription("Send an image as the bot."),
-  category: "system",
-  textcommand: false,
+  guild: "750209335841390642",
   /**
    * @param {import("discord.js").CommandInteraction} interaction
    * @param {import("discord.js").Client} client

@@ -3,7 +3,7 @@ const {
   ActionRowBuilder,
   UserSelectMenuBuilder,
 } = require("discord.js");
-const { activePurchases } = require("../../commands/stripe/stripe");
+const { activePurchases } = require("../../commands/platter/stripe");
 
 module.exports = {
   ephemeral: false,

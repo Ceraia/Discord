@@ -143,8 +143,7 @@ async function deleteInteractions(client) {
       (!client.slashcommands.has(command.name) &&
         !client.contexts.has(command.name)) ||
       (client.slashcommands.has(command.name) &&
-        !client.contexts.has(command.name) &&
-        command.guild)
+        client.slashcommands.get(command.name).guild)
     ) {
       client.log(`Deleting ${command.name} interaction.`);
       command.delete();
