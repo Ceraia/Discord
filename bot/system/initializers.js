@@ -2,7 +2,7 @@ const { loadInteractions } = require("./interactions.js");
 const { loadScheduler } = require("./scheduler.js");
 
 module.exports.initializeClient = async (client) => {
-  client.log("Initializing client.");
+  client.log("Loading client.");
 
   // Load all interactions
   await loadInteractions(client);

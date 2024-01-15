@@ -22,7 +22,7 @@ module.exports = {
     .setDescription("Send an image as the bot."),
   guild: "750209335841390642",
   /**
-   * @param {import("discord.js").CommandInteraction} interaction
+   * @param {import("discord.js").ChatInputCommandInteraction} interaction
    * @param {import("discord.js").Client} client
    */
   async executeSlash(interaction, client) {

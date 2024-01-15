@@ -162,6 +162,25 @@ async function deleteInteractions(client) {
       command.delete();
     }
   });
+
+  const guilds = await client.guilds.fetch();
+
+  // Find all guilds that have commands that are registered on Discord but not in the bot
+  guilds.forEach(async (guild) => {
+    // Get current guild commands
+    if (!guild.commands) return;
+    const commands = await guild.commands.fetch();
+
+    // Find all commands that are registered on Discord but not in the bot
+    commands.forEach((command) => {
+      if (!client.slashcommands.has(command.name)) {
+        client.log(
+          `Deleting ${command.name} interaction in guild ${guild.name}.`
+        );
+        command.delete();
+      }
+    });
+  });
 }
 
 // Button loader

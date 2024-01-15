@@ -40,6 +40,12 @@ client.logqueue = [];
 client.stripe = Stripe(client.settings.stripe.secret);
 client.products = new Map();
 
+// BigInt
+BigInt.prototype.toJSON = function () {
+  const int = Number.parseInt(this.toString());
+  return int ?? this.toString();
+};
+
 // Client initialization
 client.once("ready", async () => {
   // Call the initialization function

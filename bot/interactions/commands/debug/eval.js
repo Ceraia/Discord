@@ -14,9 +14,7 @@ async function execute(client, message) {
   // Check if the user is the bot owner
   if (client.settings.owner == message.author.id) {
     // Take the message content and remove the command
-    let code = message.content.slice(
-      client.database.get("guilds").get(message.guild.id).prefix.length + 4
-    );
+    let code = message.content.replace(`${client.settings.prefix}eval `, "");
 
     try {
       return `\`${await eval(code)}\``;
