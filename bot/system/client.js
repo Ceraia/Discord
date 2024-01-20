@@ -16,6 +16,7 @@ const Stripe = require("stripe");
 const settings = require("../settings.js");
 const { log, error, debug, warning } = require("./logger.js");
 const { initializeClient } = require("./initializers.js");
+const Database = require("./database");
 
 // Import settings into the client
 client.settings = settings;
@@ -39,6 +40,13 @@ client.logqueue = [];
 // Payment gateway
 client.stripe = Stripe(client.settings.stripe.secret);
 client.products = new Map();
+
+// Client database
+client.db = {
+  database: new Database("database"),
+  guilds: new Database("guilds"),
+  users: new Database("users"),
+};
 
 // BigInt
 BigInt.prototype.toJSON = function () {

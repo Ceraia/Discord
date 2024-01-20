@@ -1,15 +1,42 @@
 const fs = require("fs");
-const path = require("path");
 
-/**
- * @param {import("discord.js").Client} client
- * @param {string} database
- *
- * Returns the database object for the given database
- */
 class Database {
-  constructor(client) {
-    this.client = client;
+  constructor(filename) {
+    this.filename = filename;
+    this.data = this.loadData();
+  }
+
+  loadData() {
+    try {
+      const data = fs.readFileSync(`./database/${this.filename}.json`, "utf8");
+      return JSON.parse(data);
+    } catch (error) {
+      // If the file doesn't exist or there is an error, return an empty object
+      return {};
+    }
+  }
+
+  saveData() {
+    const dataToSave = JSON.stringify(this.data, null, 2);
+    fs.writeFileSync(`./database/${this.filename}.json`, dataToSave, "utf8");
+  }
+
+  getAll() {
+    return this.data;
+  }
+
+  get(key) {
+    return this.data[key];
+  }
+
+  set(key, value) {
+    this.data[key] = value;
+    this.saveData();
+  }
+
+  remove(key) {
+    delete this.data[key];
+    this.saveData();
   }
 }
 

@@ -42,6 +42,8 @@ $quotes = array(
     "\"<a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><i>My doctrines exist to rid maternity hospitals of their horror, to preserve the wife for her husband and the mother for her child.</i></a>\" - <a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><c>Ignaz Semmelweis.</c></a>",
     "\"<a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><i>My doctrines exist to rid maternity hospitals of their horror, to preserve the wife for her husband and the mother for her child.</i></a>\" - <a href=\"https://en.wikipedia.org/wiki/Ignaz_Semmelweis\"><c>Ignaz Semmelweis.</c></a>",
     "\"<a><i>A new scientific truth does not triumph by convincing its opponents and making them see the light, but rather because its opponents eventually die, and a new generation grows up that is familiar with it.</i></a>\" - Max Planck.<br>",
+    "\"<a><i>It is not the strongest of the species that survives, nor the most intelligent that survives. It is the one that is most adaptable to change.</i></a>\" - Charles Darwin.<br>",
+    "\"<a><i>School taught us that your skull is designed to protect your brain, you reach the streets and you realize that your brain is what you use to protect your skull.</i></a>\" - Bamodu.<br>",
 );
 
 function loadRandomQuote($amount)
