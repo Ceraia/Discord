@@ -8,6 +8,7 @@ const {
 
 module.exports = {
   name: "mod",
+  guild: "750209335841390642",
   category: "moderation",
   slashcommand: new SlashCommandBuilder()
     .setName("mod")
