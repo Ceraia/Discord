@@ -107,6 +107,9 @@ function commandsSame(command1, command2) {
 }
 
 // Context loader
+/**
+ * @param {import("discord.js").Client} client
+ */
 async function loadContexts(client) {
   // Find all folders in the contexts directory
   const commandFolders = fs
@@ -124,6 +127,7 @@ async function loadContexts(client) {
     // Register all slash contexts
     for (const file of commandFiles) {
       const command = require(`../interactions/contexts/${folder}/${file}`);
+
       if (command.menu) {
         // Get current slash contexts
         const contexts = await client.application.commands.fetch();
@@ -135,8 +139,36 @@ async function loadContexts(client) {
 
         // If the command doesn't exist, create it
         if (!existingContext) {
-          client.log(`Created ${command.menu.name} context.`);
-          client.application.commands.create(command.menu);
+          if (command.guild) {
+            // If the command is a guild command, register it as a guild command
+            let guild = await client.guilds.cache.get(command.guild);
+
+            if (!guild) {
+              client.error(
+                `Could not find guild with ID ${command.guild} for context ${command.menu.name}.`
+              );
+              continue;
+            }
+
+            // Get current guild contexts
+            const contexts = await guild.commands.fetch();
+
+            // Find a command with the same name in the contexts
+            const existingContext = contexts.find(
+              (cmd) => cmd.name === command.menu.name
+            );
+
+            if (!existingContext) {
+              // If the command exists, compare it to the current command
+              client.log(
+                `Created ${command.menu.name} context in guild ${guild.name}.`
+              );
+              await guild.commands.create(command.menu);
+            }
+          } else {
+            client.log(`Created ${command.menu.name} context.`);
+            client.application.commands.create(command.menu);
+          }
         }
 
         client.contexts.set(command.menu.name, command);

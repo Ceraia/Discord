@@ -1,3 +1,4 @@
+const { updatePromotions } = require("../events/entropy/payroll");
 const { loadProducts } = require("./stripe");
 
 async function loadScheduler(client) {

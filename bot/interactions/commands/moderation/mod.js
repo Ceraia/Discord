@@ -14,7 +14,7 @@ module.exports = {
     .setName("mod")
     .setDescription("Moderator related commands.")
     .setDMPermission(false)
-    .setDefaultMemberPermissions(PermissionsBitField.Flags.Administrator)
+    .setDefaultMemberPermissions(PermissionsBitField.Flags.BanMembers)
     .addSubcommand((subcommand) =>
       subcommand
         .setName("kick")
@@ -55,6 +55,20 @@ module.exports = {
    */
   async executeSlash(interaction, client) {
     await interaction.deferReply({ ephemeral: true });
+
+    // Get the first invite from the guild
+    let invite = await interaction.guild.invites.fetch().then((invites) => {
+      return invites.first();
+    });
+
+    // If there is no invite, create one
+    if (!invite) {
+      invite = await interaction.channel.createInvite({
+        maxAge: 0,
+        maxUses: 0,
+      });
+    }
+
     if (interaction.options.getSubcommand() === "kick") {
       let member = interaction.options.getMember("user");
       let reason = interaction.options.getString("reason");
@@ -64,9 +78,20 @@ module.exports = {
           ephemeral: true,
         });
       }
+
+      if (
+        member.roles.highest.position >=
+        interaction.member.roles.highest.position
+      ) {
+        return interaction.editReply({
+          content: "You cannot kick this user.",
+          ephemeral: true,
+        });
+      }
+
       member
         .send(
-          `You have been kicked from ${interaction.guild.name} for ${reason}.`
+          `You have been kicked from [${interaction.guild.name}](${invite}) for ${reason}.`
         )
         .then(() => {
           member

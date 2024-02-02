@@ -9,9 +9,10 @@ const {
 } = require("discord.js");
 
 module.exports = {
+  guild: "750209335841390642",
   menu: new ContextMenuCommandBuilder()
     .setDefaultMemberPermissions(PermissionsBitField.Flags.Administrator)
-    .setName("Edit")
+    .setName("Edit Message")
     .setType(ApplicationCommandType.Message)
     .setDMPermission(false),
   /**

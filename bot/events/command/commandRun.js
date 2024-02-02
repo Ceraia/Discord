@@ -2,14 +2,25 @@ module.exports = {
   name: "interactionCreate",
   once: false,
   /**
-   * @param {import("discord.js").ModalSubmitInteraction} interaction
+   * @param {import("discord.js").ChatInputCommandInteraction} interaction
    * @param {import("discord.js").Client} client
    */
   async execute(interaction, client) {
-    if (!interaction.isCommand()) return;
+    if (!interaction.isChatInputCommand()) return;
 
     const command = client.slashcommands.get(interaction.commandName);
-    if (!command) return client.error("Command not found.");
+    if (!command) {
+      // Delete the command
+      await interaction.reply({
+        content:
+          "This command could not be found, we will be fixing that ASAP.",
+        ephemeral: true,
+      });
+
+      await interaction.command.delete();
+
+      return client.error(`Command not found, ${interaction.commandName}`);
+    }
 
     try {
       await command.executeSlash(interaction, client);
