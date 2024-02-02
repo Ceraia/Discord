@@ -2,8 +2,7 @@ let updateRoles = Date.now() + 1000 * 60;
 
 let entropyAddedQueue = "";
 let entropyRemovedQueue = "";
-
-let clientLocal;
+let timeDelay = 1000 * 60 * 5;
 
 module.exports = {
   name: "guildMemberUpdate",
@@ -14,9 +13,17 @@ module.exports = {
    * @param {import("discord.js").Client} client
    */
   async execute(oldMember, newMember, client) {
-    if (!clientLocal) clientLocal = client;
-    if (newMember.guild.id !== "1009048008857493624") return;
+    // Check if it is partial
+    if (newMember.guild.id !== client.settings.entropy.guild) return;
+
     client.debug("Guild member updated.");
+
+    if (oldMember.partial || newMember.partial) {
+      // Fetch all members in the guild
+      await newMember.guild.members.fetch();
+      return;
+    }
+
     const oldRoles = oldMember.roles.cache;
     const newRoles = newMember.roles.cache;
 
@@ -33,17 +40,17 @@ module.exports = {
       entropyRemovedQueue += `[-] ${role.name} - <@!${newMember.id}>\n`;
     });
 
-    updateRoles = Date.now() + 1000 * 30;
+    updateRoles = Date.now() + timeDelay;
 
     // Wait 30 seconds before updating the promotions
-    setTimeout(() => updatePromotions(client), 1000 * 30);
+    setTimeout(() => updatePromotions(client), timeDelay);
   },
 };
 
 async function updatePromotions(client) {
   if (Date.now() < updateRoles) return client.debug("Not time to update yet.");
   client.debug("Checking for promotions...");
-  updateRoles = Date.now() + 1000 * 60;
+  updateRoles = Date.now() + timeDelay;
   try {
     const channel = await client.channels.fetch("1191786783898337310");
 

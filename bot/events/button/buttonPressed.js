@@ -10,7 +10,15 @@ module.exports = {
         interaction.customId.toString().split("-")[0]
       );
 
-    if (!button) return;
+    if (!button) {
+      client.error(
+        `Button with custom id ${interaction.customId} does not exist.`
+      );
+      return interaction.reply({
+        content: "This button does not exist.",
+        ephemeral: true,
+      });
+    }
 
     try {
       await button.executeButton(interaction, client);

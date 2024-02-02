@@ -16,13 +16,13 @@ async function loadCommands(client) {
       .readdirSync(`./interactions/commands/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
+    // Get current slash commands
+    let commands = await client.application.commands.fetch();
+
     // Register all slash commands
     for (const file of commandFiles) {
       const command = require(`../interactions/commands/${folder}/${file}`);
       if (command.slashcommand) {
-        // Get current slash commands
-        let commands = await client.application.commands.fetch();
-
         // Find a command with the same name in the commands
         const existingCommand = commands.find(
           (cmd) => cmd.name === command.slashcommand.name
@@ -124,14 +124,14 @@ async function loadContexts(client) {
       .readdirSync(`./interactions/contexts/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
+    // Get current slash contexts
+    const contexts = await client.application.commands.fetch();
+
     // Register all slash contexts
     for (const file of commandFiles) {
       const command = require(`../interactions/contexts/${folder}/${file}`);
 
       if (command.menu) {
-        // Get current slash contexts
-        const contexts = await client.application.commands.fetch();
-
         // Find a command with the same name in the contexts
         const existingContext = contexts.find(
           (cmd) => cmd.name === command.menu.name
@@ -316,7 +316,7 @@ async function loadSelectMenus(client) {
     }
   }
 
-  client.log(`Loaded ${client.selectmenus.size} modals.`);
+  client.log(`Loaded ${client.selectmenus.size} select menus.`);
 }
 
 // Interaction loader

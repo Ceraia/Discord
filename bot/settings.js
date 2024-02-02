@@ -11,6 +11,8 @@ module.exports = {
   suggestions: `https://discord.com/api/webhooks/1202548550437699584/X1ROy3T8PenoJs2Bz3zqNQr3t8Y-ILIaOjqUVzoBB3QZ6ttF5naJVsTxFmXw-OXjmQ8q`,
   owner: "244173330431737866",
   entropy: {
+    guild: "1009048008857493624",
+    dynamicVcCategoryId: "1137496023065956473",
     roles: {
       rankings: {
         main: [
