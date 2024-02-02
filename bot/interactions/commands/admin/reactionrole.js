@@ -10,7 +10,6 @@ const {
 module.exports = {
   name: "reactionrole",
   category: "admin",
-  guild: "750209335841390642",
   slashcommand: new SlashCommandBuilder()
     .setName("reactionrole")
     .setDefaultMemberPermissions(PermissionsBitField.Flags.Administrator)
