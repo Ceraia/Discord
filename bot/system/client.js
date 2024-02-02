@@ -49,9 +49,7 @@ client.products = new Map();
 
 // Client database
 client.db = {
-  database: new Database("database"),
   guilds: new Database("guilds"),
-  users: new Database("users"),
 };
 
 // BigInt
