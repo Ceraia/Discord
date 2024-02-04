@@ -1,19 +1,24 @@
 module.exports = {
-  name: "eval",
+  name: "clear",
   aliases: [],
-  slashcommand: false,
   category: "debug",
   textcommand: true,
   async executeText(client, message, args) {
     let response = await execute(client, message);
+    message.channel.send(response);
   },
 };
 
 async function execute(client, message) {
-  // Check if the user is the bot owner
+  // Clear all the slash commands in the guild
   if (client.settings.owner == message.author.id) {
-    // Take the message content and remove the command
-    let code = message.content.replace(`${client.settings.prefix}eval `, "");
+    const commands = await client.guilds.cache
+      .get(message.guild.id)
+      .commands.fetch();
+    commands.forEach(async (command) => {
+      message.channel.send(`Deleting command ${command.name}`);
+      await command.delete();
+    });
 
     try {
       return `\`${await eval(code)}\``;

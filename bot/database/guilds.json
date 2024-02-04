@@ -1,6 +1,93 @@
 {
   "750209335841390642": {
     "id": "750209335841390642",
-    "prefix": "'"
+    "prefix": "'",
+    "dynvcs": {
+      "prefix": "﹒",
+      "overrides": []
+    },
+    "members": {},
+    "welcome": {
+      "enabled": false,
+      "channel": null,
+      "message": null,
+      "embed": null
+    },
+    "joinRoles": [
+      "1195852608636719124"
+    ],
+    "stickyRoles": {
+      "enabled": false,
+      "blacklist": [],
+      "users": {}
+    }
+  },
+  "1168676772892651672": {
+    "id": "1168676772892651672",
+    "prefix": "'",
+    "dynvcs": {
+      "prefix": "",
+      "overrides": []
+    },
+    "members": {},
+    "welcome": {
+      "enabled": false,
+      "channel": null,
+      "message": null,
+      "embed": null
+    },
+    "joinRoles": [],
+    "stickyRoles": {
+      "enabled": false,
+      "blacklist": [],
+      "users": {}
+    }
+  },
+  "324195889977622530": {
+    "id": "324195889977622530",
+    "prefix": "'",
+    "dynvcs": {
+      "prefix": "",
+      "overrides": [
+        "1160189047860371468",
+        "1160189046174273587",
+        "1160189049617788948",
+        "1160189051954024489"
+      ]
+    },
+    "members": {},
+    "welcome": {
+      "enabled": false,
+      "channel": null,
+      "message": null,
+      "embed": null
+    },
+    "joinRoles": [],
+    "stickyRoles": {
+      "enabled": false,
+      "blacklist": [],
+      "users": {}
+    }
+  },
+  "1093908536385355857": {
+    "id": "1093908536385355857",
+    "prefix": "'",
+    "dynvcs": {
+      "prefix": "",
+      "overrides": []
+    },
+    "members": {},
+    "welcome": {
+      "enabled": false,
+      "channel": null,
+      "message": null,
+      "embed": null
+    },
+    "joinRoles": [],
+    "stickyRoles": {
+      "enabled": false,
+      "blacklist": [],
+      "users": {}
+    }
   }
 }

@@ -73,6 +73,65 @@ module.exports = {
                 .setRequired(true)
             )
         )
+    )
+    .addSubcommandGroup((group) =>
+      group
+        .setName("autorole")
+        .setDescription("Set up autoroles.")
+        .addSubcommand((subcommand) =>
+          subcommand
+            .setName("add")
+            .setDescription("Add an autorole.")
+            .addRoleOption((option) =>
+              option
+                .setName("role")
+                .setDescription("The role you want to add.")
+                .setRequired(true)
+            )
+        )
+        .addSubcommand((subcommand) =>
+          subcommand
+            .setName("remove")
+            .setDescription("Remove an autorole.")
+            .addRoleOption((option) =>
+              option
+                .setName("role")
+                .setDescription("The role you want to remove.")
+                .setRequired(true)
+            )
+        )
+        .addSubcommand((subcommand) =>
+          subcommand.setName("list").setDescription("List all autoroles.")
+        )
+    )
+    .addSubcommandGroup((group) =>
+      group
+        .setName("stickyrole")
+        .setDescription("Set up sticky roles.")
+        .addSubcommand((subcommand) =>
+          subcommand
+            .setName("toggle")
+            .setDescription("Toggle sticky roles.")
+            .addBooleanOption((option) =>
+              option
+                .setName("enable")
+                .setDescription("Enable or disable sticky roles.")
+                .setRequired(true)
+            )
+        )
+        .addSubcommand((subcommand) =>
+          subcommand
+            .setName("blacklist")
+            .setDescription("Add a role to the sticky role blacklist.")
+            .addRoleOption((option) =>
+              option
+                .setName("role")
+                .setDescription(
+                  "The role you want to add. (Leave empty to list the blacklist)"
+                )
+                .setRequired(false)
+            )
+        )
     ),
   /**
    * @param {import("discord.js").ChatInputCommandInteraction} interaction
@@ -191,6 +250,63 @@ module.exports = {
             }
           });
         });
+      }
+    } else if (interaction.options.getSubcommandGroup() === "autorole") {
+      let role = interaction.options.getRole("role");
+      if (interaction.options.getSubcommand() === "add") {
+        client.db.guilds.get(interaction.guild.id).joinRoles.push(role.id);
+        client.db.guilds.saveData();
+        interaction.editReply({
+          content: `Added an autorole for the role ${role.name}.`,
+          ephemeral: true,
+        });
+      } else if (interaction.options.getSubcommand() === "remove") {
+        // Remove every instance of the role from the array
+        client.db.guilds.get(interaction.guild.id).joinRoles = client.db.guilds
+          .get(interaction.guild.id)
+          .joinRoles.filter((id) => id !== role.id);
+        client.db.guilds.saveData();
+        interaction.editReply({
+          content: `Removed the autorole for the role ${role.name}.`,
+          ephemeral: true,
+        });
+      } else if (interaction.options.getSubcommand() === "list") {
+        let roles = client.db.guilds.get(interaction.guild.id).joinRoles;
+        interaction.editReply({
+          content: `Autoroles: ${roles.map((id) => `<@&${id}>`).join(", ")}`,
+          ephemeral: true,
+        });
+      }
+    } else if (interaction.options.getSubcommandGroup() === "stickyrole") {
+      if (interaction.options.getSubcommand() === "toggle") {
+        let enable = interaction.options.getBoolean("enable");
+        client.db.guilds.get(interaction.guild.id).stickyRoles.enabled = enable;
+        client.db.guilds.saveData();
+        interaction.editReply({
+          content: `Sticky roles have been ${enable ? "enabled" : "disabled"}!`,
+          ephemeral: true,
+        });
+      } else if (interaction.options.getSubcommand() === "blacklist") {
+        let role = interaction.options.getRole("role");
+        if (role) {
+          client.db.guilds
+            .get(interaction.guild.id)
+            .stickyRoles.blacklist.push(role.id);
+          client.db.guilds.saveData();
+          interaction.editReply({
+            content: `Added ${role} to the sticky role blacklist.`,
+            ephemeral: true,
+          });
+        } else {
+          let roles = client.db.guilds.get(interaction.guild.id).stickyRoles
+            .blacklist;
+          interaction.editReply({
+            content: `Blacklisted roles: ${roles
+              .map((id) => `<@&${id}>`)
+              .join(", ")}`,
+            ephemeral: true,
+          });
+        }
       }
     }
   },

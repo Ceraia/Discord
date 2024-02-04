@@ -16,15 +16,15 @@ async function loadCommands(client) {
       .readdirSync(`./interactions/commands/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
-    // Get current slash commands
-    let commands = await client.application.commands.fetch();
-
     // Register all slash commands
     for (const file of commandFiles) {
       const command = require(`../interactions/commands/${folder}/${file}`);
       if (command.slashcommand) {
+        // Get current slash commands
+        let commands = await client.application.commands.fetch();
+
         // Find a command with the same name in the commands
-        const existingCommand = commands.find(
+        const existingCommand = await commands.find(
           (cmd) => cmd.name === command.slashcommand.name
         );
 

@@ -36,6 +36,8 @@ client.buttons = new Map();
 client.modals = new Map();
 client.selectmenus = new Map();
 
+// Client features
+
 // Client logging
 client.log = log;
 client.error = error;

@@ -24,10 +24,26 @@ module.exports = {
       await button.executeButton(interaction, client);
     } catch (error) {
       client.error("`Button issue` : " + error.stack);
-      interaction.reply({
-        content: "There was an error while executing this button.",
-        ephemeral: true,
-      });
+      interaction
+        .reply({
+          content: "There was an error while executing this button.",
+          ephemeral: true,
+        })
+        .catch(() => {
+          interaction
+            .editReply({
+              content: "There was an error while executing this button.",
+              ephemeral: true,
+            })
+            .catch(() => {
+              interaction
+                .followUp({
+                  content: "There was an error while executing this button.",
+                  ephemeral: true,
+                })
+                .catch(() => {});
+            });
+        });
     }
   },
 };

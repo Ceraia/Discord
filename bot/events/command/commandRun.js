@@ -36,9 +36,11 @@ module.exports = {
               content: "There was an error while executing this command!",
             })
             .catch(async () => {
-              await interaction.followUp({
-                content: "There was an error while executing this command!",
-              });
+              await interaction
+                .followUp({
+                  content: "There was an error while executing this command!",
+                })
+                .catch(() => {});
             });
         });
     }
