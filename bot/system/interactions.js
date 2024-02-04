@@ -210,6 +210,14 @@ async function deleteInteractions(client) {
           `Deleting ${command.name} interaction in guild ${guild.name}.`
         );
         command.delete();
+      } else if (client.slashcommands.has(command.name)) {
+        const botCommand = client.slashcommands.get(command.name);
+        if (botCommand.guild !== guild.id) {
+          client.log(
+            `Deleting ${command.name} interaction in guild ${guild.name}.`
+          );
+          command.delete();
+        }
       }
     });
   });

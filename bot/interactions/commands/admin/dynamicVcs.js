@@ -89,6 +89,7 @@ module.exports = {
                 .setName("vc")
                 .setDescription("The VC to let users join.")
                 .setRequired(false)
+                .addChannelTypes(ChannelType.GuildVoice)
             )
             .addChannelOption((option) =>
               option

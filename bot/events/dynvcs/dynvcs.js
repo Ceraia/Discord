@@ -62,13 +62,17 @@ module.exports = {
             .then((channel) => {
               // Add the permission overrides for the user
               channel.lockPermissions().then((channel) => {
-                channel.permissionOverwrites.create(newState.member.id, {
-                  AddReactions: true,
-                  Connect: true,
-                });
-                channel.permissionOverwrites.create(oldState.client.user.id, {
-                  AddReactions: true,
-                });
+                channel.permissionOverwrites
+                  .create(newState.member.id, {
+                    AddReactions: true,
+                    Connect: true,
+                  })
+                  .catch(() => { });
+                channel.permissionOverwrites
+                  .create(oldState.client.user.id, {
+                    AddReactions: true,
+                  })
+                  .catch(() => { });
 
                 // Add override roles
                 newState.client.db.guilds
@@ -79,11 +83,36 @@ module.exports = {
                         Connect: true,
                         ViewChannel: true,
                       })
-                      .catch();
+                      .catch(() => { });
                   });
 
                 // Move the user to the channel
-                newState.member.voice.setChannel(channel).catch();
+                newState.member.voice.setChannel(channel).catch(() => { });
+
+                // Wait 60 seconds and attempt to do the same thing as above
+                setTimeout(() => {
+                  channel.permissionOverwrites.create(newState.member.id, {
+                    AddReactions: true,
+                    Connect: true,
+                  }).catch(() => { });
+                  channel.permissionOverwrites
+                    .create(oldState.client.user.id, {
+                      AddReactions: true,
+                    })
+                    .catch(() => { });
+
+                  // Add override roles
+                  newState.client.db.guilds
+                    .get(newState.guild.id)
+                    .dynvcs.overrides.forEach((role) => {
+                      channel.permissionOverwrites
+                        .create(role, {
+                          Connect: true,
+                          ViewChannel: true,
+                        })
+                        .catch(() => { });
+                    });
+                }, 60000);
               });
             });
         }
@@ -101,7 +130,7 @@ module.exports = {
           channel.members.size === 0
         ) {
           // Delete the channel
-          channel.delete().catch();
+          channel.delete().catch(() => { });
         }
       });
     }

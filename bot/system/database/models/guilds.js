@@ -21,6 +21,23 @@ class GuildModel {
       blacklist: [],
       users: {},
     };
+    this.logs = {
+      channel: null,
+    };
+    this.giveaways = [
+      // {
+      //   message: null,
+      //   channel: null,
+      //   ends: null,
+      //   owners: null,
+      //   winners: 1,
+      //   prize: null,
+      //   prizeDesc: null,
+      //   participants: [
+      //     null, // User ID
+      //   ],
+      // },
+    ];
   }
 }
 
