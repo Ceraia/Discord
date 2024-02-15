@@ -19,53 +19,54 @@ module.exports = {
     embeds: [
       new EmbedBuilder()
         .setTitle("Dynamic VCs")
-        .setColor(0x2b2d31)
+        //.setColor(0x2b2d31)
+        .setColor(0x9a9a9a)
         .setDescription(
           "Create a new VC to use this.\n\n**Buttons**\n" +
-            "🔒 Lock/Unlock the VC\n" +
-            "👁️ Hide/Show the VC\n" +
-            "➕ Increase the VC limit\n" +
-            "➖ Decrease the VC limit\n" +
-            "🔨 Ban from the VC\n" +
-            "✉️ Unban / Invite to the VC\n" +
-            "ℹ️ Rename the VC\n" +
-            "🎙️ Claim the VC\n"
+            "<:Lock:1206326940324331531> Lock/Unlock the VC\n" +
+            "<:Eye:1206326935303749722> Hide/Show the VC\n" +
+            "<:Plus:1206326946586300476> Increase the VC limit\n" +
+            "<:Minus:1206326944979877990> Decrease the VC limit\n" +
+            "<:Hammer:1206326936612114472> Ban from the VC\n" +
+            "<:Mail:1206667313609187330> Unban / Invite to the VC\n" +
+            "<:I_:1206326937748905985> Rename the VC\n" +
+            "<:Mic:1206326943201362060> Claim the VC\n"
         ),
     ],
     components: [
       new ActionRowBuilder().addComponents(
         new ButtonBuilder()
-          .setEmoji("🔒")
+          .setEmoji("<:Lock:1206326940324331531>")
           .setStyle(ButtonStyle.Secondary)
           .setCustomId("dynvc-lock"),
         new ButtonBuilder()
-          .setEmoji("👁️")
+          .setEmoji("<:Eye:1206326935303749722>")
           .setStyle(ButtonStyle.Secondary)
           .setCustomId("dynvc-hide"),
         new ButtonBuilder()
-          .setEmoji("➕")
+          .setEmoji("<:Plus:1206326946586300476>")
           .setStyle(ButtonStyle.Secondary)
           .setCustomId("dynvc-increase"),
         new ButtonBuilder()
-          .setEmoji("➖")
+          .setEmoji("<:Minus:1206326944979877990>")
           .setStyle(ButtonStyle.Secondary)
           .setCustomId("dynvc-decrease")
       ),
       new ActionRowBuilder().addComponents(
         new ButtonBuilder()
-          .setEmoji("🔨")
+          .setEmoji("<:Hammer:1206326936612114472>")
           .setStyle(ButtonStyle.Secondary)
           .setCustomId("dynvc-ban"),
         new ButtonBuilder()
-          .setEmoji("✉️")
+          .setEmoji("<:Mail:1206667313609187330>")
           .setStyle(ButtonStyle.Secondary)
           .setCustomId("dynvc-invite"),
         new ButtonBuilder()
-          .setEmoji("ℹ️")
+          .setEmoji("<:I_:1206326937748905985>")
           .setStyle(ButtonStyle.Secondary)
           .setCustomId("dynvc-rename"),
         new ButtonBuilder()
-          .setEmoji("🎙️")
+          .setEmoji("<:Mic:1206326943201362060>")
           .setStyle(ButtonStyle.Secondary)
           .setCustomId("dynvc-claim")
       ),

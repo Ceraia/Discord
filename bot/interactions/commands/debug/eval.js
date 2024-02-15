@@ -5,20 +5,22 @@ module.exports = {
   category: "debug",
   textcommand: true,
   async executeText(client, message, args) {
-    let response = await execute(client, message);
+    execute(client, message);
   },
 };
 
 async function execute(client, message) {
+  client.log("Executing eval command.");
   // Check if the user is the bot owner
   if (client.settings.owner == message.author.id) {
     // Take the message content and remove the command
     let code = message.content.replace(`${client.settings.prefix}eval `, "");
 
+    client.log(`Evaluating code: ${code}`);
     try {
-      return `\`${await eval(code)}\``;
+      return await eval(code)
     } catch (error) {
-      return `\`${error.stack}\``;
+      return client.error(error.stack);
     }
   } else {
     message.client.warning(
