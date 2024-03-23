@@ -1,0 +1,33 @@
+{
+    "Company A": {
+        "price": 49232.84,
+        "previous_price": 50217.5,
+        "start_of_day_price": 49232.84,
+        "timestamp": 1693765967
+    },
+    "Company B": {
+        "price": 97133.6,
+        "previous_price": 96162.26,
+        "start_of_day_price": 97133.6,
+        "timestamp": 1693765967
+    },
+    "Company C": {
+        "price": 154872.96,
+        "previous_price": 162616.61,
+        "start_of_day_price": 154872.96,
+        "timestamp": 1693765967
+    },
+    "Company D": {
+        "price": 173960.6,
+        "previous_price": 167002.18,
+        "start_of_day_price": 173960.6,
+        "timestamp": 1693765967
+    },
+    "Delta": {
+        "price": 112289.57,
+        "previous_price": 117904.05,
+        "start_of_day_price": 112289.57,
+        "timestamp": 1693765967
+    },
+    "_last_update_timestamp": 1693765967
+}

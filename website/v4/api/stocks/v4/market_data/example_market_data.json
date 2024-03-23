@@ -1,0 +1,57 @@
+{
+  "system_data": {
+    "last_update_timestamp": 1693863043,
+    "webhooks": [
+      {
+        "url": "https://discord.com/api/webhooks/1138219326718103552/mVqacLbTYJCkoc5gpX3gEpVQXQOtsdk7Y7NrgANNgnLJVfj0190ueSggqDpOAITMntHK"
+      }
+    ],
+    "audit_log": [
+      {
+        "time": 1693863043,
+        "action": "Create Corporation",
+        "actor": "Davey"
+      }
+    ]
+  },
+  "market_data": [
+    {
+      "id": "HKID",
+      "name": "Hawk Industries",
+      "appearance": {
+        "color": "#82aadb"
+      },
+      "market": {
+        "strength": {
+          "profit": 2,
+          "loss": -2
+        },
+        "value": [
+          {
+            "value": 1000000,
+            "timestamp": 1693863043
+          }
+        ]
+      }
+    },
+    {
+      "id": "ENT3",
+      "name": "Entropy 3rd Generation Industries",
+      "appearance": {
+        "color": "#f5a623"
+      },
+      "market": {
+        "strength": {
+          "profit": 20,
+          "loss": -20
+        },
+        "value": [
+          {
+            "value": 100000,
+            "timestamp": 1693863043
+          }
+        ]
+      }
+    }
+  ]
+}

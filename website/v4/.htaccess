@@ -1,0 +1,5 @@
+RewriteEngine On
+ErrorDocument 404 https://xdbl.dev/?i=404
+ErrorDocument 403 https://xdbl.dev/?i=404
+
+Options +Multiviews

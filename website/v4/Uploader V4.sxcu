@@ -1,0 +1,16 @@
+﻿{
+  "Version": "15.0.0",
+  "Name": "Uploader V4",
+  "DestinationType": "URLShortener",
+  "RequestMethod": "POST",
+  "RequestURL": "https://xdbl.dev/new.php",
+  "Body": "MultipartFormData",
+  "Arguments": {
+    "token": "0lUBujrM66g2VDgQhdG0h8rcBA6eMjRw",
+    "url": "{input}",
+    "name": "{prompt:Custom Name|random}"
+  },
+  "FileFormName": "file",
+  "URL": "https://xdbl.dev/i?i={response}",
+  "DeletionURL": "https://xdbl.dev/delete?i={response}"
+}

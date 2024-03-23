@@ -1,0 +1,12 @@
+[Unit]
+Description=Reverse Proxy Client X
+After=network.target
+Wants=network-online.target
+
+[Service]
+Restart=always
+Type=exec
+ExecStart=/frp/frpc -c /frp/frpcx.ini
+
+[Install]
+WantedBy=multi-user.target
