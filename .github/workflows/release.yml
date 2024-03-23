@@ -13,17 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Get commit hash
-        id: get_commit_hash
-        run: echo "::set-output name=hash::$(git rev-parse --short HEAD)"
-
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.get_commit_hash.outputs.hash }}
-          release_name: Release ${{ steps.get_commit_hash.outputs.hash }}
+          tag_name: $(git rev-parse --short HEAD)
+          release_name: Release $(git rev-parse --short HEAD)
           draft: false
           prerelease: false
