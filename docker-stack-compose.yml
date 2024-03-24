@@ -2,7 +2,7 @@ version: "3"
 
 services:
   bot:
-    image: ghcr.io/axodouble/xdbl.dev:main
+    image: ghcr.io/axodouble/xdbl-bot:main
     restart: unless-stopped
     command: node index.js
     environment:
