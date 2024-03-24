@@ -20,6 +20,7 @@ const client = new Client({
 const settings = require("../settings.js");
 const { log, error, debug, warning } = require("./logger.js");
 const { initializeClient } = require("./initializers.js");
+const database = require("./database/index.js");
 
 // Import settings into the client
 client.settings = settings;
@@ -41,7 +42,7 @@ client.warning = warning;
 client.logqueue = [];
 
 // MongoDB
-client.db = require("./database");
+client.db;
 
 // BigInt JSON support
 BigInt.prototype.toJSON = function () {
@@ -51,8 +52,12 @@ BigInt.prototype.toJSON = function () {
 
 // Client initialization
 client.once("ready", async () => {
+  // Initialize the database
+  client.db = new database.database(client);
+
   // Call the initialization function
   await initializeClient(client);
+  
 });
 
 // Make sure no matter what error occurs, the bot doesn't crash
