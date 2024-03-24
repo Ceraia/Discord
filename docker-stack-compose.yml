@@ -14,7 +14,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: changethisibegofu
-  mongo-express:
+  mongo-express: # Optional, only for web interface and exploring the database
     image: mongo-express
     restart: unless-stopped
     ports:
