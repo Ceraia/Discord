@@ -1,7 +1,6 @@
 module.exports = {
   guildId: "1009048008857493624",
   prefix: "'",
-  webhook: `https://discord.com/api/webhooks/985654730514636821/e_f0PMhrbI_oYWA_CnpDs8crhh2XBqZtirrgMPDscYgzW_857pcDcv3V-BovkvPLLXLo`,
   owner: "244173330431737866",
   entropy: {
     guild: "1009048008857493624",
