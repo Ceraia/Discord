@@ -43,7 +43,7 @@ client.logqueue = [];
 // MongoDB
 client.db = require("./database");
 
-// BigInt
+// BigInt JSON support
 BigInt.prototype.toJSON = function () {
   const int = Number.parseInt(this.toString());
   return int ?? this.toString();

@@ -4,10 +4,10 @@ require("mongoose")
   .connect(process.env.MONGOURI, {
   })
   .then(() => {
-    console.log("Connected to MongoDB");
+    require("../logger").log("Connected to MongoDB");
   })
   .catch((err) => {
-    console.error("Failed to connect to MongoDB", err);
+    require("../logger").error(err.stack);
   });
 
 module.exports = {
