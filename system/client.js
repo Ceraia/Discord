@@ -53,11 +53,10 @@ BigInt.prototype.toJSON = function () {
 // Client initialization
 client.once("ready", async () => {
   // Initialize the database
-  client.db = new database.database(client);
+  client.db = new database(client);
 
   // Call the initialization function
   await initializeClient(client);
-  
 });
 
 // Make sure no matter what error occurs, the bot doesn't crash
