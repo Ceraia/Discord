@@ -40,6 +40,9 @@ client.debug = debug;
 client.warning = warning;
 client.logqueue = [];
 
+// MongoDB
+client.db = require("./database");
+
 // BigInt
 BigInt.prototype.toJSON = function () {
   const int = Number.parseInt(this.toString());

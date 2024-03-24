@@ -5,9 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      environment:
-        - TOKEN=DISCORDTOKEN
     environment:
-      - 'TOKEN=DISCORDTOKEN'
-    command: npm start
+      TOKEN: DISCORDTOKEN
+      MONGOURI: MONGOURI
+    command: node index.js
     restart: unless-stopped
