@@ -5,8 +5,8 @@ module.exports = {
   aliases: ["h"],
   slashcommand: new SlashCommandBuilder()
     .setName("help")
-    .setDMPermission(false)
-    .setDescription("Get help with the commands"),
+    .setDMPermission(true)
+    .setDescription("Get help with the commands."),
   category: "system",
   textcommand: true,
   /**
@@ -52,11 +52,11 @@ async function execute(client) {
     const commandList = commands
       .map(
         (cmd) =>
-          `${cmd.slashcommand.name} ${
+          `/${cmd.slashcommand.name} ${
             cmd.textcommand
               ? "(" +
                 cmd.name +
-                `${cmd.aliases ? " | " + cmd.aliases.join(" | ") : ""})`
+                `${cmd.aliases ? " | " + cmd.aliases.join(` | `) : ""})`
               : ""
           }`
       )

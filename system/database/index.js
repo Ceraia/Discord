@@ -20,7 +20,9 @@ class database {
         require("../logger").error(err.stack);
       });
     this.client = client;
-    this.guilds = require("./models/guildSchema.js");
+
+    this.guilds = require("./models/guildSchema.js").guilds;
+    this.getGuild = require("./models/guildSchema.js").getGuild;
   }
 }
 

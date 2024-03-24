@@ -6,8 +6,15 @@ module.exports = {
    * @param {import("discord.js").Client} client
    */
   async execute(member, client) {
-    // client.db.guilds.get(member.guild.id).joinRoles.forEach((role) => {
-    //   member.roles.add(role, "Autorole on join.").catch();
-    // });
+    client.db.getGuild(member.guild.id).then(async (guild) => {
+      if (!guild.autoroles.length) return;
+      if (!member.guild) if (guild.autoroles.length == 0) return;
+      guild.autoroles.forEach((role) => {
+        const guildRole = member.guild.roles.cache.get(role);
+        if (!guildRole) return;
+
+        member.roles.add(guildRole);
+      });
+    });
   },
 };

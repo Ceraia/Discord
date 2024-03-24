@@ -1,6 +1,5 @@
 module.exports = {
   guildId: "1009048008857493624",
-  prefix: "'",
   owner: "244173330431737866",
   entropy: {
     guild: "1009048008857493624",

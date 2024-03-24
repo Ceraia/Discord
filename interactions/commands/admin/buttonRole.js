@@ -8,21 +8,21 @@ const {
 } = require("discord.js");
 
 module.exports = {
-  name: "reactionrole",
+  name: "buttonrole",
   category: "admin",
   slashcommand: new SlashCommandBuilder()
-    .setName("reactionrole")
+    .setName("buttonrole")
     .setDefaultMemberPermissions(PermissionsBitField.Flags.Administrator)
     .setDMPermission(false)
-    .setDescription("Reaction role commands.")
+    .setDescription("Button role commands.")
     .addSubcommandGroup((group) =>
       group
         .setName("create")
-        .setDescription("Create a reaction role.")
+        .setDescription("Create a button role.")
         .addSubcommand((sub) =>
           sub
             .setName("message")
-            .setDescription("Create a reaction role message.")
+            .setDescription("Create a button role message.")
         )
     ),
   /**
@@ -34,7 +34,7 @@ module.exports = {
       if (interaction.options.getSubcommand() === "message") {
         interaction.showModal(
           new ModalBuilder()
-            .setTitle("Message for Reaction Roles")
+            .setTitle("Message for Button Roles")
             .setCustomId("reactionrole-message")
             .setComponents(
               new ActionRowBuilder().addComponents(
@@ -42,7 +42,7 @@ module.exports = {
                   .setRequired(true)
                   .setCustomId("message")
                   .setLabel("Message")
-                  .setPlaceholder("Message for reaction role.")
+                  .setPlaceholder("Message for button role.")
                   .setValue("Get your roles here!")
                   .setStyle(TextInputStyle.Paragraph)
                   .setMaxLength(2000)

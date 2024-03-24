@@ -1,3 +1,5 @@
+const { getGuild } = require("../../../system/database/models/guildSchema");
+
 module.exports = {
   name: "eval",
   aliases: [],
@@ -13,12 +15,15 @@ async function execute(client, message) {
   client.log("Executing eval command.");
   // Check if the user is the bot owner
   if (client.settings.owner == message.author.id) {
+    // Format the message
+    let guild = await getGuild(message.guild.id);
+
     // Take the message content and remove the command
-    let code = message.content.replace(`${client.settings.prefix}eval `, "");
+    let code = message.content.replace(`${guild.prefix}eval `, "");
 
     client.log(`Evaluating code: ${code}`);
     try {
-      return await eval(code)
+      return message.reply(await eval(code))
     } catch (error) {
       return client.error(error.stack);
     }
