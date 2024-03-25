@@ -23,6 +23,8 @@ class database {
 
     this.guilds = require("./models/guildSchema.js").guilds;
     this.getGuild = require("./models/guildSchema.js").getGuild;
+    this.users = require("./models/userSchema.js").users;
+    this.getUser = require("./models/userSchema.js").getUser;
   }
 }
 

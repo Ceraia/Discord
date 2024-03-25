@@ -16,16 +16,12 @@ const client = new Client({
   ],
 });
 
-// Get settings js file
-const settings = require("../settings.js");
 const { log, error, debug, warning } = require("./logger.js");
 const { initializeClient } = require("./initializers.js");
 const database = require("./database/index.js");
 
-// Import settings into the client
-client.settings = settings;
-
-// Client maps
+// Client variables
+client.settings = require("../settings.js");
 client.textcommands = new Map();
 client.slashcommands = new Map();
 client.contexts = new Map();
