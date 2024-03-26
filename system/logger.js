@@ -1,7 +1,3 @@
-const axios = require("axios");
-const settings = require("../settings.js");
-const { EmbedBuilder } = require("@discordjs/builders");
-
 /**
  * @param {string} message
  */
