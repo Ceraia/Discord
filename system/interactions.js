@@ -1,3 +1,5 @@
+// @ts-check
+
 const path = require("path");
 const fs = require("fs");
 
@@ -100,7 +102,8 @@ async function loadCommands(client) {
 function commandsSame(command1, command2) {
   if (command1.name !== command2.name) return false;
   if (command1.description !== command2.description) return false;
-  if (command1.defaultPermission !== command2.defaultPermission) return false;
+  if (command1.defaultMemberPermissions !== command2.defaultMemberPermissions)
+    return false;
   if (command1.options.length !== command2.options.length) return false;
 
   return true;
@@ -125,7 +128,7 @@ async function loadContexts(client) {
       .filter((file) => file.endsWith(".js"));
 
     // Get current slash contexts
-    const contexts = await client.application.commands.fetch();
+    const contexts = await client.application?.commands.fetch();
 
     // Register all slash contexts
     for (const file of commandFiles) {
@@ -133,7 +136,7 @@ async function loadContexts(client) {
 
       if (command.menu) {
         // Find a command with the same name in the contexts
-        const existingContext = contexts.find(
+        const existingContext = contexts?.find(
           (cmd) => cmd.name === command.menu.name
         );
 
@@ -167,11 +170,11 @@ async function loadContexts(client) {
             }
           } else {
             client.log(`Created ${command.menu.name} context.`);
-            client.application.commands.create(command.menu);
+            client.application?.commands.create(command.menu);
           }
         }
 
-        client.contexts.set(command.menu.name, command);
+        client.contexts.set(command.menu.name, command); // @ts-ignore
       }
     }
   }

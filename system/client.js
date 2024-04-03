@@ -1,3 +1,5 @@
+// @ts-check
+
 const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const { log, error, debug, warning } = require("./logger.js");
 const { initializeClient } = require("./initializers.js");
@@ -31,12 +33,6 @@ class BotClient extends Client {
     // Initialize database
     this.db = null; // Database will be initialized in the `initializeDatabase` method
 
-    // BigInt JSON support
-    BigInt.prototype.toJSON = function () {
-      const int = Number.parseInt(this.toString());
-      return int ?? this.toString();
-    };
-
     // Client initialization
     this.once("ready", async () => {
       // Initialize the database
@@ -48,7 +44,7 @@ class BotClient extends Client {
 
     // Make sure no matter what error occurs, the bot doesn't crash
     process.on("uncaughtException", (error) => {
-      this.error(error.stack);
+      this.error(error.stack?.toString() ?? error.toString());
     });
   }
 }
