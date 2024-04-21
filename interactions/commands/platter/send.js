@@ -31,7 +31,7 @@ module.exports = {
   guild: "750209335841390642",
   /**
    * @param {import("discord.js").ChatInputCommandInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeSlash(interaction, client) {
     if (interaction.options.getSubcommand() === "text") {

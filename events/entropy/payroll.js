@@ -10,7 +10,7 @@ module.exports = {
   /**
    * @param {import("discord.js").GuildMember} oldMember
    * @param {import("discord.js").GuildMember} newMember
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async execute(oldMember, newMember, client) {
     // Check if it is partial

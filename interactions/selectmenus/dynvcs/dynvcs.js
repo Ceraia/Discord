@@ -9,7 +9,7 @@ module.exports = {
   name: "dynvc",
   /**
    * @param {import("discord.js").UserSelectMenuInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeMenu(interaction, client) {
     const subcommand = interaction.customId;

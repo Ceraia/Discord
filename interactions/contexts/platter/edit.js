@@ -17,7 +17,7 @@ module.exports = {
     .setDMPermission(false),
   /**
    * @param {import("discord.js").MessageContextMenuCommandInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeMenu(interaction, client) {
     interaction.showModal(

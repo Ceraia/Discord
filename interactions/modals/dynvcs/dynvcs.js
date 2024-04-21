@@ -2,7 +2,7 @@ module.exports = {
   name: "dynvc",
   /**
    * @param {import("discord.js").ModalSubmitInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeModal(interaction, client) {
     const action = interaction.customId.split("-")[1];

@@ -2,7 +2,7 @@ module.exports = {
   name: "edit",
   /**
    * @param {import("discord.js").ModalSubmitInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeModal(interaction, client) {
     await interaction.reply({

@@ -4,7 +4,7 @@ module.exports = {
   /**
    * @param {import("discord.js").GuildMember} oldMember
    * @param {import("discord.js").GuildMember} newMember
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async execute(message, client) {
     client.guilds.cache.get(client.settings.entropy.guild)?.members.fetch();

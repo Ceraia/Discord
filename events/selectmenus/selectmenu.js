@@ -3,7 +3,7 @@ module.exports = {
   once: false,
   /**
    * @param {import("discord.js").AnySelectMenuInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async execute(interaction, client) {
     if (!interaction.isAnySelectMenu()) return;

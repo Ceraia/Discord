@@ -111,7 +111,7 @@ function commandsSame(command1, command2) {
 
 // Context loader
 /**
- * @param {import("discord.js").Client} client
+ * @param {import("@client").BotClient} client
  */
 async function loadContexts(client) {
   // Find all folders in the contexts directory

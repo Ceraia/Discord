@@ -3,12 +3,19 @@ module.exports = {
   aliases: [],
   category: "debug",
   textcommand: true,
+  /**
+   * @param {import("discord.js").Message} message
+   * @param {import("@client").BotClient} client
+   */
   async executeText(client, message, args) {
     let response = await execute(client, message);
     message.channel.send(response);
   },
 };
-
+/**
+ * @param {import("discord.js").Message} message
+ * @param {import("@client").BotClient} client
+ */
 async function execute(client, message) {
   // Clear all the slash commands in the guild
   if (client.settings.owner == message.author.id) {

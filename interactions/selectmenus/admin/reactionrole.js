@@ -4,7 +4,7 @@ module.exports = {
   name: "reactionrole",
   /**
    * @param {import("discord.js").AnySelectMenuInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeMenu(interaction, client) {
     if (interaction.customId.split("-")[1] == "roles") {

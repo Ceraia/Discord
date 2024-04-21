@@ -1,4 +1,4 @@
-const { EmbedBuilder, SlashCommandBuilder } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   name: "ticket",
@@ -17,7 +17,7 @@ module.exports = {
   category: "tickets",
   /**
    * @param {import("discord.js").ChatInputCommandInteraction} interaction
-   * @param {import("../../../system/client").BotClient} client
+   * @param {import("@client").BotClient} client
    */
   async executeSlash(interaction, client) {
     await interaction.deferReply({ ephemeral: true });

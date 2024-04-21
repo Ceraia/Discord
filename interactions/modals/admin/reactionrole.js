@@ -9,7 +9,7 @@ module.exports = {
   name: "reactionrole",
   /**
    * @param {import("discord.js").ModalSubmitInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeModal(interaction, client) {
     if (interaction.customId.split("-")[1] == "message") {

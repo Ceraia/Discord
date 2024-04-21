@@ -14,7 +14,7 @@ module.exports = {
   name: "dynvc",
   /**
    * @param {import("discord.js").ButtonInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeButton(interaction, client) {
     const subcommand = interaction.customId;

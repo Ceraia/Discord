@@ -6,11 +6,18 @@ module.exports = {
   slashcommand: false,
   category: "debug",
   textcommand: true,
+  /**
+   * @param {import("discord.js").Message} message
+   * @param {import("@client").BotClient} client
+   */
   async executeText(client, message, args) {
     execute(client, message);
   },
 };
-
+  /**
+   * @param {import("discord.js").Message} message
+   * @param {import("@client").BotClient} client
+   */
 async function execute(client, message) {
   client.log("Executing eval command.");
   // Check if the user is the bot owner

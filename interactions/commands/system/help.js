@@ -11,7 +11,7 @@ module.exports = {
   textcommand: true,
   /**
    * @param {import("discord.js").ChatInputCommandInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeText(client, message, args) {
     let response = await execute(client);
@@ -19,7 +19,7 @@ module.exports = {
   },
   /**
    * @param {import("discord.js").ChatInputCommandInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeSlash(interaction, client) {
     await interaction.deferReply({ ephemeral: true });

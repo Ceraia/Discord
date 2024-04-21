@@ -3,7 +3,7 @@ module.exports = {
   name: "giverole",
   /**
    * @param {import("discord.js").ButtonInteraction} interaction
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async executeButton(interaction, client) {
     interaction.member.roles

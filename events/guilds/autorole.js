@@ -3,7 +3,7 @@ module.exports = {
   once: false,
   /**
    * @param {import("discord.js").GuildMember} member
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   async execute(member, client) {
     client.db.getGuild(member.guild.id).then(async (guild) => {

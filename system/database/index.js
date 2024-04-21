@@ -2,7 +2,7 @@ require("dotenv").config();
 
 class database {
   /**
-   * @param {import("discord.js").Client} client
+   * @param {import("@client").BotClient} client
    */
   constructor(client) {
     require("mongoose")
