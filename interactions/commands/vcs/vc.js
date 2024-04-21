@@ -1,3 +1,4 @@
+// @ts-check
 const { SlashCommandBuilder, PermissionsBitField } = require("discord.js");
 const { panelmessage } = require("../admin/dynamicVcs");
 
@@ -18,6 +19,7 @@ module.exports = {
    */
   async executeSlash(interaction, client) {
     await interaction.deferReply({ ephemeral: true });
+    // @ts-ignore
     interaction.editReply(panelmessage);
   },
 };

@@ -1,3 +1,4 @@
+// @ts-check
 const {
   SlashCommandBuilder,
   PermissionsBitField,
@@ -62,6 +63,7 @@ module.exports = {
 
     // If there is no invite, create one
     if (!invite) {
+      // @ts-ignore
       invite = await interaction.channel.createInvite({
         maxAge: 0,
         maxUses: 0,
@@ -69,42 +71,47 @@ module.exports = {
     }
 
     if (interaction.options.getSubcommand() === "kick") {
-      let member = interaction.options.getMember("user");
+      let target = interaction.guild.members.cache.get(
+        // @ts-ignore
+        interaction.options.getMember("user").id
+      );
       let reason = interaction.options.getString("reason");
-      if (!member.kickable) {
+      if (!target)
+        return interaction.editReply({
+          content: "User not found.",
+        });
+      if (!target.kickable) {
         return interaction.editReply({
           content: "I cannot kick this user.",
-          ephemeral: true,
         });
       }
 
       if (
-        member.roles.highest.position >=
-        interaction.member.roles.highest.position
+        target.roles.highest.position >=
+        // @ts-ignore
+        interaction.guild.members.cache.get(interaction.member.id).roles.highest
+          .position
       ) {
         return interaction.editReply({
           content: "You cannot kick this user.",
-          ephemeral: true,
         });
       }
 
-      member
+      target
         .send(
           `You have been kicked from [${interaction.guild.name}](${invite}) for ${reason}.`
         )
         .then(() => {
-          member
+          target
             .kick(reason)
             .then(() => {
               interaction.editReply({
                 content: "User kicked.",
-                ephemeral: true,
               });
             })
             .catch(() => {
               interaction.editReply({
                 content: "I cannot kick this user.",
-                ephemeral: true,
               });
             });
         })
@@ -113,9 +120,10 @@ module.exports = {
             content:
               "I cannot send a message to this user. Are you sure you want to kick them?",
             components: [
+              // @ts-ignore
               new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
-                  .setCustomId(`kick-${member.id}`)
+                  .setCustomId(`kick-${target.id}`)
                   .setLabel("Kick")
                   .setStyle(ButtonStyle.Danger)
                   .setEmoji("👢")

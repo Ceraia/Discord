@@ -1,3 +1,4 @@
+// @ts-check
 const { Schema, model } = require("mongoose");
 
 const guildSchema = new Schema({
@@ -37,5 +38,5 @@ module.exports = {
       await guild.save();
     }
     return guild;
-  }
+  },
 };

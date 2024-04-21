@@ -1,3 +1,4 @@
+// @ts-check
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
@@ -19,5 +20,5 @@ module.exports = {
       await user.save();
     }
     return user;
-  }
+  },
 };

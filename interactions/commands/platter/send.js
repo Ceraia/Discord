@@ -1,6 +1,6 @@
+// @ts-check
 const {
   SlashCommandBuilder,
-  PermissionsBitField,
   ModalBuilder,
   TextInputBuilder,
   TextInputStyle,
@@ -40,6 +40,7 @@ module.exports = {
           .setTitle("Send a message")
           .setCustomId(`send`)
           .setComponents(
+            // @ts-ignore
             new ActionRowBuilder().addComponents(
               new TextInputBuilder()
                 .setStyle(TextInputStyle.Paragraph)
@@ -57,12 +58,11 @@ module.exports = {
           files: [interaction.options.getAttachment("image")],
         })
         .then(() => {
-          interaction.editReply({ content: "Image sent.", ephemeral: true });
+          interaction.editReply({ content: "Image sent." });
         })
         .catch((e) => {
           interaction.editReply({
             content: "An error occured.",
-            ephemeral: true,
           });
         });
     }

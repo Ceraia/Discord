@@ -102,8 +102,6 @@ async function loadCommands(client) {
 function commandsSame(command1, command2) {
   if (command1.name !== command2.name) return false;
   if (command1.description !== command2.description) return false;
-  if (command1.defaultMemberPermissions !== command2.defaultMemberPermissions)
-    return false;
   if (command1.options.length !== command2.options.length) return false;
 
   return true;

@@ -1,3 +1,4 @@
+// @ts-check
 const {
   ContextMenuCommandBuilder,
   PermissionsBitField,
@@ -25,6 +26,7 @@ module.exports = {
         .setTitle("Edit a message")
         .setCustomId(`edit-${interaction.targetMessage.id}`)
         .addComponents(
+          // @ts-ignore
           new ActionRowBuilder().addComponents(
             new TextInputBuilder()
               .setCustomId("message")

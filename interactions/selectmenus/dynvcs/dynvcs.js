@@ -1,9 +1,5 @@
-const {
-  ActionRowBuilder,
-  ButtonBuilder,
-  ButtonStyle,
-  PermissionsBitField,
-} = require("discord.js");
+// @ts-check
+const { PermissionsBitField } = require("discord.js");
 
 module.exports = {
   name: "dynvc",
@@ -14,7 +10,9 @@ module.exports = {
   async executeMenu(interaction, client) {
     const subcommand = interaction.customId;
     const action = subcommand.split("-")[1];
-    const vc = interaction.member.voice.channel;
+    const vc = await interaction.guild.members.cache.get(
+      interaction.member.user.id
+    ).voice.channel;
 
     if (!vc)
       return interaction.update({
@@ -34,9 +32,9 @@ module.exports = {
       });
 
     if (
-      !vc.permissionOverwrites.resolve(interaction.member.id) ||
+      !vc.permissionOverwrites.resolve(interaction.member.user.id) ||
       !vc.permissionOverwrites
-        .resolve(interaction.member.id)
+        .resolve(interaction.member.user.id)
         .allow.has(PermissionsBitField.Flags.AddReactions)
     )
       return interaction.update({
@@ -68,9 +66,9 @@ module.exports = {
         const memberRoles = interaction.guild.members.cache
           .get(member)
           .roles.cache.map((role) => role.id);
-        const overrideRoles = []//client.db.guilds
-          //.get(interaction.guild.id)
-          //.dynvcs.overrides.filter((role) => memberRoles.includes(role));
+        const overrideRoles = []; //client.db.guilds
+        //.get(interaction.guild.id)
+        //.dynvcs.overrides.filter((role) => memberRoles.includes(role));
         if (overrideRoles.length > 0) {
           return;
         } else {

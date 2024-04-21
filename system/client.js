@@ -1,5 +1,4 @@
 // @ts-check
-
 const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const { log, error, debug, warning } = require("./logger.js");
 const { initializeClient } = require("./initializers.js");

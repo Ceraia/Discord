@@ -1,11 +1,5 @@
-const {
-  SlashCommandBuilder,
-  PermissionsBitField,
-  ModalBuilder,
-  TextInputBuilder,
-  TextInputStyle,
-  ActionRowBuilder,
-} = require("discord.js");
+// @ts-check
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   name: "dnd",

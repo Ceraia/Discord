@@ -1,3 +1,4 @@
+// @ts-check
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 
 module.exports = {
@@ -23,11 +24,10 @@ module.exports = {
           actionRow = new ActionRowBuilder();
           buttons = 0;
         }
-        roleName = interaction.guild.roles.cache.get(role).name;
         actionRow.addComponents(
           new ButtonBuilder()
             .setCustomId(`giverole-${role}`)
-            .setLabel(roleName)
+            .setLabel(interaction.guild.roles.cache.get(role).name)
             .setStyle(ButtonStyle.Secondary)
         );
         buttons++;
@@ -38,15 +38,11 @@ module.exports = {
       message.channel
         .send({
           content: message.content,
+          // @ts-ignore
           components: actionRows,
         })
         .then(() => {
           interaction.message.delete();
-          // interaction.message.update({
-          //   content: "Done.",
-          //   embeds: [],
-          //   components: [],
-          // });
         });
     }
   },

@@ -1,3 +1,4 @@
+// @ts-check
 module.exports = {
   /**
    * @param {import("discord.js").ChatInputCommandInteraction} interaction
@@ -7,6 +8,6 @@ module.exports = {
     if (interaction.deferred || interaction.replied) {
       return interaction.editReply(content);
     }
-    return interaction.reply(content, options);
+    return interaction.reply(content);
   },
 };

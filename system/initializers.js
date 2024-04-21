@@ -1,3 +1,4 @@
+// @ts-check
 const { loadInteractions } = require("./interactions.js");
 const { loadScheduler } = require("./scheduler.js");
 
