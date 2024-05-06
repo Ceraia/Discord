@@ -15,8 +15,8 @@ services:
     image: mongo
     restart: unless-stopped
     volumes:
-      - mongo-db:/app/backend/data
-      - mongo-configdb:/app/backend/data
+      - /mongo-db:/app/backend/data
+      - /mongo-configdb:/app/backend/data
     environment:
       MONGO_INITDB_ROOT_USERNAME: username
       MONGO_INITDB_ROOT_PASSWORD: password
