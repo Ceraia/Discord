@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:22-alpine
 
 COPY . .
 RUN npm i --omit=dev --no-package-lock
