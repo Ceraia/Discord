@@ -60,34 +60,16 @@ module.exports = {
               parent: newState.channel.parent ? newState.channel.parent : null,
             })
             .catch(() => {
-              // Get the first channel in the guild the bot can send messages in
-              let channel = newState.guild.channels.cache
-                .filter(
-                  (c) =>
-                    c.type === ChannelType.GuildText &&
-                    c
-                      .permissionsFor(newState.client.user)
-                      .has(PermissionsBitField.Flags.SendMessages)
-                )
-                .first();
-
-              // Send a message to the channel
-              channel.send(
+              newState.member.send(
                 `<@!${newState.member.id}> I don't have permission to create a channel in the category you are in. Please make sure I have the correct permissions and try again.\nContact your server administrator if you need help.`
-              )
+              ).catch(() => { });
 
-              if (!channel) {
-                newState.member.send(
-                  `<@!${newState.member.id}> I don't have permission to create a channel in the category you are in. Please make sure I have the correct permissions and try again.\nContact your server administrator if you need help.`
-                ).catch(() => {});
+              newState.guild.fetchOwner().then((owner) => {
+                owner.send(
+                  `I don't have permission to send messages in any channel in ${newState.guild.name}. Please give me permission to send messages in a channel and try again.`
+                ).catch(() => { });
+              });
 
-
-                newState.guild.fetchOwner().then((owner) => {
-                  owner.send(
-                    `I don't have permission to send messages in any channel in ${newState.guild.name}. Please give me permission to send messages in a channel and try again.`
-                  ).catch(() => {});
-                });
-              }
 
               client.log(`${newState.guild.name}, incorrectly configured permissions.`);
             })
@@ -101,12 +83,12 @@ module.exports = {
                       AddReactions: true,
                       Connect: true,
                     })
-                    .catch(() => {});
+                    .catch(() => { });
                   channel.permissionOverwrites
                     .create(oldState.client.user.id, {
                       AddReactions: true,
                     })
-                    .catch(() => {});
+                    .catch(() => { });
 
                   // Add override roles
                   // newState.client.db.guilds
@@ -121,7 +103,7 @@ module.exports = {
                   //   });
 
                   // Move the user to the channel
-                  newState.member.voice.setChannel(channel).catch(() => {});
+                  newState.member.voice.setChannel(channel).catch(() => { });
 
                   // Wait 60 seconds and attempt to do the same thing as above
                   setTimeout(() => {
@@ -130,12 +112,12 @@ module.exports = {
                         AddReactions: true,
                         Connect: true,
                       })
-                      .catch(() => {});
+                      .catch(() => { });
                     channel.permissionOverwrites
                       .create(oldState.client.user.id, {
                         AddReactions: true,
                       })
-                      .catch(() => {});
+                      .catch(() => { });
 
                     // // Add override roles
                     // newState.client.db.guilds
@@ -156,12 +138,12 @@ module.exports = {
                       AddReactions: true,
                       Connect: true,
                     })
-                    .catch(() => {});
+                    .catch(() => { });
                   channel.permissionOverwrites
                     .create(oldState.client.user.id, {
                       AddReactions: true,
                     })
-                    .catch(() => {});
+                    .catch(() => { });
 
                   // Add override roles
                   // newState.client.db.guilds
@@ -176,7 +158,7 @@ module.exports = {
                   //   });
 
                   // Move the user to the channel
-                  newState.member.voice.setChannel(channel).catch(() => {});
+                  newState.member.voice.setChannel(channel).catch(() => { });
 
                   // Wait 60 seconds and attempt to do the same thing as above
                   setTimeout(() => {
@@ -185,12 +167,12 @@ module.exports = {
                         AddReactions: true,
                         Connect: true,
                       })
-                      .catch(() => {});
+                      .catch(() => { });
                     channel.permissionOverwrites
                       .create(oldState.client.user.id, {
                         AddReactions: true,
                       })
-                      .catch(() => {});
+                      .catch(() => { });
 
                     // Add override roles
                     // newState.client.db.guilds
@@ -221,7 +203,7 @@ module.exports = {
           channel.members.size === 0
         ) {
           // Delete the channel
-          channel.delete().catch(() => {});
+          channel.delete().catch(() => { });
         }
       });
     }
