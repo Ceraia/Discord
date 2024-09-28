@@ -8,6 +8,6 @@ module.exports = {
      * @param {import("@client").BotClient} client
      */
     async execute(interaction, client) {
-        client.user.setActivity("with the API", { type: ActivityType.Competing });
+        client.user.setActivity("with the API", { type: ActivityType.Playing });
     },
 };
