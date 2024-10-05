@@ -8,7 +8,7 @@ class database {
   constructor(client) {
     require("mongoose")
       .connect(
-        process.env.MONGOURI.replace(
+        process.env.MONGO_URI.replace(
           "<BOT>",
           `discord-${client.application.id}`
         ),
