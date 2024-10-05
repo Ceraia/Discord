@@ -27,3 +27,14 @@ services:
       - ./axodouble/xdbl/mongo-configdb:/app/backend/data
     networks:
       - ceraia-bot
+  
+  ceraia-express:
+    image: mongo-express:latest
+    depends_on:
+      - ceraia-mongo
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${CERAIA_MONGODB_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${CERAIA_MONGODB_PASSWORD}
+      ME_CONFIG_MONGODB_URL: mongodb://${CERAIA_MONGODB_USERNAME}:${CERAIA_MONGODB_PASSWORD}@ceraia-mongo:27017/
+    networks:
+      - ceraia-bot
