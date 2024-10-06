@@ -4,4 +4,4 @@ COPY . .
 RUN bun install
 RUN bun install git -g
 
-CMD ["bun","./index.js"]
+CMD ["bun","./src/index.js"]

@@ -6,7 +6,6 @@ version: "3"
 services:
   ceraia-bot:
     image: ghcr.io/ceraia/discord:main
-    command: bun index.js
     depends_on:
       - ceraia-mongo
     environment:

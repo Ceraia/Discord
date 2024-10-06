@@ -1,9 +1,9 @@
 {
-  "name": "xdbl",
-  "main": "index.js",
+  "name": "ceraia",
+  "main": "src/index.js",
   "scripts": {
-    "start": "bun index.js",
-    "dev": "bun --hot index.js"
+    "start": "bun src/index.js",
+    "dev": "bun --hot src/index.js"
   },
   "dependencies": {
     "discord.js": "^14.14.1",
