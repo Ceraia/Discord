@@ -1,5 +1,5 @@
 {
-  "name": "Existing Dockerfile",
+  "name": "Bun Bot Development",
   "dockerComposeFile": ["../docker-compose-dev.yml"],
   "service": "app",
   "workspaceFolder": "/workspace/discord",
