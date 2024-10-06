@@ -9,6 +9,7 @@ async function log(message, sendwebhook = true) {
  * @param {string} message
  */
 async function debug(message, sendwebhook = true) {
+  if(process.env.DEBUG)
   console.log(`\x1b[33m[DEBUG]\x1b[0m ${message}`);
 }
 /**
