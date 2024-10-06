@@ -127,30 +127,28 @@ module.exports = {
           });
       } else if (interaction.options.getSubcommand() === "everyone") {
         await interaction.guild.members.fetch().then(async (members) => {
-          interaction.reply(
-            `Adding ${role} to everyone in the server... 0% complete.`
-          );
+          interaction.reply({
+            content:
+              `Adding ${role} to everyone in the server... 0% complete.`, ephemeral: true
+          });
+
+          members.forEach(async (member) => {
+            member.fetch();
+          });
+
           members = members.filter(
             (member) => !member.user.bot && !member.roles.cache.has(role)
           );
+
           let totalMembers = members.size;
           let processedMembers = 0;
 
-          let startTime = Date.now();
-
           let interval = setInterval(() => {
-            let elapsedTime = Date.now() - startTime;
-            let estimatedRemainingTime =
-              (elapsedTime / processedMembers) *
-              (totalMembers - processedMembers);
-
             let percentage = (processedMembers / totalMembers) * 100;
-            interaction.reply(
+            interaction.editReply(
               `Adding ${role} to everyone in the server... ${Math.round(
                 percentage
-              )}% complete. Estimated to be done <t:${Math.round(
-                Math.round((Date.now() + estimatedRemainingTime) / 1000) * 1.3
-              )}:R>.`
+              )}% complete. Processed ${processedMembers} out of ${totalMembers}.`
             );
           }, 5000); // Update every 5 seconds
 
@@ -160,7 +158,7 @@ module.exports = {
 
             if (processedMembers === totalMembers) {
               clearInterval(interval);
-              interaction.reply(`Added ${role} to everyone in the server!`);
+              interaction.editReply(`Added ${role} to everyone in the server!`);
             }
           });
         });
