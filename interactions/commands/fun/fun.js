@@ -208,8 +208,7 @@ async function execute(interaction) {
       .replace(/V/g, "Λ")
       .replace(/W/g, "M")
       .replace(/X/g, "X")
-      .replace(/Y/g, "⅄")
-      .replace(/Z/g, "Z");
+      .replace(/Y/g, "⅄");
   }
   if (subcommand === "uwu") {
     return interaction.options
