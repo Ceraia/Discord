@@ -7,7 +7,7 @@ const {
   TextInputBuilder,
   TextInputStyle,
 } = require("discord.js");
-const { panelmessage } = require("../../commands/admin/dynamicVcs");
+const { panelmessage } = require("@src/interactions/commands/admin/dynamicVcs");
 
 module.exports = {
   ephemeral: true,
