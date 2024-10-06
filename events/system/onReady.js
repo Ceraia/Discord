@@ -4,10 +4,10 @@ module.exports = {
     name: "onReady",
     once: true,
     /**
-     * @param {import("discord.js").AnySelectMenuInteraction} interaction
      * @param {import("@client").BotClient} client
      */
-    async execute(interaction, client) {
+    async execute(client) {
+        console.log(`Logged in as ${client.user.tag}`);
         client.user.setActivity("with the API", { type: ActivityType.Playing });
     },
 };

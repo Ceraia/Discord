@@ -2,6 +2,6 @@
   "name": "Existing Dockerfile",
   "dockerComposeFile": ["../docker-compose-dev.yml"],
   "service": "app",
-  "workspaceFolder": "/workspace",
-  "postCreateCommand": "cat /etc/os-release"
+  "workspaceFolder": "/workspace/discord",
+  "postCreateCommand": "bun install"
 }

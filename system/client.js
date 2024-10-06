@@ -1,5 +1,5 @@
 // @ts-check
-const { Client, GatewayIntentBits, Partials } = require("discord.js");
+const { Client, GatewayIntentBits, Partials, ActivityType } = require("discord.js");
 const { log, error, debug, warning } = require("./logger.js");
 const { initializeClient } = require("./initializers.js");
 const database = require("./database/index.js");
@@ -36,6 +36,10 @@ class BotClient extends Client {
     this.once("ready", async () => {
       // Initialize the database
       this.db = new database(this);
+
+      // Log the client's tag
+      console.log(`Logged in as ${client.user.tag}`);
+      client.user.setActivity("with the API", { type: ActivityType.Playing });
 
       // Call the initialization function
       await initializeClient(this);

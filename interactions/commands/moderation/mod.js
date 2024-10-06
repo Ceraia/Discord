@@ -13,7 +13,6 @@ module.exports = {
   slashcommand: new SlashCommandBuilder()
     .setName("mod")
     .setDescription("Moderator related commands.")
-    .setDMPermission(false)
     .setDefaultMemberPermissions(PermissionsBitField.Flags.BanMembers)
     .addSubcommand((subcommand) =>
       subcommand

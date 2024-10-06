@@ -9,4 +9,4 @@ RUN bun install
 
 RUN rm ./package.json
 
-CMD ["bun", "--hot", "./index.js"]
+CMD ["bun", "--watch", "./index.js"]

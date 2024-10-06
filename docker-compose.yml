@@ -10,7 +10,7 @@ services:
     depends_on:
       - ceraia-mongo
     environment:
-      TOKEN: ${CERAIA_BOT_TOKEN_DISCORD}
+      TOKEN_BOT: ${CERAIA_BOT_TOKEN_DISCORD}
       MONGO_URI: mongodb://${CERAIA_MONGODB_USERNAME}:${CERAIA_MONGODB_PASSWORD}@ceraia-mongo:27017/<BOT>?authSource=admin
     labels:
       traefik.enable: "false"
@@ -27,3 +27,7 @@ services:
       - ./data/mongo-configdb:/app/backend/data
     networks:
       - ceraia-bot
+
+networks:
+  ceraia-bot:
+    driver: bridge
