@@ -6,7 +6,6 @@ module.exports = {
   guild: "750209335841390642",
   slashcommand: new SlashCommandBuilder()
     .setName("dnd")
-    .setDMPermission(false)
     .setDescription("DnD related commands.")
     .addSubcommandGroup((group) =>
       group

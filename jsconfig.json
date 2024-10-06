@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
-      "@client": ["./system/client.js"]
+      "@client": ["./system/client.js"],
+      "@src/*": ["*"]
     }
   }
 }

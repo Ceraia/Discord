@@ -7,15 +7,15 @@ const fs = require("fs");
 async function loadCommands(client) {
   // Find all folders in the commands directory
   const commandFolders = fs
-    .readdirSync("./interactions/commands")
+    .readdirSync("./src/interactions/commands")
     .filter((file) =>
-      fs.statSync(path.join("./interactions/commands", file)).isDirectory()
+      fs.statSync(path.join("./src/interactions/commands", file)).isDirectory()
     );
 
   // Register all commands in the folders
   for (const folder of commandFolders) {
     const commandFiles = fs
-      .readdirSync(`./interactions/commands/${folder}`)
+      .readdirSync(`./src/interactions/commands/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Register all slash commands
@@ -114,15 +114,15 @@ function commandsSame(command1, command2) {
 async function loadContexts(client) {
   // Find all folders in the contexts directory
   const commandFolders = fs
-    .readdirSync("./interactions/contexts")
+    .readdirSync("./src/interactions/contexts")
     .filter((file) =>
-      fs.statSync(path.join("./interactions/contexts", file)).isDirectory()
+      fs.statSync(path.join("./src/interactions/contexts", file)).isDirectory()
     );
 
   // Register all contexts in the folders
   for (const folder of commandFolders) {
     const commandFiles = fs
-      .readdirSync(`./interactions/contexts/${folder}`)
+      .readdirSync(`./src/interactions/contexts/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Get current slash contexts
@@ -228,15 +228,15 @@ async function deleteInteractions(client) {
 async function loadButtons(client) {
   // Find all folders in the buttons directory
   const buttonFolders = fs
-    .readdirSync("./interactions/buttons")
+    .readdirSync("./src/interactions/buttons")
     .filter((file) =>
-      fs.statSync(path.join("./interactions/buttons", file)).isDirectory()
+      fs.statSync(path.join("./src/interactions/buttons", file)).isDirectory()
     );
 
   // Register all buttons in the folders
   for (const folder of buttonFolders) {
     const buttonFiles = fs
-      .readdirSync(`./interactions/buttons/${folder}`)
+      .readdirSync(`./src/interactions/buttons/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Register all buttons
@@ -253,8 +253,8 @@ async function loadButtons(client) {
 async function loadEvents(client) {
   // Find all folders in the events directory
   const eventFolders = await fs
-    .readdirSync("./events")
-    .filter((file) => fs.statSync(path.join("./events", file)).isDirectory());
+    .readdirSync("./src/events")
+    .filter((file) => fs.statSync(path.join("./src/events", file)).isDirectory());
 
   // Event Counter
   let eventCount = 0;
@@ -262,7 +262,7 @@ async function loadEvents(client) {
   // Register all events in the folders
   for (const folder of eventFolders) {
     const eventFiles = fs
-      .readdirSync(`./events/${folder}`)
+      .readdirSync(`./src/events/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Register all events
@@ -282,15 +282,15 @@ async function loadEvents(client) {
 async function loadModals(client) {
   // Find all folders in the modals directory
   const modalFolders = fs
-    .readdirSync("./interactions/modals")
+    .readdirSync("./src/interactions/modals")
     .filter((file) =>
-      fs.statSync(path.join("./interactions/modals", file)).isDirectory()
+      fs.statSync(path.join("./src/interactions/modals", file)).isDirectory()
     );
 
   // Register all modals in the folders
   for (const folder of modalFolders) {
     const modalFiles = fs
-      .readdirSync(`./interactions/modals/${folder}`)
+      .readdirSync(`./src/interactions/modals/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Register all modals
@@ -307,15 +307,15 @@ async function loadModals(client) {
 async function loadSelectMenus(client) {
   // Find all folders in the select menus directory
   const selectMenuFolders = fs
-    .readdirSync("./interactions/selectmenus")
+    .readdirSync("./src/interactions/selectmenus")
     .filter((file) =>
-      fs.statSync(path.join("./interactions/selectmenus", file)).isDirectory()
+      fs.statSync(path.join("./src/interactions/selectmenus", file)).isDirectory()
     );
 
   // Register all select menus in the folders
   for (const folder of selectMenuFolders) {
     const selectMenuFiles = fs
-      .readdirSync(`./interactions/selectmenus/${folder}`)
+      .readdirSync(`./src/interactions/selectmenus/${folder}`)
       .filter((file) => file.endsWith(".js"));
 
     // Register all select menus
