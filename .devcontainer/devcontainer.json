@@ -1,5 +1,5 @@
 {
-  "name": "Bun Bot Development",
+  "name": "Ceraia Discord Bot",
   "dockerComposeFile": ["../docker-compose-dev.yml"],
   "service": "app",
   "workspaceFolder": "/workspace/discord",
