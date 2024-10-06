@@ -12,6 +12,7 @@ services:
     environment:
       TOKEN_BOT: ${CERAIA_BOT_TOKEN_DISCORD}
       MONGO_URI: mongodb://${CERAIA_MONGODB_USERNAME}:${CERAIA_MONGODB_PASSWORD}@mongo:27017/<BOT>?authSource=admin
+      STATUS_CHANNEL: ${CERAIA_BOT_STATUS_CHANNEL}
       DEBUG: true
     labels:
       traefik.enable: "false"

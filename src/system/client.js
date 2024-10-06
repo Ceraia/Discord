@@ -1,5 +1,5 @@
 // @ts-check
-const { Client, GatewayIntentBits, Partials, ActivityType } = require("discord.js");
+const { Client, GatewayIntentBits, Partials, ActivityType, ChannelType } = require("discord.js");
 const { log, error, debug, warning } = require("./logger.js");
 const { initializeClient } = require("./initializers.js");
 const database = require("./database/index.js");
@@ -40,6 +40,14 @@ class BotClient extends Client {
       // Log the client's tag
       console.log(`Logged in as ${client.user.tag}`);
       client.user.setActivity("with the API", { type: ActivityType.Playing });
+
+      // Notify the bots status in the status channel if it's set
+      if (process.env.STATUS_CHANNEL) { 
+        const statusChannel = client.channels.cache.get(process.env.STATUS_CHANNEL);
+        if (statusChannel && statusChannel.type === ChannelType.GuildText) {
+          statusChannel.send(`Bot has been booted up. Logged in as ${client.user.tag}`);
+        }
+      }
 
       // Call the initialization function
       await initializeClient(this);
