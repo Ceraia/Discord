@@ -3,6 +3,7 @@ const { Client, GatewayIntentBits, Partials, ActivityType, ChannelType } = requi
 const { log, error, debug, warning } = require("./logger.js");
 const { initializeClient } = require("./initializers.js");
 const database = require("./database/index.js");
+const http = require("http");
 
 class BotClient extends Client {
   constructor(options) {
@@ -38,7 +39,7 @@ class BotClient extends Client {
       this.db = new database(this);
 
       // Log the client's tag
-      console.log(`Logged in as ${client.user.tag}`);
+      this.log(`Logged in as ${client.user.tag}`);
       client.user.setActivity("with the API", { type: ActivityType.Playing });
 
       // Notify the bots status in the status channel if it's set
@@ -48,6 +49,25 @@ class BotClient extends Client {
           statusChannel.send(`Bot has been booted up. Logged in as ${client.user.tag}`);
         }
       }
+
+      // Create a server for health checks
+      http.createServer((req, res) => {
+        if (req.url === '/health') {
+          // Check if the bot is connected and ready
+          if (client.isReady()) {
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end('Bot is healthy');
+          } else {
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.end('Bot is unhealthy');
+          }
+        } else {
+          res.writeHead(404, { 'Content-Type': 'text/plain' });
+          res.end('Not found');
+        }
+      }).listen(8080, () => {
+        this.log("Health check server is running on port 8080");
+      });
 
       // Call the initialization function
       await initializeClient(this);

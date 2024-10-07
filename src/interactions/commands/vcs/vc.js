@@ -8,7 +8,6 @@ module.exports = {
   slashcommand: new SlashCommandBuilder()
     .setName("vc")
     .setDescription("VC Related Commands.")
-    .setDMPermission(false)
     .setDefaultMemberPermissions(PermissionsBitField.Flags.Connect)
     .addSubcommand((subcommand) =>
       subcommand.setName("manage").setDescription("Manage a/your VC.")
