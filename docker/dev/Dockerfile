@@ -3,6 +3,7 @@ FROM oven/bun:alpine
 WORKDIR /workspace/discord
 
 RUN apk add --no-cache git curl
+
 COPY package.json ./package.json
 
 RUN bun install
