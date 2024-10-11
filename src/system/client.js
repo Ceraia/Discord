@@ -40,7 +40,12 @@ class BotClient extends Client {
 
       // Log the client's tag
       this.log(`Logged in as ${client.user.tag}`);
+      
+      // Set the bot's activity every 10 minutes
       client.user.setActivity("with the API", { type: ActivityType.Playing });
+      setInterval(() => {
+        client.user.setActivity("with the API", { type: ActivityType.Playing });
+      }, 600000);
 
       // Notify the bots status in the status channel if it's set
       if (process.env.STATUS_CHANNEL) { 
