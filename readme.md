@@ -1,3 +1,6 @@
+# Archived in favor of the Gargoyle framework.
+https://github.com/ceraia/gargoyle
+
 # the xdbl bot
 This bot is not necessarily simple, however this is a bot system for Discord that I have made from scratch and specifically tailored to my (sometimes odd) needs.
 
